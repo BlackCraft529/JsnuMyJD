@@ -1,10 +1,10 @@
 package com.jsnu.jd.jsnujd.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jsnu.jd.jsnujd.pojo.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import javax.servlet.http.HttpSession;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author 魏荣轩
@@ -12,10 +12,16 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 public class LoginController {
+    private ObjectMapper objectMapper = new ObjectMapper();
 
+    /**
+     * 测试方法
+     *
+     * @return json数据
+     */
     @RequestMapping("/test")
-    public String getUser(HttpSession session, Model model){
-        model.addAttribute("user",new User());
-        return "login";
+    @ResponseBody
+    public String getUser(){
+        return objectMapper.valueToTree(new User()).toString();
     }
 }
