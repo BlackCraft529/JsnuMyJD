@@ -8,8 +8,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * @author Luckily_Baby
+ * @author 魏荣轩
  * @date 2020/7/29 0:34
+ *
+ * 拓展Spring MVC
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -21,7 +23,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
         InterceptorRegistration addInterceptor = registry.addInterceptor(securityInterceptor);
         // 排除配置
         addInterceptor.excludePathPatterns("/error");
-        addInterceptor.excludePathPatterns("/static/**");//排除静态资源
+        //排除静态资源
+        addInterceptor.excludePathPatterns("/static/**");
         addInterceptor.excludePathPatterns("/view/login");
         addInterceptor.excludePathPatterns("/login/check");
         // 拦截配置
@@ -29,6 +32,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     }
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");//
+        //路径
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 }
