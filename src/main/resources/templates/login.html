@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="loginApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -7,9 +7,8 @@
 	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel = "stylesheet" href ="../static/css-login/style.css">
-
 </head>
-<body>
+<body ng-controller="loginController">
 	<section class="login_logo container">
 		<img src="img-login/logo.png">
 	</section>
@@ -34,19 +33,31 @@
 					</label>
 				</div>
 				<div class="login-b">
-					<button type="submit" class="btn btn-danger login-botton">登&nbsp;录</button>
+					<button type="submit" class="btn btn-danger login-botton" >登&nbsp;录</button>
 				</div>
 			</form>
 			<div class="to-register">
-				<a href="/register"><span class="glyphicon glyphicon-chevron-right"></span>立即注册</a>
+				<a href="" ng-click="demo()"><span class="glyphicon glyphicon-chevron-right"></span>立即注册</a>
 			</div>
 		</div>
 	</div>
 
-
-
 	<script>
-		
+		angular.module('loginApp',[]).controller('loginController',['$scope','$http',function ($scope,$http) {
+
+			$scope.users=[];
+			$scope.demo = function(){
+				$http.get('/test','asd').then(function (data) {
+					console.log("请求成功");
+					$scope.users=data.data;
+					console.log(data);
+
+				}),function (err) {
+					console.log(err)
+				};
+			}
+		}]);
+
 	</script>
 </body>
 </html>
