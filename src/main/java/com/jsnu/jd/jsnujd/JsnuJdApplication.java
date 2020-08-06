@@ -17,7 +17,6 @@ public class JsnuJdApplication implements CommandLineRunner {
     @Autowired
     private DataSource dataSource;
 
-
     public static void main(String[] args) {
         SpringApplication.run(JsnuJdApplication.class, args);
     }
