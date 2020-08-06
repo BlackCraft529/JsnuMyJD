@@ -3,7 +3,44 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jsnu.jd.jsnujd.mapper.UserMapper">
+    <parameterMap id="UserParameterMap" type="com.jsnu.jd.jsnujd.pojo.User">
+        <parameter property="uuid" resultMap="UserResultMap"/>
+        <parameter property="password" resultMap="UserResultMap"/>
+        <parameter property="name" resultMap="UserResultMap"/>
+        <parameter property="phone" resultMap="UserResultMap"/>
+        <parameter property="email" resultMap="UserResultMap"/>
+        <parameter property="avatar" resultMap="UserResultMap"/>
+        <parameter property="lastLoginTime" resultMap="UserResultMap"/>
+        <parameter property="registerTime" resultMap="UserResultMap"/>
+        <parameter property="retailer" resultMap="UserResultMap"/>
+    </parameterMap>
+    <resultMap id="UserResultMap" type="com.jsnu.jd.jsnujd.pojo.User">
+        <result column="uuid" property="uuid"/>
+        <result column="password" property="password"/>
+        <result column="name" property="name"/>
+        <result column="phone" property="phone"/>
+        <result column="email" property="email"/>
+        <result column="avatar" property="avatar"/>
+        <result column="last_login_time" property="lastLoginTime"/>
+        <result column="register_time" property="registerTime"/>
+        <result column="retailer" property="retailer"/>
+    </resultMap>
     <select id="selectUserPassword" resultType="string">
         select password from user_data where uuid=#{userId};
     </select>
+    <insert id="addUser" parameterMap="UserParameterMap">
+        insert into user_data (uuid,password,name,phone,email,avatar,last_login_time,register_time,retailer)
+	        values (#{uuid},#{password},#{name},#{phone},#{email},#{avatar},#{lastLoginTime},#{registerTime},#{retailer});
+    </insert>
+    <select id="selectUserByUuid" parameterType="string" resultMap="UserResultMap">
+        select * from user_data where uuid=#{userId};
+    </select>
+    <delete id="deleteUserByUuid" parameterType="string">
+        delete from user_data where uuid=#{userId};
+    </delete>
+    <update id="editUserInfoByUuid" parameterMap="UserParameterMap">
+        update user_data set password=#{password},name=#{name},phone=#{phone},email=#{email},abatar=#{avatar},
+            last_login_time=#{lastLoginTime},retailer=#{retailer} where uuid=#{uuid};
+    </update>
+
 </mapper>

@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Good {
+public class Goods {
     private String id;
     private String name;
     private String description;
-    private double price;
+    private double price,sellPrice;
     private String cate;
     private int leftAmount;
     private String image;

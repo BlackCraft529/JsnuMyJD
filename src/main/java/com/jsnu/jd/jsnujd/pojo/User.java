@@ -21,4 +21,5 @@ public class User {
     private String email;
     private String avatar;
     private Date lastLoginTime,registerTime;
+    private boolean retailer;
 }
