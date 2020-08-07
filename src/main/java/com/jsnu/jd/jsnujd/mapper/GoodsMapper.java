@@ -4,6 +4,8 @@ import com.jsnu.jd.jsnujd.pojo.Goods;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.Map;
+
 /**
  * @author 魏荣轩
  * @date 2020/8/6 18:24
@@ -42,9 +44,8 @@ public interface GoodsMapper {
 
     /**
      * 更新商品剩余数量
-     * @param goodsId 商品ID
-     * @param leftAmount 剩余数量
+     * @param data 商品数据，goodsId：id0001  leftAmount: 1
      * @return 修改条数
      */
-    int updateGoodsLeftAmount(String goodsId,int leftAmount);
+    int updateGoodsLeftAmount(Map<String,String> data);
 }

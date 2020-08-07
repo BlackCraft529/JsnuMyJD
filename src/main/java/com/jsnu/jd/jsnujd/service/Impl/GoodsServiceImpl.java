@@ -6,6 +6,8 @@ import com.jsnu.jd.jsnujd.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -168,7 +170,10 @@ public class GoodsServiceImpl implements GoodsService {
         if(goodsMapper.selectGoodsByGoodsId(goodsId)==null){
             return 0;
         }
-        return goodsMapper.updateGoodsLeftAmount(goodsId,leftAmount);
+        Map<String,String> data=new HashMap<>();
+        data.put("goodsId",goodsId);
+        data.put("leftAmount",leftAmount+"");
+        return goodsMapper.updateGoodsLeftAmount(data);
     }
 
     /**

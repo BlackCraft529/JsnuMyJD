@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsnu.jd.jsnujd.mapper.GoodsMapper">
+    <parameterMap id="GoodsParameterMap" type="com.jsnu.jd.jsnujd.pojo.Goods">
+        <parameter property="id" resultMap="UserResultMap"/>
+        <parameter property="name" resultMap="UserResultMap"/>
+        <parameter property="description" resultMap="UserResultMap"/>
+        <parameter property="price" resultMap="UserResultMap"/>
+        <parameter property="sellPrice" resultMap="UserResultMap"/>
+        <parameter property="cate" resultMap="UserResultMap"/>
+        <parameter property="leftAmount" resultMap="UserResultMap"/>
+        <parameter property="image" resultMap="UserResultMap"/>
+    </parameterMap>
+    <resultMap id="GoodsResultMap" type="com.jsnu.jd.jsnujd.pojo.Goods">
+        <result column="goods_id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="desc" property="description"/>
+        <result column="price" property="price"/>
+        <result column="sell_price" property="sellPrice"/>
+        <result column="cate" property="cate"/>
+        <result column="left_amount" property="leftAmount"/>
+        <result column="image" property="image"/>
+    </resultMap>
+    <insert id="addGoods" parameterMap="GoodsParameterMap">
+        insert into goods_data (goods_id,name,desc,price,sell_price,cate,left_amount,image)
+            values (#{id},#{name},#{description},#{price},#{sellPrice},#{cate},#{leftAmount},#{image});
+    </insert>
+    <select id="selectGoodsByGoodsId" parameterType="string" resultMap="GoodsResultMap">
+        select * from goods_data where goods_id=#{goodsId};
+    </select>
+    <update id="updateGoodsLeftAmount" parameterType="map">
+        update goods_data set left_amount=#{leftAmount} where goods_id=#{goodsId};
+    </update>
+    <delete id="deleteGoodsByGoodsId" parameterType="string">
+        delete from goods_data where goods_id=#{goodsId};
+    </delete>
+    <update id="updateGoodsInfoByPojo" parameterMap="GoodsParameterMap">
+        update goods_data set name=#{name},desc=#{description},price=#{price},sell_price=#{sellPrice},
+            cate=#{cate},left_amount=#{leftAmount},image=#{image} where goods_id=#{id};
+    </update>
+</mapper>
