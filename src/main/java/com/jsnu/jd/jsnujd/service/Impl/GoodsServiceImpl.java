@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -191,5 +192,71 @@ public class GoodsServiceImpl implements GoodsService {
         Goods goods = goodsMapper.selectGoodsByGoodsId(goodsId);
         goods.setImage(image);
         return goodsMapper.updateGoodsInfoByPojo(goods);
+    }
+
+    /**
+     * 获取所有商品信息
+     *
+     * @return 商品信息列表
+     */
+    @Override
+    public List<Goods> selectAllGoods() {
+        return goodsMapper.selectAllGoods();
+    }
+
+    /**
+     * 根据商品分类查找商品
+     *
+     * @param cate 分类ID
+     * @return 商品信息列表
+     */
+    @Override
+    public List<Goods> selectGoodsByCate(String cate) {
+        return goodsMapper.selectGoodsByCate(cate);
+    }
+
+    /**
+     * 根据商品名查找商品
+     *
+     * @param nameExact 准确商品名
+     * @return 商品
+     * @deprecated
+     */
+    @Override
+    public List<Goods> selectGoodsByNameExact(String nameExact) {
+        return selectGoodsByNameExact(nameExact);
+    }
+
+    /**
+     * 根据商品名模糊搜索
+     *
+     * @param vagueName 商品名
+     * @return 商品列表
+     */
+    @Override
+    public List<Goods> selectGoodsByVagueName(String vagueName) {
+        return goodsMapper.selectGoodsByVagueName("%"+vagueName+"%");
+    }
+
+    /**
+     * 查找最新商品
+     *
+     * @param count 查找数量
+     * @return 商品
+     */
+    @Override
+    public List<Goods> findNewestGoods(int count) {
+        return goodsMapper.findNewestGoods(count);
+    }
+
+    /**
+     * 查找最热商品
+     *
+     * @param count 数量
+     * @return 商品列表
+     */
+    @Override
+    public List<Goods> findHotGoods(int count) {
+        return goodsMapper.findHotGoods(count);
     }
 }

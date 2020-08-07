@@ -9,13 +9,14 @@ import java.util.Map;
 /**
  * @author 魏荣轩
  * @date 2020/8/5 17:13
+ * 注：该订单类仅配合数据库
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Order {
     private String id;
-    private Map<String,Integer> goodsList;
+    private String goodsList;
     private String userId;
     private double payment;
     private double settlement;

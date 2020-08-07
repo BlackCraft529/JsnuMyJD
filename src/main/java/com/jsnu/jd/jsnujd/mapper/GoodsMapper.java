@@ -3,7 +3,7 @@ package com.jsnu.jd.jsnujd.mapper;
 import com.jsnu.jd.jsnujd.pojo.Goods;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -48,4 +48,46 @@ public interface GoodsMapper {
      * @return 修改条数
      */
     int updateGoodsLeftAmount(Map<String,String> data);
+
+    /**
+     * 获取所有商品信息
+     * @return 商品信息列表
+     */
+    List<Goods> selectAllGoods();
+
+    /**
+     * 根据商品分类查找商品
+     * @param cate 分类ID
+     * @return 商品信息列表
+     */
+    List<Goods> selectGoodsByCate(String cate);
+
+    /**
+     * 根据商品名查找商品
+     * @param nameExact 准确商品名
+     * @return 商品
+     * @deprecated
+     */
+    List<Goods> selectGoodsByNameExact(String nameExact);
+
+    /**
+     * 根据商品名模糊搜索
+     * @param vagueName 商品名
+     * @return 商品列表
+     */
+    List<Goods> selectGoodsByVagueName(String vagueName);
+
+    /**
+     * 查找最新商品
+     * @param count 查找数量
+     * @return 商品
+     */
+    List<Goods> findNewestGoods(int count);
+
+    /**
+     * 查找蓄热商品
+     * @param count 数量
+     * @return 商品列表
+     */
+    List<Goods> findHotGoods(int count);
 }

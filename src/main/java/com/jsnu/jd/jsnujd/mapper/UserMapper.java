@@ -10,7 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 @Repository
-
 public interface UserMapper {
     /**
      * 新增一个用户

@@ -2,6 +2,8 @@ package com.jsnu.jd.jsnujd.service;
 
 import com.jsnu.jd.jsnujd.pojo.Goods;
 
+import java.util.List;
+
 /**
  * @author 魏荣轩
  * @date 2020/8/6 18:42
@@ -90,4 +92,46 @@ public interface GoodsService {
      * @return 修改条数
      */
     int updateGoodsImage(String goodsId,String image);
+
+    /**
+     * 获取所有商品信息
+     * @return 商品信息列表
+     */
+    List<Goods> selectAllGoods();
+
+    /**
+     * 根据商品分类查找商品
+     * @param cate 分类ID
+     * @return 商品信息列表
+     */
+    List<Goods> selectGoodsByCate(String cate);
+
+    /**
+     * 根据商品名查找商品
+     * @param nameExact 准确商品名
+     * @return 商品
+     * @deprecated
+     */
+    List<Goods> selectGoodsByNameExact(String nameExact);
+
+    /**
+     * 根据商品名模糊搜索
+     * @param vagueName 商品名
+     * @return 商品列表
+     */
+    List<Goods> selectGoodsByVagueName(String vagueName);
+
+    /**
+     * 查找最新商品
+     * @param count 查找数量
+     * @return 商品
+     */
+    List<Goods> findNewestGoods(int count);
+
+    /**
+     * 查找最热商品
+     * @param count 数量
+     * @return 商品列表
+     */
+    List<Goods> findHotGoods(int count);
 }

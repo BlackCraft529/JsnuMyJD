@@ -189,5 +189,16 @@ public class UserServiceImpl implements UserService {
         return userMapper.deleteUserByUuid(userId);
     }
 
+    /**
+     * 根据用户ID查找用户信息
+     *
+     * @param userId 用户ID
+     * @return 用户
+     */
+    @Override
+    public User selectUserByUserId(String userId) {
+        return userMapper.selectUserByUuid(userId);
+    }
+
 
 }

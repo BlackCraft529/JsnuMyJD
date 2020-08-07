@@ -1,5 +1,7 @@
 package com.jsnu.jd.jsnujd.service;
 
+import com.jsnu.jd.jsnujd.pojo.User;
+
 /**
  * @author 魏荣轩
  * @date 2020/8/5 20:28
@@ -87,4 +89,12 @@ public interface UserService {
      * @return 删除条数
      */
     int deleteUserByUuid(String userId);
+
+    /**
+     * 根据用户ID查找用户信息
+     * @param userId 用户ID
+     * @return 用户
+     */
+    User selectUserByUserId(String userId);
+
 }
