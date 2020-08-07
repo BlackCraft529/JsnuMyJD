@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsnu.jd.jsnujd.mapper.CategoryMapper">
+    <parameterMap id="CategoryParameterMap" type="com.jsnu.jd.jsnujd.pojo.Category">
+        <parameter property="id" resultMap="CategoryResultMap"/>
+        <parameter property="name" resultMap="CategoryResultMap"/>
+    </parameterMap>
+    <resultMap id="CategoryResultMap" type="com.jsnu.jd.jsnujd.pojo.Category">
+        <result column="cate_id" property="id"/>
+        <result column="name" property="name"/>
+    </resultMap>
+    <insert id="addCategory" parameterMap="CategoryParameterMap">
+        insert into category_data (cate_id,cate_name) values (#{id},#{name});
+    </insert>
+    <update id="updateCategoryName" parameterType="map">
+        update category_data set cate_id=#{cateId},cate_name=#{name};
+    </update>
+    <delete id="deleteCategoryByCateId" parameterType="string">
+        delete from category_data where cate_id=#{cateId};
+    </delete>
+    <select id="selectCategoryByCateId" parameterType="string" resultMap="CategoryResultMap">
+        select * from category_data where cate_id=#{cateId};
+    </select>
+</mapper>

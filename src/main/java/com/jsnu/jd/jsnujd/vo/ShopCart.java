@@ -1,13 +1,14 @@
-package com.jsnu.jd.jsnujd.pojo;
+package com.jsnu.jd.jsnujd.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.util.Map;
 
 /**
  * @author 魏荣轩
- * @date 2020/8/5 17:19
+ * @date 2020/8/7 22:55
  */
 @Data
 @AllArgsConstructor
@@ -15,5 +16,5 @@ import java.util.Map;
 public class ShopCart {
     private String id;
     private String ownerId;
-    private String goodsList;
+    private Map<String , Integer> goodsList;
 }

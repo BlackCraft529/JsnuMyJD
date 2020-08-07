@@ -49,7 +49,7 @@ public interface OrderMapper {
      *              不更新： 创建时间与状态
      * @return 更新条数
      */
-    int updateOrderInfoByOrderId(Order order);
+    int updateOrderInfoByOrderPojo(Order order);
 
     /**
      * 创建一个新的订单
