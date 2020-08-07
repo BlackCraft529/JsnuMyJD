@@ -3,7 +3,6 @@ package com.jsnu.jd.jsnujd.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.util.Map;
 
 /**
  * @author 魏荣轩

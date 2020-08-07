@@ -2,8 +2,6 @@ package com.jsnu.jd.jsnujd.service;
 
 import com.jsnu.jd.jsnujd.pojo.Category;
 
-import java.util.Map;
-
 /**
  * @author 魏荣轩
  * @date 2020/8/7 23:01
