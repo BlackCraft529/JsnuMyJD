@@ -1,0 +1,46 @@
+/***banner的设置****/
+.banner{
+	width: 100%;
+	height: 500px;
+	background-image: url(../../resources/img-login/banner.png);
+	background-repeat:no-repeat;
+	background-color: #e93854;
+	background-position: 50% 0%;
+}
+.banner .login-form{
+	background-color: #FFFFFF;
+	float:left;
+	margin-top: 50px;
+	height: 300px;
+	padding-top: 30px;
+	position: relative;
+}
+
+.banner .login-botton{
+	width: 80%;
+}
+.banner .login-b{
+	text-align:center;
+	
+}
+.banner .to-register{
+	text-align: right;
+	position: absolute;
+	right:0px;
+	bottom: 0px;
+	height: 10%;
+	width: 100%;
+	background-color: rgb(252,252,252);
+	border-top: 1px solid rgb(244,244,244);
+}
+
+.banner .to-register a{
+	color: rgb(182,29,29);
+}
+
+.tip{
+	background-color: rgb(255,248,240);
+	text-align: center;
+	height: 40px;
+	color: rgb(153,153,153);
+}

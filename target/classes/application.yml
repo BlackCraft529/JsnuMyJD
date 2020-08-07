@@ -1,0 +1,23 @@
+spring:
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myjd?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 1515206
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 15
+      maximum-pool-size: 200
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: HikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+mybatis:
+  type-aliases-package: com.jsnu.jd.jsnujd.pojo
+  mapper-locations: classpath:mybatis/mapper/*.xml
