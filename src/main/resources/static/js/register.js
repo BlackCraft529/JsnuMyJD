@@ -52,7 +52,7 @@
 
             function nameExist(name) {
                 $scope.info_n={
-                  name: name;
+                  name: name,
                 };
                 $http.post('/getName',$scope.info_n).then(function (data) {
                     console.log("请求成功");
