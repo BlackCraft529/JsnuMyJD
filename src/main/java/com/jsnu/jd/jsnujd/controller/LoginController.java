@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class LoginController {
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper jsonObjectMapper = new ObjectMapper();
 
     /**
      * 测试方法
@@ -22,6 +22,6 @@ public class LoginController {
     @RequestMapping("/test")
     @ResponseBody
     public String getUser(){
-        return objectMapper.valueToTree(new User()).toString();
+        return jsonObjectMapper.valueToTree(new User()).toString();
     }
 }
