@@ -1,0 +1,83 @@
+<div class="reg">
+	<nav class="top container">
+		<span><a href="#!/home"><img src="/img-register/logo.png"></a></span>
+		<b class="text">欢迎注册</b>
+	</nav>
+	<div class="reg-form">
+		<form action="">
+			<table class="col-md-4 col-sm-4 col-xs-4 col-md-offset-4 col-sm-offset-4 col-xs-offset-4 container">
+				<tr>
+					<td colspan="2" class="process"><img src="img-register/t1.jpg"></td>
+				</tr>
+				<tr>
+					<td class="td-lft col-md-4 user-name">用户名</td>
+					<td>
+						<input type="text" placeholder="您的账户名" class="ipt-t" ng-model="user.name">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="tip">
+						<span class="glyphicon glyphicon-exclamation-sign" ng-bind="info.name">
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-lft">设置密码</td>
+					<td>
+						<input type="password" placeholder="建议使用两种或两种以上字符" class="ipt-t">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="tip">
+						<span class="glyphicon glyphicon-exclamation-sign">建议使用字母、数字和符号两种及以上的组合，8-20个字符
+						</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-lft">确认密码</td>
+					<td>
+						<input type="password" placeholder="请再次输入密码" class="ipt-t">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="tip">
+						<span class="glyphicon glyphicon-exclamation-sign">请再次输入密码</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-lft user-info">电话</td>
+					<td>
+						<input type="text" placeholder="请输入正确的手机号码" class="ipt-t">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="tip">
+						<span class="glyphicon glyphicon-exclamation-sign">请输入11位手机号</span>
+					</td>
+				</tr>
+				<tr>
+					<td class="td-lft user-info">邮箱</td>
+					<td>
+						<input type="email" placeholder="请输入正确的邮箱地址" class="ipt-t">
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="tip">
+						<span class="glyphicon glyphicon-exclamation-sign">请输入正确的邮箱地址</span>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="container ">
+						<input type="submit" value="立即注册" class="reg-now  col-md-6 col-md-offset-3" ng-click="registUser()">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+
+</div>

@@ -1,0 +1,48 @@
+.reg .ipt-t{
+	padding-left: 10px;
+	width:300px;
+	height:42px;
+	opacity:0.6;
+	font-size:15px;
+	letter-spacing: 1px;
+}
+.reg .top{
+	width:1245px;
+	height:88px;
+	border-bottom:4px solid #EEEEEE;
+	margin-bottom: 20px;
+}
+.reg .top .text{
+	font-weight:normal;
+	font-size:24px;
+	text-align: bottom;
+}
+.reg .td-lft{
+	text-align: right;
+	padding:20px 20px;
+}
+.reg .process{
+	text-align: center;
+}
+.reg .tip{
+	color: rgb(197,197,197);
+}
+
+.reg .reg-now{
+	background-color: rgb(226,35,26);
+	color:#fff;
+	padding:15px 25px;
+	font-size:16px;
+	text-decoration:none;
+	border: none;
+}
+.reg .user-name{
+	letter-spacing: 5px;
+}
+.reg .user-info{
+	letter-spacing: 10px;
+}
+/*测试
+.reg table{
+	border: 1px solid black;
+}*/
