@@ -55,12 +55,21 @@
                 $scope.info_n={params:{
                   name: name
                 }};
-                $http.post('/getName',$scope.info_n).then(function (data) {
-                    console.log("请求成功");
+                //发送用户名是否存在请求
+                $http({
+                    url:'/getName',//验证表单的接口
+                    method:'post',
+                    data: {
+                        'name' :name
+                    },
+                    headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+                }).then(function successCallback(data) {
+                    console.log("发送完成")
                     return true;
-                }),function (err) {
-                    return false;
-                };
+                    //session
+                }, function errorCallback(response) {
+                    alert("error!\n"+"error message:"+response);
+                });
             }
         });
         //密码监听
@@ -71,10 +80,20 @@
         $scope.registUser=function () {
             if(!$scope.info.status)
                 return;
-            $http.post('/registerUser',$scope.user).then(function (data) {
-                console.log("注册成功");
-            }),then(function (err) {
-                console.log("注册失败");
+            //发送注册请求
+            $http({
+                url:'/registerUser',//验证表单的接口
+                method:'post',
+                data:$scope.user,
+                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+            }).then(function successCallback(data) {
+                if (data.data.uuid===null){
+                    alert("注册失败！请检查帐号密码后再次尝试！");
+                    return;
+                }
+                //session
+            }, function errorCallback(response) {
+                alert("error!\n"+"error message:"+response);
             });
         };
         //

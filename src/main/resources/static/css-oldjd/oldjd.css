@@ -1,37 +1,36 @@
 /**页面的公共样式**/
-.home body{
+body{
 	/**外边距  内边距  字体：大小  字体  颜色*/
 	margin:0px;
 	padding:0px;
 	font:12px "microsoft yahei",Arial;
 	color:#666;
 }
-.home ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd{
+ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd{
 	margin:0px;
 	padding:0px;
 	list-style:none;
 }
-
-.home a{
+a{
 	color:#666;
 	text-decoration:none;
 }
-.home .lf{
+.lf{
 	float:left;
 }
-.home .rt{
+.rt{
 	float:right;
 }
-.home .clear{
+.clear{
 	clear:both;
 }
-.home input{
+input{
 	border:none;
 	outline:none;
 }
 
 /**整体布局**/
-.home #top_box,#top_main,#nav,#banner,#main,#foot_box,#footer{
+#top_box,#top_main,#nav,#banner,#main,#foot_box,#footer{
 	/**宽度，水平居中对齐*/
 	width:1211px;
 	margin:0px auto;
@@ -39,7 +38,7 @@
 
 
 /*****1.页面顶部************/
-.home #top{
+#top{
 	/**高度   行高  背景颜色    下边框*/
 	height:30px;
 	line-height:30px;
@@ -47,38 +46,38 @@
 	border-bottom:1px solid #eee;
 }
 
-.home #top_box>img{
+#top_box>img{
 	margin-top:8px;
 	margin-right:5px;
 }
 
-.home #top_box>ul>li{
+#top_box>ul>li{
 	/**左浮动   右边外边距*/
 	float:left;
 	margin-right:5px;
 }
 
-.home #top_box b{
+#top_box b{
 	/**左边框  右外边距*/
 	border-left:1px solid #ddd;
 	margin-right:5px;
 }
 /**会员俱乐部*/
-.home li.vip a{
+li.vip a{
 	/**左内边距  ，背景图片*/
 	padding-left:29px;
 	background:url(/img/vip.jpg) no-repeat left center;
 }
 
 /**企业频道*/
-.home li.dakehu a{
+li.dakehu a{
 	/**左内边距 ，背景图片*/
 	padding-left:29px;
 	background:url(/img/dakehu.jpg) no-repeat left center;
 }
 
 /**手机京东*/
-.home li.app_jd a{
+li.app_jd a{
 	/**显示方式：行内块元素    高度   左内边距   背景属性*/
 	display:inline-block;
 	height:22px;
@@ -87,12 +86,12 @@
 	line-height:22px;
 }
 
-.home li.app_jd a:hover{
+li.app_jd a:hover{
 	background-position:-128px -399px;
 }
 
 /***客户服务*/
-.home li.service>a{
+li.service>a{
 	/**左右内边距  ，背景图片  左右上边框*/
 	padding:0px 15px;
 	background:url(/img/jt_down.jpg) no-repeat 95% center;
@@ -104,16 +103,16 @@
 	line-height:26px;
 }
 
-.home li.service>a:hover{
+li.service>a:hover{
 	/**边框颜色 背景颜色   背景图片*/
 	border-color:#ddd;
 	background-color:#fff;
 	background:url(/img/jt_up.jpg) no-repeat 95% center;
-	
+
 }
 
 /**弹出菜单**/
-.home li.service ul{
+li.service ul{
 	width:78px;
 	border:1px solid #ddd;
 	border-top:0px;
@@ -128,37 +127,37 @@
 	z-index:2;
 
 }
-.home li.service{
+li.service{
 	/**相对定义*/
 	position:relative;
 }
-.home li.service:hover ul{
+li.service:hover ul{
 	display:block;
 }
 
 /******2.Logo 和 搜索框****************/
-.home #top_main{
+#top_main{
 	/**overflow :hidden   上下内边距**/
 	overflow:hidden;
 	padding:10px 0px;
 }
 
-.home #search_box{
+#search_box{
 	/**宽度  左右外边距  浮动*/
 	width:500px;
 	margin:0px 80px 0px 40px;
 	float:left;
-	
+
 }
 
-.home #search_box div.search{
+#search_box div.search{
 	/**宽度  高度   内边距  背景颜色**/
 	width:500px;
 	height:30px;
 	padding:3px;
 	background-color:#E4393C;
 }
-.home #search_box div.search input{
+#search_box div.search input{
 	/***宽度  高度  内边距 0px**/
 	width:410px;
 	height:30px;
@@ -167,7 +166,7 @@
 	padding-left:10px;
 	color:#666;
 }
-.home #search_box div.search button{
+#search_box div.search button{
 	/**去边框  改背景  高度  宽度   文字：大小  颜色  加粗**/
 	border:0px;
 	background-color:#E4393C;
@@ -178,19 +177,19 @@
 	font-weight:bold;/**字体加粗*/
 }
 
-.home #search_box div.hot_words{
+#search_box div.hot_words{
 	margin-top:3px;
 	height:16px;
 	overflow:hidden;
 }
-.home div.hot_words span,div.hot_words a{
+div.hot_words span,div.hot_words a{
 	color:#999;
 }
-.home div.hot_words a{
+div.hot_words a{
 	margin-right:5px;
 }
 /**我的京东**/
-.home #my_jd{
+#my_jd{
 	/**左浮动，高度  行高    边框  背景**/
 	float:left;
 	height:27px;
@@ -205,7 +204,7 @@
 
 }
 
-.home #my_jd b{
+#my_jd b{
 	border:5px solid transparent;
 	border-top-color:#CCC;
 	/**相对定位*/
@@ -213,13 +212,13 @@
 	top:11px;
 	left:4px;
 }
-.home #my_jd:hover{
+#my_jd:hover{
 	background:#fff url(/img/iconlist_2.png) no-repeat -116px -55px;
 	cursor:pointer;
 }
 
 /**去购物车结算**/
-.home #my_shop{
+#my_shop{
 	/**左浮动，高度  行高  边框  背景**/
 	float:left;
 	height:27px;
@@ -229,10 +228,10 @@
 	padding-left:30px;
 	width:95px;
 	/**上外边距*/
-	margin-top:4px;	
-	margin-left:12px;	
+	margin-top:4px;
+	margin-left:12px;
 }
-.home #my_shop b{
+#my_shop b{
 	border:5px solid transparent;
 	border-top-color:#CCC;
 	/**相对定位*/
@@ -241,20 +240,20 @@
 	left:3px;
 }
 
-.home #my_shop:hover{
+#my_shop:hover{
 	background:#fff url(/img/iconlist_2.png) no-repeat -116px -116px;
-	cursor:pointer;	
+	cursor:pointer;
 }
 
 
 /*******3.页面主导航部分************/
-.home #nav{
+#nav{
 	/**高度  背景色*/
 	height:40px;
 	background-color:#E64346;
 
 }
-.home #nav>p{
+#nav>p{
 	/**宽度   高度 行高  左浮动*/
 	width:210px;
 	height:40px;
@@ -262,7 +261,7 @@
 	float:left;
 	background-color:#CD2A2C;
 }
-.home #nav>p a{
+#nav>p a{
 	float:left;
 	padding-left:10px;
 	height:40px;
@@ -272,7 +271,7 @@
 	text-decoration:none;
 	color:#fff;
 }
-.home #nav>p b{
+#nav>p b{
 	float:right;
 	width:20px;
 	height:20px;
@@ -281,8 +280,8 @@
 
 }
 
-.home #nav ul li{float:left;}
-.home #nav ul li a{
+#nav ul li{float:left;}
+#nav ul li a{
 	/**左浮动   宽度  高度   水平居中   文字：大小  颜色  加粗  去下划线*/
 	float:left;
 	width:100px;
@@ -295,15 +294,15 @@
 	text-decoration:none;
 
 }
-.home #nav ul li a:hover{
+#nav ul li a:hover{
 	background-color:#BD2A2C;
 }
 /*********4.Banner部分********/
 /**左侧分类*/
-.home #banner{
+#banner{
 	height:410px;
 }
-.home #cate_box{
+#cate_box{
 	/**左浮动  宽度  高度    上内边距  左右下边框    背景颜色**/
 	float:left;
 	width:206px;
@@ -313,7 +312,7 @@
 	border-top:0px;
 	background-color:#fafafa;
 }
-.home #cate_box li h3{
+#cate_box li h3{
 	/**取消加粗 ，文字大小*/
 	font-weight:normal;
 	font-size:14px;
@@ -322,11 +321,11 @@
 	border-top:1px solid transparent;
 	border-bottom:1px solid #fff;
 }
-.home #cate_box li h3 a{
+#cate_box li h3 a{
 	color:#333;
 	text-decoration:none;/**预防没有做公共样式处理的情况**/
 }
-.home #cate_box li h3:hover{
+#cate_box li h3:hover{
 	border-color:#ddd;
 	background-color:#fff;
 	position:relative;
@@ -334,11 +333,11 @@
 }
 
 /***子分类盒子**/
-.home #cate_box{
+#cate_box{
 	/**做相对定位：配合sub_cate_box的绝对定位*/
 	position:relative;
 }
-.home #sub_cate_box{
+#sub_cate_box{
 	/**边框  背景   宽度  高度  内边距**/
 
 	border:1px solid #ddd;
@@ -350,10 +349,9 @@
 	position:absolute;
 	top:1px;
 	left:207px;
-	z-index:auto;
 	display:none;
 }
-.home #sub_cate_box div.close{
+#sub_cate_box div.close{
 	/**宽度  高度 水平居中 垂直居中  文本：大小  颜色  倒角  背景颜色**/
 	width:20px;
 	height:20px;
@@ -372,33 +370,33 @@
 
 }
 /**子分类内容**/
-.home div.sub_cate_content{
+div.sub_cate_content{
 	width:500px;
 	min-height:100px;
 	float:left;
-/* 	border:1px solid red;调试 /测试使用* */
+	/* 	border:1px solid red;调试 /测试使用* */
 
 }
 
-.home div.sub_cate_content li{
+div.sub_cate_content li{
 	float:left;
 	border-left:1px solid #ddd;
 	padding:3px 5px;
 }
-.home div.sub_cate_content ul{
+div.sub_cate_content ul{
 	overflow:hidden;
 	border-top:1px solid #ddd;
 	padding:5px 0px;
 }
 
-.home div.sub_cate_content li.title a{
+div.sub_cate_content li.title a{
 	/**加粗  颜色  下划线**/
 	font-weight:bold;
 	color:#E4393C;
 	text-decoration:underline;
 
 }
-.home div.sub_cate_content li.title{
+div.sub_cate_content li.title{
 	/**去掉左边框  宽度   文本右对齐*/
 	border:0px;
 	width:60px;
@@ -406,16 +404,16 @@
 }
 
 /****滑动广告部分***/
-.home #slider_box{
+#slider_box{
 	/**宽度：670px  高度 400px  左浮动  上外边距：10px  左外边距10px**/
 	width:670px;
 	height:400px;
 	float:left;
 	margin:10px 0px 0px 10px;
-	
-/* 	border:1px solid red; */
+
+	/* 	border:1px solid red; */
 }
-.home #slider li{
+#slider li{
 	/**宽度  高度 20px 左浮动  倒角 50% 水平对齐  垂直对齐  背景颜色  右外边距  文字颜色*/
 	width:20px;
 	height:20px;
@@ -428,51 +426,51 @@
 	margin-right:10px;
 	cursor:pointer;
 }
-.home #slider{
+#slider{
 	position:relative;
 }
-.home #slider ul{
+#slider ul{
 	position:absolute;
 	right:50px;
 	bottom:30px;
 }
-.home #slider li:hover{
+#slider li:hover{
 	background:#E4393C;
 }
 /****三幅小广告*****/
-.home #ad{
+#ad{
 	height:159px;
 	border:1px solid #ddd;
 	border-top:0px;
 }
-.home #ad ul li{
+#ad ul li{
 	/**左浮动  宽度  上下内边距**/
 	float:left;
 	width:205px;
 	padding:10px 0px;
 	text-align:center;
 }
-.home #ad ul li.mid{
+#ad ul li.mid{
 	width:206px;
 	border:1px solid #ddd;
 	border-top:0px;
 	border-bottom:0px;
 }
-.home #ad>a{
+#ad>a{
 	width:25px;
 	height:35px;
 	background:url(/img/index/ad-arraw.png);
 	margin-top:60px;
 
 }
-.home #ad>a.rt{
+#ad>a.rt{
 	background-position:0px -35px;
 }
-.home #ad>a:hover{
+#ad>a:hover{
 	background-image:url(/img/index/ad-arraw-hover.png);
 }
 /***右边广告部分****/
-.home #extra_focus{
+#extra_focus{
 	/***宽  高  右浮动   上外边距*/
 	width:310px;
 	height:400px;
@@ -480,50 +478,50 @@
 	margin-top:10px;
 }
 /***京东快报*/
-.home div.title>a{
+div.title>a{
 	float:right;
 	color:#005aa0;
 }
-.home div.title{
+div.title{
 	overflow:hidden;
 	padding:15px 0px 5px;
 }
 
-.home div.news div.content{
+div.news div.content{
 	/**边框  溢出处理*/
 	border:1px solid #ddd;
 	border-top:2px solid #aaa;
 	overflow:hidden;
 }
 
-.home div.news div.content ul{
+div.news div.content ul{
 	padding:0 10px;
 	width:133px;
 	line-height:25px;
 }
-.home div.news div.content ul.lf{
+div.news div.content ul.lf{
 	border-right:1px solid #ddd;
 }
 /***虚拟相关内容****/
-.home #virtuals{
+#virtuals{
 	/**上外边距   左边框   上边框 **/
 	margin-top:10px;
 	border-left:1px solid #ddd;
 	border-top:1px solid #ddd;
 	overflow:hidden;
 }
-.home #virtuals li{
+#virtuals li{
 	float:left;
 	width:76.25px;
 	height:89px;
 	border-right:1px solid #ddd;
 	border-bottom:1px solid #ddd;
 }
-.home #virtuals li a{
+#virtuals li a{
 	display:block;
 	text-align:center;
 }
-.home #virtuals li s{
+#virtuals li s{
 	/*以话费为例  块级  宽度 高度  背景  元素水平位置居中**/
 	display:block;
 	width:42px;
@@ -531,29 +529,29 @@
 	background:url(/img/index/virtuals-20140606.png) no-repeat;
 	margin:12px auto;
 }
-.home #virtuals li.jipiao s{
+#virtuals li.jipiao s{
 	background-position:0px -50px;
 }
-.home #virtuals li.caipiao s{
+#virtuals li.caipiao s{
 	background-position:-128px 0px;
 }
-.home #virtuals li.youxi s{
+#virtuals li.youxi s{
 	background-position:-190px 0px;
 }
-.home #virtuals li.lvxing s{
+#virtuals li.lvxing s{
 	background-position:-66px 0px;
 }
-.home #virtuals li.dianyingpiao s{
+#virtuals li.dianyingpiao s{
 	background-position:-65px -50px;
 }
-.home #virtuals li.licai s{
+#virtuals li.licai s{
 	background-position:-128px -50px;
 }
-.home #virtuals li.shuidianmeiqi s{
+#virtuals li.shuidianmeiqi s{
 	background-position:-189px -50px;
 }
 
-.home #virtuals li i{
+#virtuals li i{
 	display:block;
 	width:0px;
 	border:5px solid transparent;
@@ -561,25 +559,25 @@
 	margin:5px auto 0px;
 }
 /**********5.页面主体部分********************/
-.home #main{
+#main{
 	margin:10px auto ;
 	overflow:hidden;
 }
 /**生活的橱窗部分  文本***/
-.home #show_box>p{
+#show_box>p{
 	font-size:16pt;
 	font-weight:bold;
 	margin-bottom:10px;
 }
-.home #show_box>p i{
+#show_box>p i{
 	font-size:14px;
 	font-weight:normal;
 }
 /***8幅广告**/
-.home #show_box>ul{
+#show_box>ul{
 	overflow:hidden;
 }
-.home #show_box>ul>li{
+#show_box>ul>li{
 	/***左浮动  宽度  高度   背景  右外边距   下外边距**/
 	float:left;
 	width:292px;
@@ -588,45 +586,45 @@
 	margin-right:10px;
 	margin-bottom:10px;
 }
-.home #show_box li.no_margin{
+#show_box li.no_margin{
 	margin-right:0px;
 }
 
-.home #show_box li.tuangou{
+#show_box li.tuangou{
 	background-image:url(/img/index/show_04.png);
 }
 
-.home #show_box li.dijia{
+#show_box li.dijia{
 	background-image:url(/img/index/show_02.jpg);
 }
 
-.home #show_box li.haodongxi{
+#show_box li.haodongxi{
 	background-image:url(/img/index/show_03.jpg);
 }
 
-.home #show_box li.shoufa{
+#show_box li.shoufa{
 	background-image:url(/img/index/show_05.jpg);
 }
-.home #show_box li.youhuiquan{
+#show_box li.youhuiquan{
 	background-image:url(/img/index/show_06.jpg);
 }
-.home #show_box li.yushou{
+#show_box li.yushou{
 	background-image:url(/img/index/show_07.jpg) ;
 }
-.home #show_box li.jingxuan{
+#show_box li.jingxuan{
 	background-image:url(/img/index/show_08.jpg);
 }
 
 /**背景图移动的操作**/
-.home #show_box>ul>li{
+#show_box>ul>li{
 	/**过渡效果 ： 为了移动背景图能够显示变换效果*/
 	transition:background linear 0.3s;/**全程匀速移动  0.3速度*/
 }
-.home #show_box>ul>li:hover{
+#show_box>ul>li:hover{
 	background-position:-10px 0px;
 }
 /**遮罩层效果**/
-.home #show_box li b{
+#show_box li b{
 	/**块级元素   宽度 高度   背景颜色   透明度**/
 	display:block;
 	width:45%;
@@ -634,37 +632,37 @@
 	background:#fff;
 	opacity:0.7;/**透明度  ：0.0 -1.0*/
 }
-.home #show_box>ul>li{
+#show_box>ul>li{
 	position:relative;
 }
-.home #show_box>ul>li>div{
+#show_box>ul>li>div{
 	position:absolute;
 	top:25px;
 	left:15px;
 }
-.home #show_box li>div>h3{
+#show_box li>div>h3{
 	color:#50504C;
 	font-size:18px;
 
 }
-.home #show_box li>div>h4{
+#show_box li>div>h4{
 	color:#666;
 	font-size:14px;
 	font-weight:normal;
 	line-height:20px;
 
 }
-.home #show_box li>div>h5{
+#show_box li>div>h5{
 	font-size:12px;
 	color:#E4393C;
 	font-weight:normal;
 }
 
-.home #show_box li>div>ul{
+#show_box li>div>ul{
 	margin-top:20px;
 	color:#999;
 }
-.home #show_box li>div>ul i{
+#show_box li>div>ul i{
 	display:inline-block;
 	width:2px;
 	height:2px;
@@ -673,28 +671,28 @@
 	right:5px;
 	bottom:4px;
 }
-.home #show_box li>div>span{
+#show_box li>div>span{
 	padding:1px 3px;
 	color:#fff;
 	background:#E4393C;
 
 }
-.home #show_box li>div>div{
+#show_box li>div>div{
 	margin-top:20px;
 
 }
-.home #show_box li>div>div>b{
+#show_box li>div>div>b{
 	font-size:24px;
 	color:#E4393C;
 	font-weight:normal;
 }
 
 /******这是三个新添加的广告图片********/
-.home #three_ad>ul{
+#three_ad>ul{
 	overflow:hidden;
 }
 
-.home #three_ad>ul>li{
+#three_ad>ul>li{
 	/**左浮动  宽度 高度  背景  右外边框*/
 	float:left;
 	width:392px;
@@ -703,23 +701,23 @@
 	margin-right:10px;
 }
 
-.home #three_ad li.second_ad{
+#three_ad li.second_ad{
 	background:url(/img/index/ad_small_02.jpg) no-repeat;
 
 }
-.home #three_ad li.third_ad{
+#three_ad li.third_ad{
 	background:url(/img/index/ad_small_03.jpg) no-repeat;
 
 }
 
 /*****一楼层信息*****/
-.home div.floor{
+div.floor{
 	margin-bottom:10px;
 }
-.home div.floor header{
+div.floor header{
 	overflow:hidden;
 }
-.home div.floor header span{
+div.floor header span{
 	/**左浮动  宽度  高度  背景   文本水平居中  下边框 内边距**/
 	float:left;
 	width:26px;
@@ -732,11 +730,11 @@
 	border-bottom:2px solid #aaa;
 	padding:3px 0px;
 }
-.home div.floor header span:hover{
+div.floor header span:hover{
 	background-position:-40px 0px;
 	cursor:pointer;
 }
-.home div.floor header p{
+div.floor header p{
 	/**左浮动 宽度   文字：大小  颜色   加粗  居中显示  下边框 上下内边距*/
 	float:left;
 	width:185px;
@@ -747,12 +745,12 @@
 	border-bottom:2px solid #aaa;
 	padding-top:5px;
 	padding-bottom:3.5px;
-	
+
 }
-.home div.floor header ul li{
+div.floor header ul li{
 	float:left;
 }
-.home div.floor header ul.tab a{
+div.floor header ul.tab a{
 	/***左浮动  宽度：158px 字体大小：14px 字体加粗   水平居中   上内边距：15px 下内边距：4px**/
 	float:left;
 	width:158px;
@@ -762,17 +760,17 @@
 	padding-top:15px;
 	padding-bottom:5px;
 	border-bottom:2px solid #aaa;
-	
+
 
 }
-.home div.floor header ul.tab a:hover{
+div.floor header ul.tab a:hover{
 	border-color:#E4393C;
 	background:url(/img/index/tab_arraw.png) no-repeat center bottom;
 }
-.home div.floor header ul.link{
+div.floor header ul.link{
 	width:210px;
 }
-.home div.floor header ul.link li{
+div.floor header ul.link li{
 	float:left;
 	width:50%;
 	border-bottom:2px solid #aaa;
@@ -781,13 +779,13 @@
 	text-align:center;
 
 }
-.home div.floor header ul.link li a{
+div.floor header ul.link li a{
 	color:#005aa0;
 }
 
 
 
-.home div.floor>aside.lf_list{
+div.floor>aside.lf_list{
 	/**左浮动，宽度  高度  右下边框**/
 	float:left;
 	width:210px;
@@ -796,27 +794,27 @@
 	border-top:0px;
 	border-left:0px;
 }
-.home div.floor>aside.lf_list ul{
+div.floor>aside.lf_list ul{
 	overflow:hidden;
 	padding:0px 5px;
 }
-.home div.floor>aside.lf_list li{
+div.floor>aside.lf_list li{
 	float:left;
 	width:50%;
 	line-height:25px;
 }
-.home div.floor>aside>lf_list p{
+div.floor>aside>lf_list p{
 	text-align:center;
 	margin-top:10px;
 }
 
-.home div.floor{
+div.floor{
 	margin-bottom:10px;
 }
-.home div.floor header{
+div.floor header{
 	overflow:hidden;
 }
-.home div.floor header span{
+div.floor header span{
 	/**左浮动  宽度  高度  背景   文本水平居中  下边框 内边距**/
 	float:left;
 	width:26px;
@@ -829,11 +827,11 @@
 	border-bottom:2px solid #aaa;
 	padding:3px 0px;
 }
-.home div.floor header span:hover{
+div.floor header span:hover{
 	background-position:-40px 0px;
 	cursor:pointer;
 }
-.home div.floor header p{
+div.floor header p{
 	/**左浮动 宽度   文字：大小  颜色   加粗  居中显示  下边框 上下内边距*/
 	float:left;
 	width:185px;
@@ -845,10 +843,10 @@
 	padding-top:5px;
 	padding-bottom:3.5px;
 }
-.home div.floor header ul li{
+div.floor header ul li{
 	float:left;
 }
-.home div.floor header ul.tab a{
+div.floor header ul.tab a{
 	/***左浮动  宽度：158px 字体大小：14px 字体加粗   水平居中   上内边距：15px 下内边距：4px**/
 	float:left;
 	width:158px;
@@ -858,17 +856,17 @@
 	padding-top:15px;
 	padding-bottom:5px;
 	border-bottom:2px solid #aaa;
-	
+
 
 }
-.home div.floor header ul.tab a:hover{
+div.floor header ul.tab a:hover{
 	border-color:#E4393C;
 	background:url(/img/index/tab_arraw.png) no-repeat center bottom;
 }
-.home div.floor header ul.link{
+div.floor header ul.link{
 	width:210px;
 }
-.home div.floor header ul.link li{
+div.floor header ul.link li{
 	float:left;
 	width:50%;
 	border-bottom:2px solid #aaa;
@@ -877,13 +875,13 @@
 	text-align:center;
 
 }
-.home div.floor header ul.link li a{
+div.floor header ul.link li a{
 	color:#005aa0;
 }
 
 
 
-.home div.floor>aside.lf_list{
+div.floor>aside.lf_list{
 	/**左浮动，宽度  高度  右下边框**/
 	float:left;
 	width:210px;
@@ -892,28 +890,28 @@
 	border-top:0px;
 	border-left:0px;
 }
-.home div.floor>aside.lf_list ul{
+div.floor>aside.lf_list ul{
 	overflow:hidden;
 	padding:0px 5px;
 }
-.home div.floor>aside.lf_list li{
+div.floor>aside.lf_list li{
 	float:left;
 	width:50%;
 	line-height:25px;
 }
-.home div.floor>aside>lf_list p{
+div.floor>aside>lf_list p{
 	text-align:center;
 	margin-top:10px;
 }
 
 /**中间内容**/
-.home div.mid_list{
+div.mid_list{
 	width:790px;
 	height:362px;
 	float:left;
 	/* border:1px solid red; */
 }
-.home div.mid_list dl{
+div.mid_list dl{
 	float:left;
 	width:157px;
 	height:180px;
@@ -922,39 +920,39 @@
 	border-left:0px;
 }
 
-.home div.mid_list div{
+div.mid_list div{
 	float:left;
 	height:180px;
 	border:1px solid #ddd;
 	border-top:0px;
 	border-left:0px;
 }
-.home div.mid_list dt{
+div.mid_list dt{
 	text-align:center;
 }
-.home div.mid_list dd{
+div.mid_list dd{
 	padding:0px 10px;
 	line-height:18px;
 	margin-top:10px;
 }
-.home div.mid_list dd.text{
-    margin-top:4px;
+div.mid_list dd.text{
+	margin-top:4px;
 	color:#E4393C;
 	text-align:center;
 }
 
 /**右侧内容**/
-.home div.floor aside.rt{
+div.floor aside.rt{
 	width:210px;
 	height:361px;
 	border-bottom:1px solid #ddd;
 }
-.home div.floor aside.rt ul{
+div.floor aside.rt ul{
 	overflow:hidden;
 	border-bottom:1px solid #ddd;
 
 }
-.home div.floor aside.rt li{
+div.floor aside.rt li{
 	float:left;
 	width:50%;
 	text-align:center;
@@ -963,15 +961,15 @@
 }
 
 /*****二楼层信息*****/
-.home div.floor2{
+div.floor2{
 	float:left;
 	margin-top:10px;
 	margin-bottom:10px;
 }
-.home div.floor2 header{
+div.floor2 header{
 	overflow:hidden;
 }
-.home div.floor2 header span{
+div.floor2 header span{
 	/**左浮动  宽度  高度  背景   文本水平居中  下边框 内边距**/
 	float:left;
 	width:26px;
@@ -984,11 +982,11 @@
 	border-bottom:2px solid #aaa;
 	padding:3px 0px;
 }
-.home div.floor2 header span:hover{
+div.floor2 header span:hover{
 	background-position:-40px 0px;
 	cursor:pointer;
 }
-.home div.floor2 header p{
+div.floor2 header p{
 	/**左浮动 宽度   文字：大小  颜色   加粗  居中显示  下边框 上下内边距*/
 	float:left;
 	width:185px;
@@ -1000,10 +998,10 @@
 	padding-top:5px;
 	padding-bottom:3.5px;
 }
-.home div.floor2 header ul li{
+div.floor2 header ul li{
 	float:left;
 }
-.home div.floor2 header ul.tab a{
+div.floor2 header ul.tab a{
 	/***左浮动  宽度：158px 字体大小：14px 字体加粗   水平居中   上内边距：15px 下内边距：4px**/
 	float:left;
 	width:158px;
@@ -1013,17 +1011,17 @@
 	padding-top:15px;
 	padding-bottom:5px;
 	border-bottom:2px solid #aaa;
-	
+
 
 }
-.home div.floor2 header ul.tab a:hover{
+div.floor2 header ul.tab a:hover{
 	border-color:#E4393C;
 	background:url(/img/index/tab_arraw.png) no-repeat center bottom;
 }
-.home div.floor2 header ul.link{
+div.floor2 header ul.link{
 	width:210px;
 }
-.home div.floor2 header ul.link li{
+div.floor2 header ul.link li{
 	float:left;
 	width:50%;
 	border-bottom:2px solid #aaa;
@@ -1032,13 +1030,13 @@
 	text-align:center;
 
 }
-.home div.floor2 header ul.link li a{
+div.floor2 header ul.link li a{
 	color:#005aa0;
 }
 
 
 
-.home div.floor2>aside.lf_list{
+div.floor2>aside.lf_list{
 	/**左浮动，宽度  高度  右下边框**/
 	float:left;
 	width:210px;
@@ -1047,16 +1045,16 @@
 	border-top:0px;
 	border-left:0px;
 }
-.home div.floor2>aside.lf_list ul{
+div.floor2>aside.lf_list ul{
 	overflow:hidden;
 	padding:0px 5px;
 }
-.home div.floor2>aside.lf_list li{
+div.floor2>aside.lf_list li{
 	float:left;
 	width:50%;
 	line-height:25px;
 }
-.home div.floor2>aside>lf_list p{
+div.floor2>aside>lf_list p{
 	text-align:center;
 	margin-top:10px;
 }
@@ -1065,17 +1063,17 @@
 
 
 /**右侧内容**/
-.home div.floor2 aside.rt{
+div.floor2 aside.rt{
 	width:210px;
 	height:361px;
 	border-bottom:1px solid #ddd;
 }
-.home div.floor2 aside.rt ul{
+div.floor2 aside.rt ul{
 	overflow:hidden;
 	border-bottom:1px solid #ddd;
 
 }
-.home div.floor2 aside.rt li{
+div.floor2 aside.rt li{
 	float:left;
 	width:50%;
 	text-align:center;
@@ -1085,15 +1083,15 @@
 
 
 /*****三楼层信息*****/
-.home div.floor3{
+div.floor3{
 	float:left;
 	margin-top:10px;
 	margin-bottom:10px;
 }
-.home div.floor3 header{
+div.floor3 header{
 	overflow:hidden;
 }
-.home div.floor3 header span{
+div.floor3 header span{
 	/**左浮动  宽度  高度  背景   文本水平居中  下边框 内边距**/
 	float:left;
 	width:26px;
@@ -1106,11 +1104,11 @@
 	border-bottom:2px solid #aaa;
 	padding:3px 0px;
 }
-.home div.floor3 header span:hover{
+div.floor3 header span:hover{
 	background-position:-40px 0px;
 	cursor:pointer;
 }
-.home div.floor3 header p{
+div.floor3 header p{
 	/**左浮动 宽度   文字：大小  颜色   加粗  居中显示  下边框 上下内边距*/
 	float:left;
 	width:185px;
@@ -1122,10 +1120,10 @@
 	padding-top:5px;
 	padding-bottom:3.5px;
 }
-.home div.floor3 header ul li{
+div.floor3 header ul li{
 	float:left;
 }
-.home div.floor3 header ul.tab a{
+div.floor3 header ul.tab a{
 	/***左浮动  宽度：158px 字体大小：14px 字体加粗   水平居中   上内边距：15px 下内边距：4px**/
 	float:left;
 	width:158px;
@@ -1135,17 +1133,17 @@
 	padding-top:15px;
 	padding-bottom:5px;
 	border-bottom:2px solid #aaa;
-	
+
 
 }
-.home div.floor3 header ul.tab a:hover{
+div.floor3 header ul.tab a:hover{
 	border-color:#E4393C;
 	background:url(/img/index/tab_arraw.png) no-repeat center bottom;
 }
-.home div.floor3 header ul.link{
+div.floor3 header ul.link{
 	width:210px;
 }
-.home div.floor3 header ul.link li{
+div.floor3 header ul.link li{
 	float:left;
 	width:50%;
 	border-bottom:2px solid #aaa;
@@ -1154,13 +1152,13 @@
 	text-align:center;
 
 }
-.home div.floor3 header ul.link li a{
+div.floor3 header ul.link li a{
 	color:#005aa0;
 }
 
 
 
-.home div.floor3>aside.lf_list{
+div.floor3>aside.lf_list{
 	/**左浮动，宽度  高度  右下边框**/
 	float:left;
 	width:210px;
@@ -1169,32 +1167,32 @@
 	border-top:0px;
 	border-left:0px;
 }
-.home div.floor3>aside.lf_list ul{
+div.floor3>aside.lf_list ul{
 	overflow:hidden;
 	padding:0px 5px;
 }
-.home div.floor3>aside.lf_list li{
+div.floor3>aside.lf_list li{
 	float:left;
 	width:50%;
 	line-height:25px;
 }
-.home div.floor3>aside>lf_list p{
+div.floor3>aside>lf_list p{
 	text-align:center;
 	margin-top:10px;
 }
 
 /**右侧内容**/
-.home div.floor3 aside.rt{
+div.floor3 aside.rt{
 	width:210px;
 	height:361px;
 	border-bottom:1px solid #ddd;
 }
-.home div.floor3 aside.rt ul{
+div.floor3 aside.rt ul{
 	overflow:hidden;
 	border-bottom:1px solid #ddd;
 
 }
-.home div.floor3 aside.rt li{
+div.floor3 aside.rt li{
 	float:left;
 	width:50%;
 	text-align:center;
@@ -1203,12 +1201,12 @@
 }
 
 /*****热门晒单模块********/
-.home #content_other{
+#content_other{
 	float:left;
 	margin:10px 0px;
 	/* overflow:hidden; */
 }
-.home #content_other div.share{
+#content_other div.share{
 	/**左浮动  宽度  高度 边框  内边距**/
 	float:left;
 	width:427px;
@@ -1218,29 +1216,29 @@
 	padding:6px 8px;
 }
 
-.home #content_other div.share>p{
+#content_other div.share>p{
 	color:#666;
 	font-size:14px;
 	font-weight:bold;
 }
-.home #content_other div.share li{
+#content_other div.share li{
 	/**内边距  和 下边框*/
 	padding:5px 15px;
 	border-bottom:1px dotted #ddd;
 	overflow:hidden;
 	margin-top:10px;
 }
-.home #content_other div.share li>p{
+#content_other div.share li>p{
 	float:left;
 	position:relative;
 
 }
-.home #content_other div.share li p img{
+#content_other div.share li p img{
 	width:50px;
 }
-.home #content_other div.share li i.shai{
+#content_other div.share li i.shai{
 	/**绝对定位  宽度  高度  背景属性**/
-	position:absolute;	
+	position:absolute;
 	top:-3px;
 	right:-10px;
 	background:url(/img/iconlist_3.png) no-repeat -200px -50px;
@@ -1248,9 +1246,9 @@
 	height:17px;
 }
 
-.home #content_other div.share li i.hot{
+#content_other div.share li i.hot{
 	/**绝对定位  宽度  高度  背景属性**/
-	position:absolute;	
+	position:absolute;
 	top:-3px;
 	right:-10px;
 	background:url(/img/iconlist_3.png) no-repeat -225px -50px;
@@ -1258,21 +1256,21 @@
 	height:17px;
 }
 
-.home #content_other div.share li>div{
+#content_other div.share li>div{
 	float:left;
 	margin-left:15px;
 }
-.home #content_other div.share li h3{
+#content_other div.share li h3{
 	/**取消加粗  上下外边距**/
 	font-weight:normal;
 	border-top:2px;
 	border-bottom:5px;
 	width:260px;
 }
-.home #content_other div.share li h3 a{
+#content_other div.share li h3 a{
 	color:#005aa0;
 }
-.home #content_other div.share li div p{
+#content_other div.share li div p{
 	width:270px;
 	height:40px;
 	padding-right:50px;
@@ -1280,14 +1278,14 @@
 }
 
 /****在线阅读模块********/
-.home div.more{
+div.more{
 	width:311px;
 	height:200px;
 	float:right;
 	margin-left:10px;
 }
 
-.home div.more div.reading{
+div.more div.reading{
 	/**边框 内边距*/
 	border:1px solid #ddd;
 	border-top:2px solid #ddd;
@@ -1295,28 +1293,28 @@
 	padding-bottom:15px;
 }
 
-.home div.more div.reading a{
+div.more div.reading a{
 	color:#005aa0;
 }
 
-.home div.more div.reading p{
+div.more div.reading p{
 	overflow:hidden;
 	margin-bottom:10px;
 }
 
-.home div.more div.reading>div{
+div.more div.reading>div{
 	overflow:hidden;
 }
 
-.home div.more div.reading ul{
+div.more div.reading ul{
 	float:left;
 }
 
-.home div.more div.reading li{
+div.more div.reading li{
 	line-height:25px;
 }
 
-.home div.more div.reading li b{
+div.more div.reading li b{
 	display:inline-block;
 	width:2px;
 	height:2px;
@@ -1329,12 +1327,12 @@
 
 
 
-.home div.more div.order p{
+div.more div.order p{
 	font-weight:bold;
 	line-height:20px;
 }
 
-.home div.more div.order input{
+div.more div.order input{
 	/**宽度 高度 padding 边框 背景图片***/
 	width:222px;
 	height:26px;
@@ -1346,7 +1344,7 @@
 	background:url(/img/index/email.gif) no-repeat 5px center;
 }
 
-.home div.more div.order button{
+div.more div.order button{
 	/***宽度 高度 倒角 背景颜色 文字颜色 加粗*/
 	width:55px;
 	height:28px;
@@ -1359,14 +1357,14 @@
 }
 
 /**********6.页面底部   购物指南***********/
-.home #foot_box{
+#foot_box{
 	margin:10px auto;
 	border-top:1px solid #ddd;
 	padding-top:10px;
 	overflow:hidden;
 }
 
-.home #foot_box p{
+#foot_box p{
 	width:40px;
 	height:40px;
 	float:left;
@@ -1374,41 +1372,41 @@
 	margin:0px 10px 0px 50px;
 }
 
-.home #foot_box p.shopping_guide{
+#foot_box p.shopping_guide{
 	background-position:0px -56px;
 }
 
-.home #foot_box p.send_type{
+#foot_box p.send_type{
 	background-position:-50px -56px;
 }
 
-.home #foot_box p.pay_type{
+#foot_box p.pay_type{
 	background-position:0px -103px;
 }
-.home #foot_box p.after_sales{
+#foot_box p.after_sales{
 	background-position:-50px -103px;
 }
-.home #foot_box p.special_service{
+#foot_box p.special_service{
 	background-position:0px -151px;
 }
-.home #foot_box ul{
+#foot_box ul{
 	float:left;
 	width:142px;
 }
-.home #foot_box li{
+#foot_box li{
 	line-height:22px;
 }
-.home #foot_box li b{
+#foot_box li b{
 	line-height:30px;
 }
 
 /*******最底部信息*******/
-.home #footer div{
+#footer div{
 	height:100px;
 	line-height:20px;
 	margin-top:10px;
 }
-.home #footer p{
+#footer p{
 	margin:-40px 0px 0px 350px;
 
 }

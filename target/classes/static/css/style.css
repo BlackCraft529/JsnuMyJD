@@ -1,0 +1,102 @@
+/*head设置*/
+.head{
+	background-color: rgb(227,228,229);
+	width: 100%;
+	height: 30px;
+}
+.head a{
+	color: rgb(153,153,153);
+	
+}
+.head a:hover{
+	color: rgb(227,51,51);
+	text-decoration: none;
+}
+.head ul{
+	list-style:none;
+	margin-top: 5px;
+}
+.head li{
+	float: left;
+}
+.head ul .spacer{
+	width: 1px;
+	background-color: #ccc;
+	height: 10px;
+	margin: 5px 10px;
+}
+.head .loaction_ico{
+	color: rgb(241,2,21);
+}
+.head .location{
+	margin-top: 5px;
+}
+.head .rgt_now{
+	color: rgb(227,51,51);
+}
+.head .firm_buy{
+	color: rgb(227,51,51);
+}
+.head .g_down{
+	color: rgb(153,153,153);
+}
+
+
+/*底部foot设置*/
+.foot{
+	background-color: rgb(244,244,244);
+}
+.foot a{
+	color: rgb(102,102,102);
+	
+}
+.foot a:hover{
+	color: rgb(227,51,51);
+	text-decoration: none;
+}
+.foot .main{
+	list-style:none;
+	margin-top: 5px;
+	font-size: 10px;
+
+}
+.foot .main li{
+	float: left;
+}
+.foot ul .spacer{
+	width: 1px;
+	background-color: #ccc;
+	height: 13px;
+	margin: 3px 10px;
+}
+.foot .sub_row{
+	margin-top: 10px;
+}
+.foot .sub_row ul{
+	color: rgb(153,153,153);
+	list-style:none;
+	font-size: 10px;
+}
+.foot .sub_row li{
+	float: left;
+}
+.foot .sub_row a{
+	color: rgb(153,153,153);
+}
+.foot .sub_row a:hover{
+	color: rgb(227,51,51);
+	text-decoration: none;
+}
+.foot .sub_4 .glb_ico{
+	color: rgb(200,22,35);
+}
+
+.foot .row_5{
+
+}
+/*test*/
+.null{
+	height: 500px;
+	width: 100%;
+	/*background-color: rgb(244,244,244);*/
+}

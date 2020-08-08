@@ -1,8 +1,8 @@
+
 .reg .ipt-t{
 	padding-left: 10px;
 	width:300px;
 	height:42px;
-	opacity:0.6;
 	font-size:15px;
 	letter-spacing: 1px;
 }
@@ -15,11 +15,10 @@
 .reg .top .text{
 	font-weight:normal;
 	font-size:24px;
-	text-align: bottom;
 }
 .reg .td-lft{
 	text-align: right;
-	padding:20px 20px;
+	padding:0px 20px;
 }
 .reg .process{
 	text-align: center;
@@ -42,7 +41,8 @@
 .reg .user-info{
 	letter-spacing: 10px;
 }
-/*测试
-.reg table{
-	border: 1px solid black;
-}*/
+
+/*测试*/
+/*.reg table{*/
+/*	border: 1px solid black;*/
+/*}*/

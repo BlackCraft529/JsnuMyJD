@@ -23,7 +23,7 @@
                 alert("请起码输入4位用户名，11位手机号或者大于4位的邮箱地址");
                 return;
             }
-            if($scope.user.password<8){
+            if($scope.user.password.length<8){
                 alert("密码不能少于8位");
                 return;
             }
@@ -37,18 +37,6 @@
                     $scope.user.password=old;
             });
             //发送登录请求
-            // $scope.user_t= {params:{
-            //     account: $scope.user.account,
-            //     password: $scope.user.password
-            // }};
-            // console.log($scope.user_t);
-            // $http.post('/loginAction',$scope.user_t).then(function (data) {
-            //     console.log("请求成功");
-            //
-            //
-            // }),function (err) {
-            //     alert("登录失败！请检查帐号密码后再次尝试！");
-            // };
             $http({
                 url:'/loginAction',//验证表单的接口
                 method:'post',
@@ -58,12 +46,13 @@
                 },
                 headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
             }).then(function successCallback(data) {
-                console.log("请求成功");
-                console.log(data);
-                // 请求成功执行代码
+                if (data.data.uuid===null){
+                    alert("登录失败！请检查帐号密码后再次尝试！");
+                    return;
+                }
+                //session
             }, function errorCallback(response) {
-                console.log("失败"+response);
-                // 请求失败执行代码
+                alert("error!\n"+"error message:"+response);
             });
 
 
