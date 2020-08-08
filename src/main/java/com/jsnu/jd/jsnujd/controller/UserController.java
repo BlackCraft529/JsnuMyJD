@@ -8,7 +8,9 @@ import com.jsnu.jd.jsnujd.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -23,7 +25,7 @@ public class UserController {
     /**
      * json工具对象
      */
-    private ObjectMapper jsonObjectMapper = new ObjectMapper();
+    private ObjectMapper jsonObjectMapper =  new ObjectMapper();
 
     /**
      * 登录请求
@@ -33,7 +35,7 @@ public class UserController {
      */
     @RequestMapping("/loginAction")
     @ResponseBody
-    public String loginAction(String jsonData) throws JsonProcessingException {
+    public String loginAction(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String account=node.get("account").toString();
         String password=node.get("password").toString();
