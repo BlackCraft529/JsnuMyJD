@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author 魏荣轩
@@ -31,6 +32,7 @@ public class UserController {
      * @throws JsonProcessingException json转换错误
      */
     @RequestMapping("/loginAction")
+    @ResponseBody
     public String loginAction(String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String account=node.get("account").toString();
@@ -46,6 +48,7 @@ public class UserController {
      * @throws JsonProcessingException json转换错误
      */
     @RequestMapping("/registerUser")
+    @ResponseBody
     public String registerNewUser(String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String name = node.get("name").toString();
@@ -67,6 +70,7 @@ public class UserController {
      * @throws JsonProcessingException json转换错误
      */
     @RequestMapping("/getName")
+    @ResponseBody
     public String getName(String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String name = node.get("name").toString();
