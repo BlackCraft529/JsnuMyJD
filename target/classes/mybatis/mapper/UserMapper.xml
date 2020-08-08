@@ -25,7 +25,7 @@
         <result column="register_time" property="registerTime"/>
         <result column="retailer" property="retailer"/>
     </resultMap>
-    <select id="selectUserPassword" resultType="string">
+    <select id="selectUserPasswordByUserId" parameterType="string" resultType="string">
         select password from user_data where uuid=#{userId};
     </select>
     <insert id="addUser" parameterMap="UserParameterMap">
@@ -42,5 +42,13 @@
         update user_data set password=#{password},name=#{name},phone=#{phone},email=#{email},abatar=#{avatar},
             last_login_time=#{lastLoginTime},retailer=#{retailer} where uuid=#{uuid};
     </update>
-
+    <select id="selectUserByEmail" parameterType="string" resultMap="UserResultMap">
+        select * from user_data where email=#{email};
+    </select>
+    <select id="selectUserByPhone" parameterType="string" resultMap="UserResultMap">
+        select * from user_data where phone=#{phone};
+    </select>
+    <select id="selectUserByName" parameterType="string" resultMap="UserResultMap">
+        select * from user_data where name=#{name};
+    </select>
 </mapper>

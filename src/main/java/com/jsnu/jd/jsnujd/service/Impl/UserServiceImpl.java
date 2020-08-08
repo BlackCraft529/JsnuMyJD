@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public boolean userPasswordIsMatch(String userId, String password) {
-        return MD5Util.getSaltverifyMD5(password,userMapper.selectUserPassword(userId));
+        return MD5Util.getSaltverifyMD5(password,userMapper.selectUserPasswordByUserId(userId));
     }
 
     /**
@@ -56,6 +56,11 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public int addUser(String password, String name, String phone, String email, String avatar, boolean isRetailer) {
+        if(userMapper.selectUserByName(name)!=null
+            ||userMapper.selectUserByPhone(phone)!=null
+            ||userMapper.selectUserByEmail(email)!=null){
+            return 0;
+        }
         User user = new User();
         String mD5Password = MD5Util.getSaltMD5(password);
         String uuid = UUID.randomUUID().toString().replaceAll("-","");
@@ -198,6 +203,70 @@ public class UserServiceImpl implements UserService {
     @Override
     public User selectUserByUserId(String userId) {
         return userMapper.selectUserByUuid(userId);
+    }
+
+    /**
+     * 根据用户邮箱查找用户信息
+     *
+     * @param email 邮箱
+     * @return 用户
+     */
+    @Override
+    public User selectUserByEmail(String email) {
+        return userMapper.selectUserByEmail(email);
+    }
+
+    /**
+     * 根据用户手机查找用户数据
+     *
+     * @param phone 手机号
+     * @return 用户
+     */
+    @Override
+    public User selectUserByPhone(String phone) {
+        return userMapper.selectUserByPhone(phone);
+    }
+
+    /**
+     * 根据用户昵称查找用户数据
+     *
+     * @param name 昵称
+     * @return 用户
+     */
+    @Override
+    public User selectUserByName(String name) {
+        return userMapper.selectUserByName(name);
+    }
+
+    /**
+     * 匹配用户密码，成功返回用户
+     *
+     * @param key 模糊字符
+     * @param password 明文密码
+     * @return 用户
+     */
+    @Override
+    public User matchUserPasswordByVagueKey(String key,String password) {
+        if(userMapper.selectUserByEmail(key)!=null){
+            User user = userMapper.selectUserByEmail(key);
+            if(MD5Util.getSaltverifyMD5(password,user.getPassword())){
+                return user;
+            }
+            return new User();
+        }else if(userMapper.selectUserByPhone(key)!=null){
+            User user = userMapper.selectUserByPhone(key);
+            if(MD5Util.getSaltverifyMD5(password,user.getPassword())){
+                return user;
+            }
+            return new User();
+        }else if(userMapper.selectUserByName(key)!=null){
+            User user = userMapper.selectUserByName(key);
+            if(MD5Util.getSaltverifyMD5(password,user.getPassword())){
+                return user;
+            }
+            return new User();
+        }
+        return new User();
     }
 
 

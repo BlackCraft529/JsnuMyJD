@@ -97,4 +97,33 @@ public interface UserService {
      */
     User selectUserByUserId(String userId);
 
+    /**
+     * 根据用户邮箱查找用户信息
+     * @param email 邮箱
+     * @return 用户
+     */
+    User selectUserByEmail(String email);
+
+    /**
+     * 根据用户手机查找用户数据
+     * @param phone 手机号
+     * @return 用户
+     */
+    User selectUserByPhone(String phone);
+
+    /**
+     * 根据用户昵称查找用户数据
+     * @param name 昵称
+     * @return 用户
+     */
+    User selectUserByName(String name);
+
+    /**
+     * 匹配用户密码，成功返回用户
+     * @param key 模糊字符
+     * @param password 明文密码
+     * @return 用户
+     */
+    User matchUserPasswordByVagueKey(String key,String password);
+
 }

@@ -23,7 +23,21 @@ public interface UserMapper {
      * @param userId 用户ID
      * @return 用户数据库加密密码串
      */
-    String selectUserPassword(String userId);
+    String selectUserPasswordByUserId(String userId);
+
+    /**
+     * 根据用户邮箱查询密码
+     * @param email 邮箱
+     * @return 用户数据库加密密码串
+     */
+    User selectUserByEmail(String email);
+
+    /**
+     * 根据用户手机号查询密码
+     * @param phone 手机号
+     * @return 用户数据库加密密码串
+     */
+    User selectUserByPhone(String phone);
 
     /**
      * 根据用户ID查询用户信息
@@ -31,6 +45,13 @@ public interface UserMapper {
      * @return 用户实体类
      */
     User selectUserByUuid(String userId);
+
+    /**
+     * 根据用户名查找用户数据
+     * @param name 用户名
+     * @return 用户
+     */
+    User selectUserByName(String name);
 
     /**
      * 删除用户数据
