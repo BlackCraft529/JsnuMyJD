@@ -42,7 +42,7 @@
             //     password: $scope.user.password
             // }};
             // console.log($scope.user_t);
-            // $http.get('/loginAction',$scope.user_t).then(function (data) {
+            // $http.post('/loginAction',$scope.user_t).then(function (data) {
             //     console.log("请求成功");
             //
             //
@@ -57,9 +57,13 @@
                     password: $scope.user.password
                 },
                 headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
-            }).success(function(data){
+            }).then(function successCallback(data) {
                 console.log("请求成功");
                 console.log(data);
+                // 请求成功执行代码
+            }, function errorCallback(response) {
+                console.log("失败"+response);
+                // 请求失败执行代码
             });
 
 
