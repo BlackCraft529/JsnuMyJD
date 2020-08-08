@@ -37,18 +37,33 @@
                     $scope.user.password=old;
             });
             //发送登录请求
-            $scope.user_t= {params:{
-                account: $scope.user.account,
-                password: $scope.user.password
-            }};
-            console.log($scope.user_t);
-            $http.get('/loginAction',$scope.user_t).then(function (data) {
+            // $scope.user_t= {params:{
+            //     account: $scope.user.account,
+            //     password: $scope.user.password
+            // }};
+            // console.log($scope.user_t);
+            // $http.get('/loginAction',$scope.user_t).then(function (data) {
+            //     console.log("请求成功");
+            //
+            //
+            // }),function (err) {
+            //     alert("登录失败！请检查帐号密码后再次尝试！");
+            // };
+            $http({
+                url:'/loginAction',//验证表单的接口
+                method:'post',
+                data:{
+                    account: $scope.user.account,
+                    password: $scope.user.password
+                },
+                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+            }).success(function(data){
                 console.log("请求成功");
+                console.log(data);
+            });
 
 
-            }),function (err) {
-                alert("登录失败！请检查帐号密码后再次尝试！");
-            };
+            //
         }
 
 
