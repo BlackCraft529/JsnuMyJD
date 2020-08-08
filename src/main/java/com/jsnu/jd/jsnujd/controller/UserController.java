@@ -51,14 +51,13 @@ public class UserController {
      */
     @RequestMapping("/registerUser")
     @ResponseBody
-    public String registerNewUser(String jsonData) throws JsonProcessingException {
+    public String registerNewUser(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String name = node.get("name").toString();
         String password = node.get("password").toString();
         String phone = node.get("phone").toString();
         String email = node.get("mail").toString();
         User user = new User();
-        //String password,String name,String phone,String email,String avatar,boolean isRetailer
         if(userService.addUser(password,name,phone,email,"未设置",false)>0){
             user=userService.selectUserByPhone(phone);
         }
@@ -73,7 +72,7 @@ public class UserController {
      */
     @RequestMapping("/getName")
     @ResponseBody
-    public String getName(String jsonData) throws JsonProcessingException {
+    public String getName(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String name = node.get("name").toString();
         if(userService.selectUserByName(name)!=null){
