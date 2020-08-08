@@ -4,3 +4,7 @@
 2020.8.8:
   /oldjd:
     - msg: 转发至静态京东页面
+  /getLocation:
+    - params: null
+    - msg: 获得定位，没有获取到发送返回江苏
+    - return: 'location'
