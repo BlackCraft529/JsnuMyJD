@@ -8,6 +8,6 @@
             controller: 'homeCtrl'
         })
     }]).controller('homeCtrl', ['$scope', function($scope){
-        console.log("home跳转成功");
+
     }]);
 })(angular)

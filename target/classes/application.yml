@@ -5,9 +5,9 @@ spring:
     static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/myjd?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
-    username: root
-    password: 1515206
+    url: jdbc:mysql://wrxjsnu529.mysql.rds.aliyuncs.com:3307/myjd?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: wrx_jsnu
+    password: 1515206+++520rjw
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 15

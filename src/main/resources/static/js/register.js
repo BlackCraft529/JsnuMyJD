@@ -2,12 +2,13 @@
     'use strict';
     angular.module('jd.register',[
         'ngRoute'
-    ]).config(['$routeProvider',function($routeProvider) {
+    ]).config(['$routeProvider','$qProvider',function($routeProvider,$qProvider) {
         $routeProvider.when('/register',{
             templateUrl: 'html/register.html',
             controller: 'registerCtrl'
-        })
-    }]).controller('registerCtrl', ['$scope','$http', function($scope){
+        });
+        $qProvider.errorOnUnhandledRejections(false);
+    }]).controller('registerCtrl', ['$scope','$http', function($scope,$http){
         $scope.info={
             name: '',
             password: '',
@@ -23,7 +24,6 @@
         };
         //用户名监听
         $scope.$watch('user.name',function (now,old) {
-            console.log(now.length);
             if(now===''){
                 $scope.info.name="4-20个字符，可以留空";
                 $scope.info.status=true;
@@ -39,7 +39,7 @@
                  $scope.info.status=false;
                  return;
              }
-            if(nameExist(now)){
+            if(nameExist(now,$http)){
                 $scope.info.name="当前用户名可用";
                 $scope.info.status=true;
                 return;
@@ -50,10 +50,11 @@
                 return;
             }
 
-            function nameExist(name) {
-                $scope.info_n={
-                  name: name,
-                };
+            function nameExist(name,$http) {
+                console.log(name);
+                $scope.info_n={params:{
+                  name: name
+                }};
                 $http.post('/getName',$scope.info_n).then(function (data) {
                     console.log("请求成功");
                     return true;
@@ -71,9 +72,9 @@
             if(!$scope.info.status)
                 return;
             $http.post('/registerUser',$scope.user).then(function (data) {
-
+                console.log("注册成功");
             }),then(function (err) {
-
+                console.log("注册失败");
             });
         };
         //
