@@ -24,7 +24,7 @@ public class UtilsController {
      * @param jsonData json数据
      * @return 地址数据
      */
-    @RequestMapping("/loginAction")
+    @RequestMapping("/getLocation")
     @ResponseBody
     public String getAddressByIp(@RequestBody String jsonData) throws IOException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
