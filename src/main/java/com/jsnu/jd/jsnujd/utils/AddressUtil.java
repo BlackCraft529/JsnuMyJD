@@ -37,7 +37,6 @@ public class AddressUtil {
             addressBuilder.append(content);
         }
         ObjectNode addressNode = jsonObjectMapper.readValue(addressBuilder.toString(),ObjectNode.class);
-        return addressNode.get("province").toString().replaceAll("\"","")
-                +" "+addressNode.get("city").toString().replaceAll("\"","");
+        return addressNode.get("city").toString().replaceAll("\"","").replaceAll("市","");
     }
 }
