@@ -3,7 +3,7 @@
     - msg: 转发至静态京东页面
     - Complete: IndexController("/oldjd");
   /getLocation:
-    - params: null
+    - params: ip
     - msg: 获得定位，没有获取到发送返回江苏
     - return: 'location'
     - Complete: UtilsController("/loginAction");
