@@ -20,15 +20,17 @@ public class ShopCart {
     private User owner;
     private Map<Goods, Integer> goodsList;
     public ShopCart(com.jsnu.jd.jsnujd.pojo.ShopCart shopCart){
-        for(String value:shopCart.getGoodsList().split(",")){
-            String goodsId=value.split("#")[0];
-            int amount=Integer.parseInt(value.split("#")[1]);
-            if(StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId)==null){
-                continue;
+        if(shopCart!=null){
+            for(String value:shopCart.getGoodsList().split(",")){
+                String goodsId=value.split("#")[0];
+                int amount=Integer.parseInt(value.split("#")[1]);
+                if(StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId)==null){
+                    continue;
+                }
+                goodsList.put(StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId),amount);
             }
-            goodsList.put(StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId),amount);
+            this.id=shopCart.getId();
+            this.owner=StaticServiceImpl.getUserService().selectUserByUserId(shopCart.getOwnerId());
         }
-        this.id=shopCart.getId();
-        this.owner=StaticServiceImpl.getUserService().selectUserByUserId(shopCart.getOwnerId());
     }
 }

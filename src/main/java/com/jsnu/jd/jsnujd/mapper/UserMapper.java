@@ -26,9 +26,9 @@ public interface UserMapper {
     String selectUserPasswordByUserId(String userId);
 
     /**
-     * 根据用户邮箱查询密码
+     * 根据用户邮箱查询用户信息
      * @param email 邮箱
-     * @return 用户数据库加密密码串
+     * @return 用户信息
      */
     User selectUserByEmail(String email);
 
@@ -66,4 +66,5 @@ public interface UserMapper {
      * @return 成功条数
      */
     int editUserInfoByPojo(User user);
+
 }

@@ -1,7 +1,13 @@
 2020.8.8:
   hxz,wrx:
-    - 修复前后端数据无法交互
+  - 修复前后端数据无法交互
   hxz:
-    - login.js功能再添加
-    - oldjd.html与oldjd.css部署
-    - index.html重构
+  - login.js功能再添加
+  - oldjd.html与oldjd.css部署
+  - index.html重构
+2020.8.9:
+  wrx:
+  -新增ShopCart相关后端;
+  -修复部分vo类报空指针错误;
+  -修复部分Service方法;
+  -完善部分Controller;

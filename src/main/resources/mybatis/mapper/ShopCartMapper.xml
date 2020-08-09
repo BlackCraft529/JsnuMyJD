@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsnu.jd.jsnujd.mapper.ShopCartMapper">
+    <parameterMap id="ShopCartParameterMap" type="com.jsnu.jd.jsnujd.pojo.ShopCart">
+        <parameter property="id" resultMap="OrderResultMap"/>
+        <parameter property="ownerId" resultMap="OrderResultMap"/>
+        <parameter property="goodsList" resultMap="OrderResultMap"/>
+    </parameterMap>
+    <resultMap id="ShopCartResultMap" type="com.jsnu.jd.jsnujd.pojo.ShopCart">
+        <result column="cart_id" property="id"/>
+        <result column="goods_list" property="goodsList"/>
+        <result column="owner" property="ownerId"/>
+    </resultMap>
+    <select id="selectShopCartByCardId" parameterType="string" resultMap="ShopCartResultMap">
+        select * from shopcart_data where cart_id=#{cartId};
+    </select>
+    <select id="selectShopCartByUserId" parameterType="string" resultMap="ShopCartResultMap">
+        select * from shopcart_data where owner=#{userId};
+    </select>
+    <update id="updateShopCartGoodsListByPojo" parameterMap="ShopCartParameterMap">
+        update shopcart_data set owner=#{ownerId},goods_list=#{goodsList} where cart_id=#{id};
+    </update>
+    <delete id="deleteShopCartByCartId" parameterType="string">
+        delete from shopcart_data where cart_id=#{cartId};
+    </delete>
+    <insert id="addShopCart" parameterMap="ShopCartParameterMap">
+        insert into shopcart_data (cart_id,owner,goods_list) values (#{id},#{ownerId},#{goodsList});
+    </insert>
+</mapper>

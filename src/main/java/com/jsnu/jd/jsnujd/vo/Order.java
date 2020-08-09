@@ -25,19 +25,21 @@ public class Order {
     private Date createTime;
     private int status;
     public Order(com.jsnu.jd.jsnujd.pojo.Order order){
-        for(String value:order.getGoodsList().split(",")){
-            String goodsId=value.split("#")[0];
-            int amount=Integer.parseInt(value.split("#")[1]);
-            if(StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId)==null){
-                continue;
+        if(order!=null) {
+            for (String value : order.getGoodsList().split(",")) {
+                String goodsId = value.split("#")[0];
+                int amount = Integer.parseInt(value.split("#")[1]);
+                if (StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId) == null) {
+                    continue;
+                }
+                goodsList.put(StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId), amount);
             }
-            goodsList.put(StaticServiceImpl.getGoodsService().selectGoodsByGoodsId(goodsId),amount);
+            this.id = order.getId();
+            this.user = StaticServiceImpl.getUserService().selectUserByUserId(order.getUserId());
+            this.payment = order.getPayment();
+            this.settlement = order.getSettlement();
+            this.createTime = order.getCreateTime();
+            this.status = order.getStatus();
         }
-        this.id=order.getId();
-        this.user=StaticServiceImpl.getUserService().selectUserByUserId(order.getUserId());
-        this.payment=order.getPayment();
-        this.settlement=order.getSettlement();
-        this.createTime=order.getCreateTime();
-        this.status=order.getStatus();
     }
 }

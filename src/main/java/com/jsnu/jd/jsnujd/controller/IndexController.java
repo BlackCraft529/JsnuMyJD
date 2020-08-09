@@ -29,4 +29,9 @@ public class IndexController {
     public String toRegister(){
         return "register";
     }
+
+    @RequestMapping("/oldjd")
+    public String toOldJd(){
+        return "oldjd";
+    }
 }
