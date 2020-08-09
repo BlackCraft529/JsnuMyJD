@@ -28,7 +28,7 @@ public class UtilsController {
     @ResponseBody
     public String getAddressByIp(@RequestBody String jsonData) throws IOException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
-        String ip=node.get("ip").toString();
+        String ip=node.get("ip").toString().replaceAll("\"","");
         Map<String,String> address=new HashMap<>();
         address.put("location", AddressUtil.getLocationByIp(ip));
         return jsonObjectMapper.writeValueAsString(address);
