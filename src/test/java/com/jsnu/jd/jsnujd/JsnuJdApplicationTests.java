@@ -36,7 +36,7 @@ class JsnuJdApplicationTests {
 
     @Test
     void testAddressGetter() throws IOException {
-        System.out.println(AddressUtil.getLocationByIp("115.231.163.99"));
+        System.out.println(AddressUtil.getLocationByIp("223.66.155.79"));
     }
 
     @Test
