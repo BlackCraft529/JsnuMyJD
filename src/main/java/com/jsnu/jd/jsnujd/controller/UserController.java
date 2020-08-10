@@ -37,8 +37,8 @@ public class UserController {
     @ResponseBody
     public String loginAction(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
-        String account=node.get("account").toString();
-        String password=node.get("password").toString();
+        String account=node.get("account").toString().replaceAll("\"","");
+        String password=node.get("password").toString().replaceAll("\"","");
         User user=userService.matchUserPasswordByVagueKey(account,password);
         return jsonObjectMapper.valueToTree(user).toString();
     }
@@ -53,10 +53,10 @@ public class UserController {
     @ResponseBody
     public String registerNewUser(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
-        String name = node.get("name").toString();
-        String password = node.get("password").toString();
-        String phone = node.get("phone").toString();
-        String email = node.get("mail").toString();
+        String name = node.get("name").toString().replaceAll("\"","");
+        String password = node.get("password1").toString().replaceAll("\"","");
+        String phone = node.get("phone").toString().replaceAll("\"","");
+        String email = node.get("mail").toString().replaceAll("\"","");
         User user = new User();
         if(userService.addUser(password,name,phone,email,"未设置",false)>0){
             user=userService.selectUserByPhone(phone);
@@ -74,7 +74,7 @@ public class UserController {
     @ResponseBody
     public String getName(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
-        String name = node.get("name").toString();
+        String name = node.get("name").toString().replaceAll("\"","");
         if(userService.selectUserByName(name)!=null){
             return jsonObjectMapper.valueToTree(true).toString();
         }
@@ -91,7 +91,7 @@ public class UserController {
     @ResponseBody
     public String getPhone(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
-        String phone = node.get("phone").toString();
+        String phone = node.get("phone").toString().replaceAll("\"","");
         if(userService.selectUserByPhone(phone)!=null){
             return jsonObjectMapper.valueToTree(true).toString();
         }else {
@@ -109,8 +109,8 @@ public class UserController {
     @ResponseBody
     public String getEmail(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
-        String email = node.get("email").toString();
-        if(userService.selectUserByEmail(email)!=null){
+        String mail = node.get("mail").toString().replaceAll("\"","");
+        if(userService.selectUserByEmail(mail)!=null){
             return jsonObjectMapper.valueToTree(true).toString();
         }else {
             return jsonObjectMapper.valueToTree(false).toString();
