@@ -165,6 +165,7 @@
                     alert("注册失败！请检查帐号密码后再次尝试！");
                     return;
                 }
+                alert("注册成功");
                 //session
             }, function errorCallback(response) {
                 alert("error!\n"+"error message:"+response);

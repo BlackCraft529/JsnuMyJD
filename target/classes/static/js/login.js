@@ -11,7 +11,8 @@
     }]).controller('loginCtrl', ['$scope','$http', function($scope,$http){
         $scope.user={
             account: '',
-            password: ''
+            password: '',
+            rmbme: true,
         };
         $scope.wantlogin = function(){
             //帐号密码格式判断
@@ -46,11 +47,13 @@
                 },
                 headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
             }).then(function successCallback(data) {
+                sessionStorage.setItem("password","123456");
                 if (data.data.uuid===null){
                     alert("登录失败！请检查帐号密码后再次尝试！");
                     return;
                 }
                 //session
+                alert("登录成功！\nuuid="+data.data.uuid+"\npassowrd="+data.data.password);
             }, function errorCallback(response) {
                 alert("error!\n"+"error message:"+response);
             });
