@@ -80,4 +80,40 @@ public class UserController {
         }
         return jsonObjectMapper.valueToTree(false).toString();
     }
+
+    /**
+     * 检查用户手机号是否存在
+     * @param jsonData json数据
+     * @return boolean json数据
+     * @throws JsonProcessingException json转换错误
+     */
+    @RequestMapping("/getPhone")
+    @ResponseBody
+    public String getPhone(@RequestBody String jsonData) throws JsonProcessingException {
+        JsonNode node = jsonObjectMapper.readTree(jsonData);
+        String phone = node.get("phone").toString();
+        if(userService.selectUserByPhone(phone)!=null){
+            return jsonObjectMapper.valueToTree(true).toString();
+        }else {
+            return jsonObjectMapper.valueToTree(false).toString();
+        }
+    }
+
+    /**
+     * 检查用户邮箱是否存在
+     * @param jsonData json数据
+     * @return boolean json数据
+     * @throws JsonProcessingException json转换错误
+     */
+    @RequestMapping("/getMail")
+    @ResponseBody
+    public String getEmail(@RequestBody String jsonData) throws JsonProcessingException {
+        JsonNode node = jsonObjectMapper.readTree(jsonData);
+        String email = node.get("email").toString();
+        if(userService.selectUserByEmail(email)!=null){
+            return jsonObjectMapper.valueToTree(true).toString();
+        }else {
+            return jsonObjectMapper.valueToTree(false).toString();
+        }
+    }
 }
