@@ -7,3 +7,14 @@
     - msg: 获得定位，没有获取到发送返回江苏
     - return: 'location'
     - Complete: UtilsController("/loginAction");
+
+2020.8.10:
+  /getPhone:
+    -params: phone
+    -msg: 发送用户手机号匹配是否存在
+    -return: true/false 存在为true
+
+  /getMail:
+    -params: mail
+    -msg: 发送用户手机号匹配是否存在
+    -return: true/false 存在为true

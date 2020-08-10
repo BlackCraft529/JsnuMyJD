@@ -18,8 +18,7 @@
         }).then(function(data){
             if(data.data.ip==='')
                 $scope.location='江苏';
-            else{//发送地址请求
-                console.log(data.data);
+            else{//发送获得地域请求
                 $http({
                     url:'/getLocation',//验证表单的接口
                     method:'post',
@@ -27,7 +26,6 @@
                     headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
                 }).then(function successCallback(data) {
                     $scope.location=data.data.location;
-                    console.log(data.data);
                 }, function errorCallback(response) {
                     $scope.location="江苏";
                 });
