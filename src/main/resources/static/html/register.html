@@ -9,7 +9,7 @@
 				<tr>
 					<td class="td-lft col-md-4 user-name">用户名</td>
 					<td>
-						<input type="text" placeholder="您的账户名" class="ipt-t" ng-model="user.name">
+						<input type="text" placeholder="您的账户名" class="ipt-t" ng-model="user.name" ng-blur="judgeName()">
 					</td>
 				</tr>
 				<tr>
@@ -47,7 +47,7 @@
 				<tr>
 					<td class="td-lft user-info">电话</td>
 					<td>
-						<input type="text" placeholder="请输入正确的手机号码" class="ipt-t" ng-model="user.phone">
+						<input type="text" placeholder="请输入正确的手机号码" class="ipt-t" ng-model="user.phone" ng-blur="judgePhone()">
 					</td>
 				</tr>
 				<tr>
@@ -59,7 +59,7 @@
 				<tr>
 					<td class="td-lft user-info">邮箱</td>
 					<td>
-						<input type="email" placeholder="请输入正确的邮箱地址" class="ipt-t" ng-model="user.mail">
+						<input type="text" placeholder="请输入正确的邮箱地址" class="ipt-t" ng-model="user.mail" ng-blur="judgeMail()">
 					</td>
 				</tr>
 				<tr>

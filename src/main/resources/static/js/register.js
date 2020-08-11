@@ -8,7 +8,7 @@
             controller: 'registerCtrl'
         });
         $qProvider.errorOnUnhandledRejections(false);
-    }]).controller('registerCtrl', ['$scope','$http', function($scope,$http){
+    }]).controller('registerCtrl', ['$scope','$http','$window', function($scope,$http,$window){
         $scope.info={
             name: '',
             password1: '',
@@ -27,6 +27,7 @@
             phone: '',
             mail: '',
         };
+
         //用户名监听
         $scope.$watch('user.name',function (now,old) {
             if(now===''){
@@ -38,21 +39,42 @@
                 $scope.info.name="用户名太短";
                 $scope.info.name_status=false;
                 return;
+            }else {
+                $scope.info.name="用户名格式正确";
             }
              if(now.length>20)
                  $scope.user.name=old;
-            if(!nameExist(now)){
-                $scope.info.name="当前用户名可用";
-                $scope.info.name_status=true;
-                return;
-            }
-            else{
-                $scope.info.name="当前用户名已被占用";
-                $scope.info.name_status=false;
-                return;
-            }
+
 
         });
+        $scope.judgeName=function(){
+            if($scope.user.name.length<4)
+                return;
+            //发送姓名是否存在请求
+            $http({
+                url:'/getName',//验证表单的接口
+                method:'post',
+                data: {
+                    'name' :$scope.user.name
+                },
+                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+            }).then(function successCallback(data) {
+                if(!data.data){
+                    $scope.info.name="当前用户名可用";
+                    $scope.info.name_status=true;
+                }
+                else {
+                    $scope.info.name="当前用户名已被占用";
+                    $scope.info.name_status=false;
+                    return;
+                }
+            }, function errorCallback(response) {
+                alert("error!\n"+"error message:"+response);
+                $scope.info.name="出现连接错误";
+                $scope.info.name_status=false;
+            });
+
+        };
         //密码监听
         $scope.$watch('user.password1',function (now,old) {
             if(now===""){
@@ -75,6 +97,11 @@
         $scope.$watch('user.password2',function (now,old) {
             if(now===""){
                 $scope.info.password2="请再次输入密码";
+                $scope.info.password_status=false;
+                return;
+            }
+            if(now.length<8){
+                $scope.info.password2="请起码输入8位字符";
                 $scope.info.password_status=false;
                 return;
             }
@@ -105,17 +132,35 @@
             }
             if(now.length>11)
                 $scope.user.phone=old;
-            if(!phoneExist(now)){
-                $scope.info.phone="当前手机号可用";
-                $scope.info.phone_status=true;
-                return;
-            }else {
-                $scope.info.phone="当前手机号已被占用";
-                $scope.info.phone_status=false;
-                return;
-            }
-
+            if(now.length==11)
+                $scope.info.phone="手机号格式正确";
         });
+        $scope.judgePhone=function(){
+            if($scope.user.phone.length<11)
+                return;
+            //发送手机是否存在请求
+            $http({
+                url:'/getPhone',//验证表单的接口
+                method:'post',
+                data: {
+                    'phone' :$scope.user.phone
+                },
+                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+            }).then(function successCallback(data) {
+                if(!data.data){
+                    $scope.info.phone="当前手机号可用";
+                    $scope.info.phone_status=true;
+                }
+                else {
+                    $scope.info.phone="当前手机号已被占用";
+                    $scope.info.phone_status=false;
+                }
+            }, function errorCallback(response) {
+                alert("error!\n"+"error message:"+response);
+                $scope.info.phone="出现连接错误";
+                $scope.info.phone_status=false;
+            });
+        };
         //邮箱监听
         $scope.$watch("user.mail",function (now, old) {
             if(now===''){
@@ -123,34 +168,49 @@
                 $scope.info.mail_status=false;
                 return;
             }
-            if(now.length <6){
+            if(now.length<6){
                 $scope.info.mail="邮箱地址过短";
                 $scope.info.mail_status=false;
                 return;
             }
-            var count=0;
-            for(var i=0;i<now.length;i++){
-                if(now.charAt(i)==="@")
-                    count++;
-            }
-            if(count!=1){
-                $scope.info.mail="邮箱内请输入@且只能输入一个@";
+            if(!mailFormat(now)){
+                $scope.info.mail="邮箱内只能输入一个@且后面必须跟随内容";
                 $scope.info.mail_status=false;
                 return;
-            }
-            if(!mailExist(now)){
-                $scope.info.mail="当前邮箱可用";
-                $scope.info.mail_status=true;
-                return;
             }else {
-                $scope.info.mail="当前邮箱已被占用";
-                $scope.info.phone_status=false;
-                return;
+                $scope.info.mail="邮箱格式正确";
             }
         });
+
+        $scope.judgeMail=function() {
+            if ($scope.user.mail.length < 6)
+                return;
+            if(!mailFormat($scope.user.mail))
+                return;
+            //发送邮箱是否存在请求
+            $http({
+                url: '/getMail',//验证表单的接口
+                method: 'post',
+                data: {
+                    'mail': $scope.user.mail
+                },
+                headers: {'Content-Type': 'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+            }).then(function successCallback(data) {
+                if (!data.data) {
+                    $scope.info.mail = "当前邮箱可用";
+                    $scope.info.mail_status = true;
+                } else {
+                    $scope.info.mail = "当前邮箱已被占用";
+                    $scope.info.mail_status = false;
+                }
+            }, function errorCallback(response) {
+                alert("error!\n" + "error message:" + response);
+                $scope.info.mail = "出现连接错误";
+                $scope.info.mail_status = false;
+            });
+        }
         //----------------------------------提交----------------------------------
         $scope.registUser=function () {
-            console.log(sessionStorage.getItem("password"));
             if(!$scope.info.name_status&& !$scope.info.password_status && !$scope.info.phone_status && !$scope.info.mail_status)
                 return;
             console.log("注册了");
@@ -165,60 +225,36 @@
                     alert("注册失败！请检查帐号密码后再次尝试！");
                     return;
                 }
-                alert("注册成功");
+
                 //session
+                sessionStorage.setItem("uuid", data.data.uuid);
+                sessionStorage.setItem("password", data.data.password);
+                sessionStorage.setItem("name", data.data.name);
+                sessionStorage.setItem("phone", data.data.phone);
+                sessionStorage.setItem("avatar", data.data.avatar);
+                sessionStorage.setItem("lastLoginTime", data.data.lastLoginTime);
+                sessionStorage.setItem("registerTime", data.data.registerTime);
+                sessionStorage.setItem("retailer", data.data.retailer);
+                alert("恭喜您注册成功！页面即将跳转，如果没有跳转请手动刷新！");
+                $window.location.reload();
             }, function errorCallback(response) {
                 alert("error!\n"+"error message:"+response);
             });
         };
         //使用函数
-        function nameExist(name) {
-            //发送用户名是否存在请求
-            $http({
-                url:'/getName',//验证表单的接口
-                method:'post',
-                data: {
-                    'name' :name
-                },
-                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
-            }).then(function successCallback(data) {
-                  return data.data;
-            }, function errorCallback(response) {
-                alert("error!\n"+"error message:"+response);
-                return true;
-            });
+        var mailFormat=function (now) {
+            var count=0;
+            for(var i=0;i<now.length;i++){
+                if(now.charAt(i)==="@")
+                    count++;
+            }
+            if(count!=1)
+                return false;
+            if(now.charAt(now.length-1)==="@")
+                return false;
+            return true;
         }
-        function phoneExist(phone) {
-            //发送手机是否存在请求
-            $http({
-                url:'/getPhone',//验证表单的接口
-                method:'post',
-                data: {
-                    'phone' :phone
-                },
-                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
-            }).then(function successCallback(data) {
-                return data.data;
-            }, function errorCallback(response) {
-                alert("error!\n"+"error message:"+response);
-                return true;
-            });
-        }
-        function mailExist(mail) {
-            //发送手机是否存在请求
-            $http({
-                url:'/getMail',//验证表单的接口
-                method:'post',
-                data: {
-                    'mail' :mail
-                },
-                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
-            }).then(function successCallback(data) {
-                return data.data;
-            }, function errorCallback(response) {
-                alert("error!\n"+"error message:"+response);
-            });
-        }
+
         //
     }]);
 })(angular)

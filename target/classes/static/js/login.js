@@ -8,7 +8,7 @@
             controller: 'loginCtrl'
         });
         $qProvider.errorOnUnhandledRejections(false);
-    }]).controller('loginCtrl', ['$scope','$http', function($scope,$http){
+    }]).controller('loginCtrl', ['$scope','$http',"$window", function($scope,$http,$window){
         $scope.user={
             account: '',
             password: '',
@@ -47,13 +47,21 @@
                 },
                 headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
             }).then(function successCallback(data) {
-                sessionStorage.setItem("password","123456");
                 if (data.data.uuid===null){
                     alert("登录失败！请检查帐号密码后再次尝试！");
                     return;
                 }
                 //session
-                alert("登录成功！\nuuid="+data.data.uuid+"\npassowrd="+data.data.password);
+                sessionStorage.setItem("uuid", data.data.uuid);
+                sessionStorage.setItem("password", data.data.password);
+                sessionStorage.setItem("name", data.data.name);
+                sessionStorage.setItem("phone", data.data.phone);
+                sessionStorage.setItem("avatar", data.data.avatar);
+                sessionStorage.setItem("lastLoginTime", data.data.lastLoginTime);
+                sessionStorage.setItem("registerTime", data.data.registerTime);
+                sessionStorage.setItem("retailer", data.data.retailer);
+                alert("登录成功！页面即将跳转，如果没有跳转请手动刷新！");
+                $window.location.reload();
             }, function errorCallback(response) {
                 alert("error!\n"+"error message:"+response);
             });
@@ -64,4 +72,4 @@
 
 
     }]);
-})(angular)
+})(angular);
