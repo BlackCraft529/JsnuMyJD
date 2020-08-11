@@ -12,6 +12,7 @@
         <parameter property="avatar" resultMap="UserResultMap"/>
         <parameter property="lastLoginTime" resultMap="UserResultMap"/>
         <parameter property="registerTime" resultMap="UserResultMap"/>
+        <parameter property="address" resultMap="UserResultMap"/>
         <parameter property="retailer" resultMap="UserResultMap"/>
     </parameterMap>
     <resultMap id="UserResultMap" type="com.jsnu.jd.jsnujd.pojo.User">
@@ -21,6 +22,7 @@
         <result column="phone" property="phone"/>
         <result column="email" property="email"/>
         <result column="avatar" property="avatar"/>
+        <result column="address" property="address"/>
         <result column="last_login_time" property="lastLoginTime"/>
         <result column="register_time" property="registerTime"/>
         <result column="retailer" property="retailer"/>
@@ -29,8 +31,8 @@
         select password from user_data where uuid=#{userId};
     </select>
     <insert id="addUser" parameterMap="UserParameterMap">
-        insert into user_data (uuid,password,name,phone,email,avatar,last_login_time,register_time,retailer)
-	        values (#{uuid},#{password},#{name},#{phone},#{email},#{avatar},#{lastLoginTime},#{registerTime},#{retailer});
+        insert into user_data (uuid,password,name,phone,email,avatar,last_login_time,register_time,retailer,address)
+	        values (#{uuid},#{password},#{name},#{phone},#{email},#{avatar},#{lastLoginTime},#{registerTime},#{retailer},#{address});
     </insert>
     <select id="selectUserByUuid" parameterType="string" resultMap="UserResultMap">
         select * from user_data where uuid=#{userId};
@@ -39,8 +41,8 @@
         delete from user_data where uuid=#{userId};
     </delete>
     <update id="editUserInfoByUuid" parameterMap="UserParameterMap">
-        update user_data set password=#{password},name=#{name},phone=#{phone},email=#{email},abatar=#{avatar},
-            last_login_time=#{lastLoginTime},retailer=#{retailer} where uuid=#{uuid};
+        update user_data set password=#{password},name=#{name},phone=#{phone},email=#{email},avatar=#{avatar},
+            last_login_time=#{lastLoginTime},retailer=#{retailer},address=#{address} where uuid=#{uuid};
     </update>
     <select id="selectUserByEmail" parameterType="string" resultMap="UserResultMap">
         select * from user_data where email=#{email};

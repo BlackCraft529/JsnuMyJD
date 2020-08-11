@@ -13,10 +13,12 @@
     -params: phone
     -msg: 发送用户手机号匹配是否存在
     -return: true/false 存在为true
+    - Complete: UtilsController("/getPhone");
 
   /getMail:
     -params: mail
     -msg: 发送用户手机号匹配是否存在
     -return: true/false 存在为true
+    - Complete: UtilsController("/getMail");
 
 2020.8.11
