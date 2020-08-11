@@ -1,7 +1,6 @@
 package com.jsnu.jd.jsnujd.service;
 
 import com.jsnu.jd.jsnujd.pojo.Goods;
-
 import java.util.List;
 
 /**
@@ -18,9 +17,10 @@ public interface GoodsService {
      * @param cate 分类
      * @param leftAmount 剩余数量
      * @param image 图片链接
+     * @param publisher 发布者
      * @return 新增条数
      */
-    int addGoods(String name,String desc,double price,double sellPrice,String cate,int leftAmount,String image);
+    int addGoods(String name,String desc,double price,double sellPrice,String cate,int leftAmount,String image,String publisher);
 
     /**
      * 通过商品ID获取商品数据

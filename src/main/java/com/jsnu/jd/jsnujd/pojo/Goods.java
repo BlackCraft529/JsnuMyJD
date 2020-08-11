@@ -15,6 +15,7 @@ import java.util.Date;
 public class Goods {
     private String id;
     private String name;
+    private String publisher;
     private String description;
     private double price,sellPrice;
     private String cate;

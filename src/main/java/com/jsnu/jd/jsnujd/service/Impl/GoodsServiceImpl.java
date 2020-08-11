@@ -30,15 +30,17 @@ public class GoodsServiceImpl implements GoodsService {
      * @param cate       分类
      * @param leftAmount 剩余数量
      * @param image      图片链接
+     * @param publisher  发布者
      * @return 新增条数
      */
     @Override
-    public int addGoods(String name, String desc, double price, double sellPrice, String cate, int leftAmount, String image) {
+    public int addGoods(String name, String desc, double price, double sellPrice, String cate, int leftAmount, String image,String publisher) {
         Goods goods = new Goods();
         String goodsId= UUID.randomUUID().toString().replaceAll("-","");
         while(goodsMapper.selectGoodsByGoodsId(goodsId)!=null){
             goodsId= UUID.randomUUID().toString().replaceAll("-","");
         }
+        goods.setPublisher(publisher);
         goods.setId(goodsId);
         goods.setName(name);
         goods.setDescription(desc);

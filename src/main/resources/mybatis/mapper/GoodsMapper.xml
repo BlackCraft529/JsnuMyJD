@@ -13,6 +13,7 @@
         <parameter property="leftAmount" resultMap="GoodsResultMap"/>
         <parameter property="image" resultMap="GoodsResultMap"/>
         <parameter property="sellAmount" resultMap="GoodsResultMap"/>
+        <parameter property="publisher" resultMap="GoodsResultMap"/>
         <parameter property="createTime" resultMap="GoodsResultMap"/>
     </parameterMap>
     <resultMap id="GoodsResultMap" type="com.jsnu.jd.jsnujd.pojo.Goods">
@@ -26,10 +27,11 @@
         <result column="image" property="image"/>
         <result column="sell_amount" property="sellAmount"/>
         <result column="create_time" property="createTime"/>
+        <result column="publisher" property="publisher"/>
     </resultMap>
     <insert id="addGoods" parameterMap="GoodsParameterMap">
-        insert into goods_data (goods_id,name,desc,price,sell_price,cate,left_amount,image,sell_amount,create_time)
-            values (#{id},#{name},#{description},#{price},#{sellPrice},#{cate},#{leftAmount},#{image},#{sellAmount},#{createTime});
+        insert into goods_data (goods_id,name,desc,price,sell_price,cate,left_amount,image,sell_amount,create_time,publisher)
+            values (#{id},#{name},#{description},#{price},#{sellPrice},#{cate},#{leftAmount},#{image},#{sellAmount},#{createTime},#{publisher});
     </insert>
     <select id="selectGoodsByGoodsId" parameterType="string" resultMap="GoodsResultMap">
         select * from goods_data where goods_id=#{goodsId};
@@ -42,7 +44,7 @@
     </delete>
     <update id="updateGoodsInfoByPojo" parameterMap="GoodsParameterMap">
         update goods_data set name=#{name},desc=#{description},price=#{price},sell_price=#{sellPrice},
-            cate=#{cate},left_amount=#{leftAmount},image=#{image} where goods_id=#{id};
+            cate=#{cate},left_amount=#{leftAmount},image=#{image},publisher=#{publisher} where goods_id=#{id};
     </update>
     <select id="selectAllGoods" resultMap="GoodsResultMap">
         select * from goods_data;
