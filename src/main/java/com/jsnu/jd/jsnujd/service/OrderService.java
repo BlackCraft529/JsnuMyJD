@@ -18,11 +18,12 @@ public interface OrderService {
      * @param userId 用户ID
      * @param payment 付款
      * @param settlement 应付
+     * @param address 收货地址
      * @param createTime 创建时间
      * @param status 状态
      * @return 新增条数
      */
-    int createNewOrder(String goodsList, String userId, double payment, double settlement, Date createTime,int status);
+    int createNewOrder(String goodsList, String userId, double payment, double settlement, Date createTime,String address,int status);
 
     /**
      * 根据订单号查询订单信息

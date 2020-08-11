@@ -58,7 +58,7 @@ public class UserController {
         String phone = node.get("phone").toString().replaceAll("\"","");
         String email = node.get("mail").toString().replaceAll("\"","");
         User user = new User();
-        if(userService.addUser(password,name,phone,email,"未设置",false)>0){
+        if(userService.addUser(password,name,phone,email,"未设置","未设置",false)>0){
             user=userService.selectUserByPhone(phone);
         }
         return jsonObjectMapper.valueToTree(user).toString();

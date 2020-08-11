@@ -23,6 +23,7 @@ public class Order {
     private double payment;
     private double settlement;
     private Date createTime;
+    private String address;
     private int status;
     public Order(com.jsnu.jd.jsnujd.pojo.Order order){
         if(order!=null) {
@@ -39,6 +40,7 @@ public class Order {
             this.payment = order.getPayment();
             this.settlement = order.getSettlement();
             this.createTime = order.getCreateTime();
+            this.address=order.getAddress();
             this.status = order.getStatus();
         }
     }

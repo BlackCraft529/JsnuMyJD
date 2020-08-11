@@ -20,6 +20,7 @@ public class User {
     private String phone;
     private String email;
     private String avatar;
+    private String address;
     private Date lastLoginTime,registerTime;
     private boolean retailer;
 }

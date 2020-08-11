@@ -50,12 +50,13 @@ public class UserServiceImpl implements UserService {
      * @param name       姓名
      * @param phone      电话
      * @param email      邮箱
-     * @param avatar     地址
+     * @param avatar     头像外链
+     * @param address    收货地址
      * @param isRetailer 是否为商家
      * @return 添加条数
      */
     @Override
-    public int addUser(String password, String name, String phone, String email, String avatar, boolean isRetailer) {
+    public int addUser(String password, String name, String phone, String email, String avatar,String address, boolean isRetailer) {
         if(userMapper.selectUserByName(name)!=null
             ||userMapper.selectUserByPhone(phone)!=null
             ||userMapper.selectUserByEmail(email)!=null){
@@ -72,6 +73,7 @@ public class UserServiceImpl implements UserService {
         user.setName(name);
         user.setPhone(phone);
         user.setEmail(email);
+        user.setAddress(address);
         user.setAvatar(avatar);
         user.setRegisterTime(new Date());
         user.setLastLoginTime(new Date());

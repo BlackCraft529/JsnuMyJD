@@ -20,5 +20,6 @@ public class Order {
     private double payment;
     private double settlement;
     private Date createTime;
+    private String address;
     private int status;
 }

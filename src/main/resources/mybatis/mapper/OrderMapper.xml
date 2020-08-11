@@ -10,6 +10,7 @@
         <parameter property="payment" resultMap="OrderResultMap"/>
         <parameter property="settlement" resultMap="OrderResultMap"/>
         <parameter property="createTime" resultMap="OrderResultMap"/>
+        <parameter property="address" resultMap="OrderResultMap"/>
         <parameter property="status" resultMap="OrderResultMap"/>
     </parameterMap>
     <resultMap id="OrderResultMap" type="com.jsnu.jd.jsnujd.pojo.Order">
@@ -19,6 +20,7 @@
         <result column="payment" property="payment"/>
         <result column="settlement" property="settlement"/>
         <result column="create_time" property="createTime"/>
+        <result column="address" property="address"/>
         <result column="status" property="status"/>
     </resultMap>
     <select id="selectOrderByOrderId" resultMap="OrderResultMap" parameterType="string">
@@ -37,8 +39,8 @@
         update order_data set goods_list=#{goodsList},user_id=#{userId},payment=#{payment},settlement=#{settlement} where order_id=#{id};
     </update>
     <insert id="createNewOrder" parameterMap="OrderParameterMap">
-        insert into order_data (order_id,goods_list,user_id,payment,settlement,create_time,status)
-            values (#{id},#{goodsList},#{userId},#{payment},#{settlement},#{createTime},#{status});
+        insert into order_data (order_id,goods_list,user_id,payment,settlement,create_time,status,address)
+            values (#{id},#{goodsList},#{userId},#{payment},#{settlement},#{createTime},#{status},#{address});
     </insert>
     <delete id="deleteOrderByOrderId" parameterType="string">
         delete from order_data where order_id=#{orderId};

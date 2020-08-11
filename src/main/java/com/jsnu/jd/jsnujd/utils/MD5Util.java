@@ -83,8 +83,8 @@ public class MD5Util {
             cs1[i / 3 * 2 + 1] = md5str.charAt(i + 2);
             cs2[i / 3] = md5str.charAt(i + 1);
         }
-        String Salt = new String(cs2);
-        String md5st=md5Hex(password + Salt);
+        String salt = new String(cs2);
+        String md5st=md5Hex(password + salt);
         return md5st.equals(String.valueOf(cs1));
     }
 }

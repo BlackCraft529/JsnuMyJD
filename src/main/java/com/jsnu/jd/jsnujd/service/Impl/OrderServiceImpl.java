@@ -27,13 +27,14 @@ public class OrderServiceImpl implements OrderService {
      * @param payment    付款
      * @param settlement 应付
      * @param createTime 创建时间
+     * @param address    收货地址
      * @param status     状态
      * @return 新增条数
      * TODO:
      * 计算商品总价格?
      */
     @Override
-    public int createNewOrder(String goodsList, String userId, double payment, double settlement, Date createTime, int status) {
+    public int createNewOrder(String goodsList, String userId, double payment, double settlement, Date createTime,String address, int status) {
         com.jsnu.jd.jsnujd.pojo.Order order=new com.jsnu.jd.jsnujd.pojo.Order();
         String orderId= UUID.randomUUID().toString().replaceAll("-","");
         while(orderMapper.selectOrderByOrderId(orderId)!=null){
@@ -44,6 +45,7 @@ public class OrderServiceImpl implements OrderService {
         order.setUserId(userId);
         order.setPayment(payment);
         order.setSettlement(settlement);
+        order.setAddress(address);
         order.setStatus(status);
         order.setCreateTime(new Date());
         return orderMapper.createNewOrder(order);

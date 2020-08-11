@@ -30,11 +30,12 @@ public interface UserService {
      * @param name 姓名
      * @param phone 电话
      * @param email 邮箱
-     * @param avatar 地址
+     * @param avatar 头像外链
+     * @param address 收货地址
      * @param isRetailer 是否为商家
      * @return 添加条数
      */
-    int addUser(String password,String name,String phone,String email,String avatar,boolean isRetailer);
+    int addUser(String password,String name,String phone,String email,String avatar,String address,boolean isRetailer);
 
     /**
      * 更新一个用户的用户名
