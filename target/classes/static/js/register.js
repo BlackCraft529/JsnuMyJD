@@ -18,14 +18,14 @@
             name_status: false,
             password_status: false,
             phone_status: false,
-            mail_status: false,
+            email_status: false,
         };
         $scope.user={
             name: '',
             password1: '',
             password2: '',
             phone: '',
-            mail: '',
+            email: '',
         };
 
         //用户名监听
@@ -162,58 +162,57 @@
             });
         };
         //邮箱监听
-        $scope.$watch("user.mail",function (now, old) {
+        $scope.$watch("user.email",function (now, old) {
             if(now===''){
-                $scope.info.mail="请输入正确的邮箱地址";
-                $scope.info.mail_status=false;
+                $scope.info.email="请输入正确的邮箱地址";
+                $scope.info.email_status=false;
                 return;
             }
             if(now.length<6){
-                $scope.info.mail="邮箱地址过短";
-                $scope.info.mail_status=false;
+                $scope.info.email="邮箱地址过短";
+                $scope.info.email_status=false;
                 return;
             }
             if(!mailFormat(now)){
-                $scope.info.mail="邮箱内只能输入一个@且后面必须跟随内容";
-                $scope.info.mail_status=false;
+                $scope.info.email="邮箱内只能输入一个@且后面必须跟随内容";
+                $scope.info.email_status=false;
                 return;
             }else {
-                $scope.info.mail="邮箱格式正确";
+                $scope.info.email="邮箱格式正确";
             }
         });
 
         $scope.judgeMail=function() {
-            if ($scope.user.mail.length < 6)
+            if ($scope.user.email.length < 6)
                 return;
-            if(!mailFormat($scope.user.mail))
+            if(!mailFormat($scope.user.email))
                 return;
             //发送邮箱是否存在请求
             $http({
                 url: '/getMail',//验证表单的接口
                 method: 'post',
                 data: {
-                    'mail': $scope.user.mail
+                    'mail': $scope.user.email
                 },
                 headers: {'Content-Type': 'application/json;charset=UTF-8'}, //将其变为 json 参数形式
             }).then(function successCallback(data) {
                 if (!data.data) {
-                    $scope.info.mail = "当前邮箱可用";
-                    $scope.info.mail_status = true;
+                    $scope.info.email = "当前邮箱可用";
+                    $scope.info.email_status = true;
                 } else {
-                    $scope.info.mail = "当前邮箱已被占用";
-                    $scope.info.mail_status = false;
+                    $scope.info.email = "当前邮箱已被占用";
+                    $scope.info.email_status = false;
                 }
             }, function errorCallback(response) {
                 alert("error!\n" + "error message:" + response);
-                $scope.info.mail = "出现连接错误";
-                $scope.info.mail_status = false;
+                $scope.info.email = "出现连接错误";
+                $scope.info.email_status = false;
             });
         }
         //----------------------------------提交----------------------------------
         $scope.registUser=function () {
-            if(!$scope.info.name_status&& !$scope.info.password_status && !$scope.info.phone_status && !$scope.info.mail_status)
+            if(!$scope.info.name_status&& !$scope.info.password_status && !$scope.info.phone_status && !$scope.info.email_status)
                 return;
-            console.log("注册了");
             //发送注册请求
             $http({
                 url:'/registerUser',//验证表单的接口
@@ -232,6 +231,7 @@
                 sessionStorage.setItem("name", data.data.name);
                 sessionStorage.setItem("phone", data.data.phone);
                 sessionStorage.setItem("avatar", data.data.avatar);
+                sessionStorage.setItem("email", data.data.email);
                 sessionStorage.setItem("lastLoginTime", data.data.lastLoginTime);
                 sessionStorage.setItem("registerTime", data.data.registerTime);
                 sessionStorage.setItem("retailer", data.data.retailer);

@@ -57,9 +57,12 @@
                 sessionStorage.setItem("name", data.data.name);
                 sessionStorage.setItem("phone", data.data.phone);
                 sessionStorage.setItem("avatar", data.data.avatar);
+                sessionStorage.setItem("address", data.data.address);
+                sessionStorage.setItem("email", data.data.email);
                 sessionStorage.setItem("lastLoginTime", data.data.lastLoginTime);
                 sessionStorage.setItem("registerTime", data.data.registerTime);
                 sessionStorage.setItem("retailer", data.data.retailer);
+                console.log(data.data);
                 alert("登录成功！页面即将跳转，如果没有跳转请手动刷新！");
                 $window.location.reload();
             }, function errorCallback(response) {
