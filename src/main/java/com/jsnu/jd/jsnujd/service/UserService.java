@@ -127,4 +127,17 @@ public interface UserService {
      */
     User matchUserPasswordByVagueKey(String key,String password);
 
+    /**
+     * 更新用户主要数据
+     * @param userId 用户ID
+     * @param name 用户名称
+     * @param phone 用户手机
+     * @param password 用户明文密码
+     * @param email 邮箱
+     * @param address 地址
+     * @param avatar 头像外链
+     * @return 修改条数
+     */
+    int updateUserMainInformationByUserId(String userId,String name,String phone,String password,String email,String address,String avatar);
+
 }

@@ -51,4 +51,13 @@ public interface ShopCartService {
      * @return 修改条数
      */
     int updateShopCartInfoByUserId(String userId,String goodsList);
+
+    /**
+     * 为用户购物车新增商品
+     * @param userId 用户ID
+     * @param goodsId 商品ID
+     * @param amount 数量
+     * @return 修改条数
+     */
+    int addShopCartGoodsByUserId(String userId,String goodsId,int amount);
 }

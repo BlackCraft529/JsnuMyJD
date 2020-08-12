@@ -1,10 +1,15 @@
 package com.jsnu.jd.jsnujd.service.Impl;
 
+import com.jsnu.jd.jsnujd.mapper.GoodsMapper;
 import com.jsnu.jd.jsnujd.mapper.ShopCartMapper;
+import com.jsnu.jd.jsnujd.pojo.Goods;
 import com.jsnu.jd.jsnujd.service.ShopCartService;
 import com.jsnu.jd.jsnujd.vo.ShopCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -15,6 +20,8 @@ import java.util.UUID;
 public class ShopCartServiceImpl implements ShopCartService {
     @Autowired
     private ShopCartMapper shopCartMapper;
+    @Autowired
+    private GoodsMapper goodsMapper;
 
     /**
      * 新增一个购物车信息
@@ -98,4 +105,32 @@ public class ShopCartServiceImpl implements ShopCartService {
         shopCart.setGoodsList(goodsList);
         return shopCartMapper.updateShopCartGoodsListByPojo(shopCart);
     }
+
+    /**
+     * 为用户购物车新增商品
+     *
+     * @param userId  用户ID
+     * @param goodsId 商品ID
+     * @param amount  数量
+     * @return 修改条数
+     */
+    @Override
+    public int addShopCartGoodsByUserId(String userId, String goodsId, int amount) {
+        if(shopCartMapper.selectShopCartByUserId(userId)==null){
+            return 0;
+        }
+        com.jsnu.jd.jsnujd.vo.ShopCart shopCart=new ShopCart(shopCartMapper.selectShopCartByUserId(userId));
+        Map<Goods, Integer> newGoodsList = shopCart.getGoodsList();
+        for(Map.Entry<Goods, Integer> entry : shopCart.getGoodsList().entrySet()){
+            if(entry.getKey().getId().equalsIgnoreCase(goodsId)){
+                newGoodsList.put(entry.getKey(),entry.getValue()+1);
+            }
+        }
+        if(newGoodsList.equals(shopCart.getGoodsList())){
+            newGoodsList.put(goodsMapper.selectGoodsByGoodsId(goodsId),1);
+        }
+        return shopCartMapper.updateShopCartGoodsListByPojo(new com.jsnu.jd.jsnujd.pojo.ShopCart(shopCart));
+    }
+
+
 }

@@ -41,4 +41,19 @@ public class ShopCartController {
         ShopCart shopCart=shopCartService.selectShopCartByUserId(userId);
         return jsonObjectMapper.valueToTree(shopCart).toString();
     }
+
+    /**
+     * 新增用户购物车数量
+     * @param jsonData json数据
+     * @return 是否新增
+     * @throws JsonProcessingException json转换错误
+     */
+    @RequestMapping("/enrollCart")
+    @ResponseBody
+    public String enrollCart(@RequestBody String jsonData) throws JsonProcessingException {
+        JsonNode node = jsonObjectMapper.readTree(jsonData);
+        String userId=node.get("uuid").toString().replaceAll("\"","");
+        String goodsId=node.get("goods_id").toString().replaceAll("\"","");
+        return jsonObjectMapper.valueToTree(shopCartService.addShopCartGoodsByUserId(userId,goodsId,1) != 0).toString();
+    }
 }

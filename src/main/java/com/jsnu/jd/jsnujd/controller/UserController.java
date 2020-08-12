@@ -115,4 +115,19 @@ public class UserController {
             return jsonObjectMapper.valueToTree(false).toString();
         }
     }
+
+    @RequestMapping("/editInformation")
+    @ResponseBody
+    public String editInformation(@RequestBody String jsonData) throws JsonProcessingException {
+        JsonNode node = jsonObjectMapper.readTree(jsonData);
+        String userId = node.get("uuid").toString().replaceAll("\"","");
+        String name = node.get("name").toString().replaceAll("\"","");
+        String phone = node.get("phone").toString().replaceAll("\"","");
+        String password = node.get("password").toString().replaceAll("\"","");
+        String email = node.get("email").toString().replaceAll("\"","");
+        String address = node.get("address").toString().replaceAll("\"","");
+        String avatar = node.get("avatar").toString().replaceAll("\"","");
+        return jsonObjectMapper.valueToTree(
+                userService.updateUserMainInformationByUserId(userId,name,phone,password,email,address,avatar)).toString();
+    }
 }

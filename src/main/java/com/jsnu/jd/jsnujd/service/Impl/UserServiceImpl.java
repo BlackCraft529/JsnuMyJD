@@ -271,5 +271,32 @@ public class UserServiceImpl implements UserService {
         return new User();
     }
 
+    /**
+     * 更新用户主要数据
+     *
+     * @param userId   用户ID
+     * @param name     用户名称
+     * @param phone    用户手机
+     * @param password 用户明文密码
+     * @param email    邮箱
+     * @param address  地址
+     * @param avatar   头像外链
+     * @return 修改条数
+     */
+    @Override
+    public int updateUserMainInformationByUserId(String userId, String name, String phone, String password, String email, String address, String avatar) {
+        if (userMapper.selectUserByUuid(userId) == null) {
+            return 0;
+        }
+        User user = userMapper.selectUserByUuid(userId);
+        user.setAddress(address);
+        user.setName(name==null?userId:name);
+        user.setPassword(MD5Util.getSaltMD5(password));
+        user.setPhone(phone);
+        user.setAvatar(avatar);
+        user.setEmail(email);
+        return userMapper.editUserInfoByPojo(user);
+    }
+
 
 }
