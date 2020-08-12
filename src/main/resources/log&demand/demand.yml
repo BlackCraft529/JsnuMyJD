@@ -54,4 +54,4 @@
   /getSomething:
     - params: search_key
     - msg: 获取用户以关键字搜索的商品
-    - return: 相关的json,额外加一个属性"resulte":true/false 用于判断是否有类似商品
+    - return: 相关的json,额外加一个属性"result":true/false 用于判断是否有类似商品

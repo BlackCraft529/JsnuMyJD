@@ -49,4 +49,4 @@
   /getOrder:
     - params: uuid
     - msg: 获取用户的订单
-    - return: order类
+    - return: order 返回的顺序由新到旧，如果数据超过10条，则只返回最新10条
