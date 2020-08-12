@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsnu.jd.jsnujd.mapper.GoodsMapper">
+    <parameterMap id="GoodsParameterMap" type="com.jsnu.jd.jsnujd.pojo.Goods">
+        <parameter property="id" resultMap="GoodsResultMap"/>
+        <parameter property="name" resultMap="GoodsResultMap"/>
+        <parameter property="description" resultMap="GoodsResultMap"/>
+        <parameter property="price" resultMap="GoodsResultMap"/>
+        <parameter property="sellPrice" resultMap="GoodsResultMap"/>
+        <parameter property="cate" resultMap="GoodsResultMap"/>
+        <parameter property="leftAmount" resultMap="GoodsResultMap"/>
+        <parameter property="image" resultMap="GoodsResultMap"/>
+        <parameter property="sellAmount" resultMap="GoodsResultMap"/>
+        <parameter property="createTime" resultMap="GoodsResultMap"/>
+    </parameterMap>
+    <resultMap id="GoodsResultMap" type="com.jsnu.jd.jsnujd.pojo.Goods">
+        <result column="goods_id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="desc" property="description"/>
+        <result column="price" property="price"/>
+        <result column="sell_price" property="sellPrice"/>
+        <result column="cate" property="cate"/>
+        <result column="left_amount" property="leftAmount"/>
+        <result column="image" property="image"/>
+        <result column="sell_amount" property="sellAmount"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+    <insert id="addGoods" parameterMap="GoodsParameterMap">
+        insert into goods_data (goods_id,name,desc,price,sell_price,cate,left_amount,image,sell_amount,create_time)
+            values (#{id},#{name},#{description},#{price},#{sellPrice},#{cate},#{leftAmount},#{image},#{sellAmount},#{createTime});
+    </insert>
+    <select id="selectGoodsByGoodsId" parameterType="string" resultMap="GoodsResultMap">
+        select * from goods_data where goods_id=#{goodsId};
+    </select>
+    <update id="updateGoodsLeftAmount" parameterType="map">
+        update goods_data set left_amount=#{leftAmount} where goods_id=#{goodsId};
+    </update>
+    <delete id="deleteGoodsByGoodsId" parameterType="string">
+        delete from goods_data where goods_id=#{goodsId};
+    </delete>
+    <update id="updateGoodsInfoByPojo" parameterMap="GoodsParameterMap">
+        update goods_data set name=#{name},desc=#{description},price=#{price},sell_price=#{sellPrice},
+            cate=#{cate},left_amount=#{leftAmount},image=#{image} where goods_id=#{id};
+    </update>
+    <select id="selectAllGoods" resultMap="GoodsResultMap">
+        select * from goods_data;
+    </select>
+    <select id="selectGoodsByCate" parameterType="string" resultMap="GoodsResultMap">
+        select * from goods_data where cate=#{cate};
+    </select>
+    <select id="selectGoodsByNameExact" parameterType="string" resultMap="GoodsResultMap">
+        select * from goods_data where name=#{nameExact};
+    </select>
+    <select id="selectGoodsByVagueName" parameterType="string" resultMap="GoodsResultMap">
+        select * from goods_data where name=#{vagueName};
+    </select>
+    <!--查找最新商品-->
+    <select id="findNewestGoods" parameterType="_int" resultMap="GoodsResultMap">
+        select * from goods_data order by create_time desc limit #{count};
+    </select>
+    <!--查找最热商品-->
+    <select id="findHotGoods" parameterType="_int" resultMap="GoodsResultMap">
+        select * from goods_data order by sell_amount desc limit #{count};
+    </select>
+</mapper>
