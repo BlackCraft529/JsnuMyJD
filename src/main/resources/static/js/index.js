@@ -6,6 +6,7 @@
         'jd.login',
         'jd.register',
         'jd.userinfo',
+        'jd.search',
     ]);
     app.config(['$routeProvider',function($routeProvider) {
         $routeProvider.otherwise({redirectTo:'/home'});
