@@ -8,7 +8,7 @@
             controller: 'userinfoCtrl'
         });
         $qProvider.errorOnUnhandledRejections(false);
-    }]).controller("userinfoCtrl",['$scope','$http',function ($scope,$http) {
+    }]).controller("userinfoCtrl",['$scope','$http','$window','$location',function ($scope,$http,$location,$window) {
         $scope.user={
             uuid:'',
             password:'',
@@ -22,6 +22,7 @@
             retailer: '',
             status: false,
             cartList: "0",
+            search_key: "",
         };
         $scope.tempUser={
             password1:'',
@@ -347,6 +348,10 @@
                 return "img-userinfo/1.png";
             return $scope.user.avatar;
         }
+        //搜索
+        $scope.iWantIt=function () {
+            $location.path("/search").search({'search_key':$scope.user.search_key})
+        };
         //
     }]);
 })(angular)

@@ -40,8 +40,8 @@
     <delete id="deleteUserByUuid" parameterType="string">
         delete from user_data where uuid=#{userId};
     </delete>
-    <update id="editUserInfoByUuid" parameterMap="UserParameterMap">
-        update user_data set password=#{password},name=#{name},phone=#{phone},email=#{email},avatar=#{avatar},
+    <update id="editUserInfoByPojo" parameterMap="UserParameterMap">
+        update user_data set password=#{password},`name`=#{name},phone=#{phone},email=#{email},avatar=#{avatar},
             last_login_time=#{lastLoginTime},retailer=#{retailer},address=#{address} where uuid=#{uuid};
     </update>
     <select id="selectUserByEmail" parameterType="string" resultMap="UserResultMap">
