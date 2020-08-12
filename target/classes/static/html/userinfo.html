@@ -13,7 +13,7 @@
         </div>
         <div class="search">
             <input type="text" class="search_box">
-            <span class="search_it">搜索</span>
+            <span class="search_it" >搜索</span></a>
         </div>
         <div class="cart" ng-click="">
             <span class="glyphicon glyphicon-shopping-cart cart_ico"></span>
@@ -74,60 +74,62 @@
                         <tr>
                             <td class="hint">用户名：</td>
                             <td class="inputbox">
-                                <input type="text" ng-disabled="!editInfo" ng-model="tempUser.name">
+                                <input type="text" ng-disabled="!editInfo" ng-model="tempUser.name" placeholder="用户名，可以为空">
                             </td>
                             <td class="hint">手机号：</td>
                             <td class="inputbox">
-                                <input type="text" ng-disabled="!editInfo"  ng-model="tempUser.phone">
+                                <input type="text" ng-disabled="!editInfo"  ng-model="tempUser.phone" placeholder="手机号，不可为空">
                             </td>
                         </tr>
                         <tr>
                             <td class="hint">密码：</td>
-                            <td class="inputbox"><input type="password" ng-disabled="!editInfo"  ng-model="tempUser.password1"></td>
+                            <td class="inputbox"><input type="password" ng-disabled="!editInfo"  ng-model="tempUser.password1" placeholder="密码，不填则默认不修改"></td>
                             <td class="hint">邮箱：</td>
-                            <td class="inputbox"><input type="text" ng-disabled="!editInfo"  ng-model="tempUser.email"></td>
+                            <td class="inputbox"><input type="text" ng-disabled="!editInfo"  ng-model="tempUser.email"  placeholder="邮箱，不可为空"></td>
                         </tr>
                         <tr>
                             <td class="hint">确认密码：</td>
-                            <td class="inputbox"><input type="password" ng-disabled="!editInfo"  ng-model="tempUser.password2"></td>
+                            <td class="inputbox"><input type="password" ng-disabled="!editInfo"  ng-model="tempUser.password2"  placeholder="二次密码，不填则默认不修改"></td>
                         </tr>
                     </table>
                     <table>
                         <tr>
                             <td class="hint" >收货地址：</td>
-                            <td class="inputbox"><input type="text" class="lginput" ng-disabled="!editInfo"  ng-model="tempUser.address"></td>
+                            <td class="inputbox"><input type="text" class="lginput" ng-disabled="!editInfo"  ng-model="tempUser.address"  placeholder="收货地址，可以为空"></td>
                         </tr>
                         <tr>
                             <td class="hint">头像外链：</td>
-                            <td class="inputbox"><input type="text"  class="lginput" ng-disabled="!editInfo"  ng-model="tempUser.avatar"></td>
+                            <td class="inputbox"><input type="text"  class="lginput" ng-disabled="!editInfo"  ng-model="tempUser.avatar"  placeholder="头像连接，可以为空"></td>
                         </tr>
                     </table>
                 </div>
             </div>
             <div class="release"ng-if="ifRetailer()">
                 <div class="title">发布商品
-                    <span class="glyphicon glyphicon-upload release_goods" ng-click="releaseGoods()">发布</span></div>
+                    <span class="glyphicon glyphicon-upload release_goods" ng-click="releaseGoods()">发布商品</span>
+                    <span class="glyphicon glyphicon-trash release_goods" ng-click="clearGoodsInfo()">清空信息</span>
+                </div>
                 <div class="main">
                     <table class="table1">
                         <tr>
                             <td class="msg">商品名：</td>
-                            <td><input type="text"></td>
+                            <td><input type="text" placeholder="商品名称，不可为空"></td>
                             <td class="msg">商品价格：</td>
-                            <td><input type="text"></td>
+                            <td><input type="text" placeholder="商品价格，不可为空"></td>
                             <td class="msg">商品分类：</td>
-                            <td><input type="text"></td>
+                            <td><input type="text" placeholder="商品分类，不可为空"></td>
                             <td class="msg">商品数量：</td>
-                            <td><input type="text"></td>
+                            <td><input type="text" placeholder="商品数量，不可为空"></td>
                         </tr>
                     </table>
                     <table class="table2">
                         <tr>
                             <td class="msg">商品图片链接：</td>
-                            <td><input type="text"></td>
+                            <td><input type="text" placeholder="商品图片链接，不可为空"></td>
                         </tr>
                         <tr>
                             <td class="msg">商品描述：</td>
-                            <td><textarea ></textarea></td>
+                            <td><textarea  placeholder="商品描述，可以为空"></textarea></td>
                         </tr>
                     </table>
                 </div>
