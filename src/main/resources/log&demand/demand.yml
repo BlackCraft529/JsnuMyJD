@@ -30,28 +30,34 @@
     - params: uuid
     - msg: 获取用户购物车列表
     - return: "id" "Goods_id" "goods_name" "num" "price"  id:用户ID goods_name:商品名 num:加入数量 price:单品价格 Goods_id:商品ID
+    - Complete: ShopCartController("/getCartList");
 
   /release:
     - params: uuid name price desc left_amount cate image
     - msg: 发布商品
     - return: true/fasle 成功为true
+    - Complete: GoodsController("/release");
 
   /editInformation:
     - params: uuid name phone password email address avatar
     - msg: 修改用户信息（不变也改，节省判断） 如果name为空，则使用uuid作为用户名;密码为空则不修改;
     - return: true/false 成功为true
+    - Complete: UserController("/editInformation");
 
   /enrollCart:
     - params: uuid goods_id
     - msg: 加入购物车
     - return: ture/false 成功为true
+    - Complete: ShopCartController("/enrollCart");
 
   /getOrder:
     - params: uuid
     - msg: 获取用户的订单
     - return: order 返回的顺序由新到旧，如果数据超过10条，则只返回最新10条
+    - Complete: OrderController("/getOrder");
 
   /getSomething:
     - params: search_key
     - msg: 获取用户以关键字搜索的商品
     - return: 相关的json,额外加一个属性"result":true/false 用于判断是否有类似商品
+    - Complete: GoodsController("/getSomething");

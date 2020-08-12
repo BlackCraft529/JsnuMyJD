@@ -3,7 +3,6 @@ package com.jsnu.jd.jsnujd.mapper;
 import com.jsnu.jd.jsnujd.pojo.Category;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
 import java.util.Map;
 
 /**

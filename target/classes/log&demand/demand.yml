@@ -50,3 +50,8 @@
     - params: uuid
     - msg: 获取用户的订单
     - return: order 返回的顺序由新到旧，如果数据超过10条，则只返回最新10条
+
+  /getSomething:
+    - params: search_key
+    - msg: 获取用户以关键字搜索的商品
+    - return: 相关的json,额外加一个属性"result":true/false 用于判断是否有类似商品

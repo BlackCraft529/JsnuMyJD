@@ -3,17 +3,14 @@ package com.jsnu.jd.jsnujd.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jsnu.jd.jsnujd.pojo.Goods;
 import com.jsnu.jd.jsnujd.service.GoodsService;
-import com.jsnu.jd.jsnujd.service.UserService;
+import com.jsnu.jd.jsnujd.vo.VagueGoods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.UUID;
 
 /**
  * @author 魏荣轩
@@ -50,5 +47,26 @@ public class GoodsController {
         //String name,String desc,double price,double sellPrice,String cate,int leftAmount,String image,String publisher
         return jsonObjectMapper.valueToTree(
                 goodsService.addGoods(goodsName, desc, price, price, cate, leftAmount, image, userId) != 0).toString();
+    }
+
+    /**
+     * 模糊关键字搜索商品信息
+     * @param jsonData json数据
+     * @return 商品列表
+     * @throws JsonProcessingException json转换错误
+     */
+    @RequestMapping("/getSomething")
+    @ResponseBody
+    public String getSomething(@RequestBody String jsonData) throws JsonProcessingException {
+        JsonNode node = jsonObjectMapper.readTree(jsonData);
+        String vagueName = node.get("search_key").toString().replaceAll("\"","");
+        VagueGoods vagueGoods = new VagueGoods();
+        if(goodsService.selectGoodsByVagueName(vagueName)==null){
+            vagueGoods.setResult(false);
+            return jsonObjectMapper.valueToTree(vagueGoods).toString();
+        }
+        vagueGoods.setGoodsList(goodsService.selectGoodsByVagueName(vagueName));
+        vagueGoods.setResult(true);
+        return jsonObjectMapper.valueToTree(vagueGoods).toString();
     }
 }

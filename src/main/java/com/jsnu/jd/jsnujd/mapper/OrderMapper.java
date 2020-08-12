@@ -3,7 +3,6 @@ package com.jsnu.jd.jsnujd.mapper;
 import com.jsnu.jd.jsnujd.pojo.Order;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
 import java.util.List;
 import java.util.Map;
 
@@ -63,4 +62,11 @@ public interface OrderMapper {
      * @param orderId 订单ID
      */
     void deleteOrderByOrderId(String orderId);
+
+    /**
+     * 根据用户ID查找最新的10条订单数据
+     * @param userId 用户ID
+     * @return 订单数据
+     */
+    List<Order> getNewestOrderListByUserId(String userId);
 }

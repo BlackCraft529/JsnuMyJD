@@ -7,8 +7,6 @@ import com.jsnu.jd.jsnujd.service.ShopCartService;
 import com.jsnu.jd.jsnujd.vo.ShopCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
