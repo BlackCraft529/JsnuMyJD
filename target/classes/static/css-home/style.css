@@ -1,0 +1,275 @@
+
+/***logn一行设置***/
+
+.homePage .home .input_seacrch{
+	margin-top:30px;
+	width:500px;
+	height:40px;
+	background-color:red;
+	border:none;
+	outline:none;
+}
+
+.homePage .home .input_seacrch .txtSearch{
+	border:hidden;
+	padding-left:10px;
+	margin:1px 5px 1px 1px;
+	width:450px;
+	height:38px;
+}
+
+.homePage .home .input_seacrch span{
+	padding:11px 5px 2px 10px;
+	color:white;
+
+}
+
+/*********logn一行的购物车*******/
+.homePage .home div.gouwuche{
+	border:1px solid #EEEEEE;
+	margin-top:35px;
+	width:125px;
+	height:32px;
+	line-height:10px;
+	padding:8px 0px 20px 35px;
+	background:#f7f7f7 url(Images/iconlist_2.png) no-repeat -116px -85px;
+
+}
+
+
+.homePage .home div.gouwuche b{
+	border:5px solid transparent;
+	border-top-color:#CCC;
+	/**相对定位*/
+	position:relative;
+	top:11px;
+	left:3px;
+}
+
+.homePage .home div.gouwuche:hover{
+	background:#fff url(Images/iconlist_2.png) no-repeat -116px -116px;
+	cursor:pointer;
+}
+
+/*热门搜索*/
+.homePage .home div.hot_words{
+	margin-top:3px;
+	height:16px;
+	overflow:hidden;
+}
+.homePage .home div.hot_words span{
+	font-size:5px;
+	color:red;
+}
+
+.homePage .home div.hot_words a{
+	font-size:5px;
+	color:#999;
+	margin-right:5px;
+}
+.homePage .home div.hot_words a:hover{
+	color:red;
+
+}
+
+
+
+/**秒杀，优惠券，PLUS一栏的设置*/
+.homePage .home ul li{
+	padding-right:20px;
+	font-size:15px;
+	margin-top:12px;
+	list-style:none;
+}
+.homePage .home ul li span{
+	float:left;
+	padding-right:22px;
+	color:black;
+}
+
+.homePage .home .miaosha span{
+	color:red;
+	font-weight:bold;
+}
+
+.homePage .home .youhuiquan span{
+	color:red;
+	font-weight:bold;
+}
+
+.homePage .home .plus span:hover{
+	color:red;
+}
+
+
+/**中间banner广告的部分*/
+.homePage .banner div.words_list ul{
+	border:1px solid #ddd;
+	padding-left:15px;
+	padding-bottom:5px;
+}
+.homePage .banner div.words_list ul li{
+	list-style:none;
+}
+
+.homePage .banner div.words_list ul li a:hover{
+	color:red;
+}
+
+.homePage .banner .words_list li a{
+	color:black;
+	text-decoration:none;
+}
+
+
+.homePage .banner .middle_img a img{
+	padding-left:0px;
+	width:104.5%;
+}
+
+
+/**中右侧图片*/
+.homePage .banner .yili a img{
+	width:160px;
+	height:128.5px;
+	padding:0px 0px 5px 5px;
+
+}
+
+/****右侧一栏*****/
+
+.homePage .banner .rt_first ul{
+	padding-left:0px;
+	list-style:none;
+}
+
+
+.homePage .banner .rt_first ul{
+	height:380px;
+}
+
+.homePage .banner .rt_first ul li.small_logndog img{
+	width:25%;
+	height:30%;
+	margin:10px 0px 5px 15px;
+
+}
+
+.homePage .banner .rt_first ul li.small_logndog ul{
+	float:right;
+	margin:15px 20px 0px 5px;
+	width:75px;
+	height:35px;
+	font-size:10px;
+}
+
+.homePage .banner .rt_first ul li.small_logndog ul li span:hover{
+	color:red;
+}
+
+.homePage .banner .rt_first ul li.two_button{
+	width:145px;
+	margin-left:10px;
+	padding:3px;
+}
+
+.homePage .banner .rt_first ul li.two_button button{
+	background-color:red;
+	color:white;
+
+}
+
+
+.homePage .banner .rt_first ul li.two_button button.bt_two{
+	background-color:black;
+	color:yellow;
+}
+
+.homePage .banner .rt_first ul li.two_button button:hover{
+	background-color:#900000;
+}
+
+
+.homePage .banner .rt_first ul li.space_line{
+	width:150px;
+	height:1px;
+	margin-top:10px;
+	margin-left:6px;
+	background-color: #ddd;
+}
+
+.homePage .banner .rt_first ul li.jd_news ul{
+	height:22px;
+}
+
+.homePage .banner .rt_first ul li.jd_news ul li.jd_newsone span{
+	font-size:13px;
+	font-weight:bold;
+	margin:15px 0px 0px 10px;
+}
+
+.homePage .banner .rt_first ul li.jd_news ul li.jd_newstwo span{
+	margin-top:-15px;
+	margin-right:10px;
+	float:right;
+	font-size:10px;
+	color:rgb(148,148,148);
+}
+
+.homePage .banner .rt_first ul li.jd_news ul li.jd_newstwo span:hover{
+	color:red;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul{
+	height:80px;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul li b{
+	font-size:10px;
+	border:1px solid red;
+	color:red;
+	background-color:rgb(251,238,232);
+	margin-left:5px;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul li span{
+	margin-left:9px;
+	font-size:12px;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul li span:hover{
+	color:red;
+}
+
+
+
+.homePage .banner .rt_first ul li.words_line ul{
+
+	height:50px;
+}
+
+.homePage .banner .rt_first ul li.words_line ul li{
+	margin:5px;
+	float:left;
+	padding:0px 5px 0px 5px;
+	width:43px;
+	height:45px;
+}
+
+
+
+.homePage .banner .rt_first ul li.words_line ul li span a img{
+	width:25px;
+	height:25px;
+
+}
+
+.homePage .banner .rt_first ul li.words_line ul li span h5{
+	margin:1px 4px 0px 4px;
+	width:30px;
+	font-size:2px;
+}
+
+.homePage .banner .rt_first ul li.words_line ul li:hover{
+	color:red;
+}
