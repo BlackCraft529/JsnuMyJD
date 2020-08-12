@@ -185,6 +185,7 @@
     height: 240px;
     background-color: rgb(226,35,26);
     background-image: url(/img-userinfo/jdcom.png);
+    background-repeat: no-repeat;
     padding-top: 10px;
 }
 .userinfo .info_main .ico{

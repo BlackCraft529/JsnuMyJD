@@ -31,6 +31,14 @@
             avatar:'',
             address: '',
         };
+        $scope.goodsINfo={
+            name:'',
+            price:'',
+            desc:'',
+            Sell_amount:'',
+            cate:'',
+            image:'',
+        };
         $scope.editInfo=false;
         if (sessionStorage.getItem("uuid")!==null){
             $scope.user.uuid=sessionStorage.getItem("uuid");
@@ -183,7 +191,7 @@
                 }
             }),function errorCallBack(err) {
                 alert("error!\n"+"error message:"+err);
-            }
+            };
         };
         //取消
         $scope.cancelEdit=function () {
@@ -209,6 +217,7 @@
         //发布商品
         $scope.releaseGoods=function () {
             //商品名
+            // if($scope.goodsINfo)
             //商品价格
             //商品分类
             //商品数量
@@ -218,7 +227,26 @@
         };
         //清空商品内容
         $scope.clearGoodsInfo=function () {
+            $scope.goodsINfo.name='';
+            $scope.goodsINfo.price='';
+            $scope.goodsINfo.desc='';
+            $scope.goodsINfo.Sell_amount='';
+            $scope.goodsINfo.cate='';
+            $scope.goodsINfo.image='';
 
+            $http({
+                url: '/getCartList',
+                method: 'post',
+                data: {
+                    "uuid" : $scope.user.uuid,
+                },
+                headers :{'Content-Type': 'application/json;charset=UTF-8'},
+            }).then(function successCallBack(data) {
+               console.log(data.data);
+                console.log(12131);
+            }),function errorCallBack(err) {
+                alert("error!\n"+"error message:"+err);
+            }
         };
         //
     }]);

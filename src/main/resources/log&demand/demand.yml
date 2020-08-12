@@ -28,11 +28,11 @@
 2020.8.12:
   /getCartList:
     - params: uuid
-    - msg: 获取用户还没结算的购物车列表
+    - msg: 获取用户购物车列表
     - return: "id" "Goods_id" "goods_name" "num" "price"  id:用户ID goods_name:商品名 num:加入数量 price:单品价格 Goods_id:商品ID
 
   /release:
-    - params: name price desc Sell_amount cate image
+    - params: uuid name price desc left_amount cate image
     - msg: 发布商品
     - return: true/fasle 成功为true
 
