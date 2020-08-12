@@ -5,10 +5,8 @@ import com.jsnu.jd.jsnujd.pojo.Goods;
 import com.jsnu.jd.jsnujd.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
+
+import java.util.*;
 
 /**
  * @author 魏荣轩
@@ -49,6 +47,8 @@ public class GoodsServiceImpl implements GoodsService {
         goods.setCate(cate);
         goods.setLeftAmount(leftAmount);
         goods.setImage(image);
+        goods.setSellAmount(0);
+        goods.setCreateTime(new Date());
         return goodsMapper.addGoods(goods);
     }
 
