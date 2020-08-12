@@ -108,7 +108,7 @@ public class UserController {
     @ResponseBody
     public String getEmail(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
-        String mail = node.get("mail").toString().replaceAll("\"","");
+        String mail = node.get("email").toString().replaceAll("\"","");
         if(userService.selectUserByEmail(mail)!=null){
             return jsonObjectMapper.valueToTree(true).toString();
         }else {
