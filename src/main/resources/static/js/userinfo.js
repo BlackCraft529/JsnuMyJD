@@ -8,7 +8,7 @@
             controller: 'userinfoCtrl'
         });
         $qProvider.errorOnUnhandledRejections(false);
-    }]).controller("userinfoCtrl",['$scope','$http',function ($scope,$http) {
+    }]).controller("userinfoCtrl",['$scope','$http','$window','$location',function ($scope,$http,$location,$window) {
         $scope.user={
             uuid:'',
             password:'',
@@ -22,6 +22,7 @@
             retailer: '',
             status: false,
             cartList: "0",
+            search_key: "",
         };
         $scope.tempUser={
             password1:'',
@@ -39,6 +40,9 @@
             left_amount:'',
             cate:'',
             image:'',
+        };
+        $scope.userOrder={
+
         };
         $scope.editInfo=false;
         //装填个人信息
@@ -63,6 +67,20 @@
             if($scope.user.avatar!=="未设置")
                 $scope.tempUser.avatar=$scope.user.avatar;
             //购物车数量获取
+            $http({
+                url: '/getCartList',
+                method: 'post',
+                data: {
+                    "uuid" : $scope.user.uuid,
+                },
+                headers :{'Content-Type': 'application/json;charset=UTF-8'},
+            }).then(function successCallBack(data) {
+                console.log(data.data);
+                $scope.user.cartList="30";
+            }),function errorCallBack(err) {
+                alert("error!\n" + "error message:" + err);
+            };
+            //用户订单获取
             $http({
                 url: '/getCartList',
                 method: 'post',
@@ -256,7 +274,7 @@
                         return;
                     }
                 }else if($scope.goodsInfo.price.charAt(i)<'0'||$scope.goodsInfo.price.charAt(i)>'9'){
-                    alert("商品价格请勿输入数字以及小数点之外的内容！")
+                    alert("商品价格请勿输入数字以及小数点之外的内容！");
                     return;
                 }
             }
@@ -300,6 +318,12 @@
             }).then(function successCallBack(data) {
                 if(data.data){
                     alert("恭喜您，发布成功！");
+                    $scope.goodsInfo.name='';
+                    $scope.goodsInfo.price='';
+                    $scope.goodsInfo.desc='';
+                    $scope.goodsInfo.Sell_amount='';
+                    $scope.goodsInfo.cate='';
+                    $scope.goodsInfo.image='';
                 }else {
                     alert("未知错误，发布失败，请重试");
                 }
@@ -324,6 +348,10 @@
                 return "img-userinfo/1.png";
             return $scope.user.avatar;
         }
+        //搜索
+        $scope.iWantIt=function () {
+            $location.path("/search").search({'search_key':$scope.user.search_key})
+        };
         //
     }]);
 })(angular)

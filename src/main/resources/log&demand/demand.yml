@@ -46,3 +46,7 @@
     - msg: 加入购物车
     - return: ture/false 成功为true
 
+  /getOrder:
+    - params: uuid
+    - msg: 获取用户的订单
+    - return: order类
