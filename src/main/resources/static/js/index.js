@@ -13,16 +13,15 @@
     app.run(['$rootScope', '$location', function($rootScope, $location) {
         /* 监听路由的状态变化 */
         $rootScope.$on('$routeChangeStart', function(evt, next, current){
-            console.log('route begin change');//开始变化
+            // console.log('route begin change');//开始变化
         });
         $rootScope.$on('$routeChangeSuccess', function(evt, current, previous) {
-            console.log('route have already changed ：'+$location.path());//变化结束
+            // console.log('route have already changed ：'+$location.path());//变化结束
             //如果登录过后访问登录/注册
             if(($location.path()==='/login'||$location.path()==="/register")&&sessionStorage.getItem("uuid")!=null){
                 $location.path("/home");
                 return;
             }
-            console.log(sessionStorage.getItem("uuid"));
             if($location.path()==="/userinfo" && sessionStorage.getItem("uuid")===null){
                 $location.path("/login");
                 return;
@@ -38,6 +37,8 @@
             name:'',
             phone:'',
             avatar:'',
+            address: '',
+            email: '',
             lastLoginTime:'',
             registerTime:'',
             retailer: '',
@@ -74,6 +75,8 @@
             $scope.user.name=sessionStorage.getItem("name");
             $scope.user.phone=sessionStorage.getItem("phone");
             $scope.user.avatar=sessionStorage.getItem("avatar");
+            $scope.user.address=sessionStorage.getItem("address");
+            $scope.user.email=sessionStorage.getItem("email");
             $scope.user.lastLoginTime=sessionStorage.getItem("lastLoginTime");
             $scope.user.registerTime=sessionStorage.getItem("registerTime");
             $scope.user.retailer=sessionStorage.getItem("retailer");
@@ -84,6 +87,8 @@
             $scope.user.name='';
             $scope.user.phone='';
             $scope.user.avatar='';
+            $scope.user.address='';
+            $scope.user.email='';
             $scope.user.lastLoginTime='';
             $scope.user.registerTime='';
             $scope.user.retailer='';

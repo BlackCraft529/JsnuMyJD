@@ -21,4 +21,6 @@
     -return: true/false 存在为true
     - Complete: UtilsController("/getMail");
 
-2020.8.11
+2020.8.11:
+  fix:
+    - 登录/注册之后返回的user没有mail属性
