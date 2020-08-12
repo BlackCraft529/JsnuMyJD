@@ -1,0 +1,155 @@
+.searchPage #select{
+	width:1230px;
+	height:800px;
+	border:1px solid red;
+	margin:20px auto;
+}
+.searchPage #top img{
+	margin:20px;
+}
+
+.searchPage #top div.search{
+	width:510px;
+	height:35px;
+	padding:2px;
+	background-color:red;
+	margin:-80px 0px 0px 400px; 
+}
+
+.searchPage #top div.search input{
+	/*宽度 高度 内边距 0px*/
+	width:410px;
+	height:30px;
+	padding:0px;
+	/*左内边距 文本颜色*/
+	padding-left:10px;
+	color:#666;
+}
+.searchPage #top div.search button{
+	/*去边框 改背景 高度 宽度 文字：大小 颜色 加粗*/
+	border:0px;
+	background-color:red;
+	height:28px;
+	width:75px;
+	font-size:16px;
+	color:#fff;
+}
+
+.searchPage #top div.my_car img{
+	border:1px solid #E0E0E0;
+	margin-top:-50px;
+	margin-left:950px;
+	
+}
+
+
+.searchPage #top div.nav{
+	border:2px solid white;
+	border-bottom:2px solid red;
+	height:55px;
+}
+.searchPage #top div.nav p{
+	width:150px;
+	background-color:red;
+	color:white;
+	font-weight:bold;
+	margin-bottom:-26px;
+	margin-left:40px;
+	padding:10px;
+	padding-left:100px;
+
+}
+.searchPage #top div.nav li.l1{
+	padding-left:300px;
+}
+.searchPage #top div.nav li{
+	float:left;
+	padding-left:50px;
+	margin-top:-20px;
+}
+
+.searchPage #top div.nav li a{
+	color:black;
+	text-decoration:none;
+	font-weight:bold;
+}
+.searchPage #top div.nav li a:hover{
+	color:red;
+}
+
+
+.searchPage #main img{
+	margin:20px 0px 10px 80px;
+}
+.searchPage #main li{
+	float:left;
+	margin-left:30px;
+}
+.searchPage #main li a{
+	float:left;
+	border:1px solid white;
+	width:250px;
+	height:440px;
+	text-decoration:none;
+}
+.searchPage #main a span{
+	color:red;
+	font-size:23px;
+	margin-left:20px;
+}
+.searchPage #main a div{
+	color:#888888;
+	font-size:13px;	
+	margin-bottom:20px;
+	margin-left:20px;
+
+}
+
+.searchPage #main a div:hover{
+	color:red;
+
+}
+.searchPage #main a b{
+	color:#888888;
+	font-size:13px;	
+	margin-left:-120px;
+}
+
+.searchPage #main a button{
+	color:red;
+	border:1px solid red;
+	background-color:white;
+	font-size:13px;
+	margin:10px 0px 10px 120px; 
+}
+
+
+.searchPage #main a b img{
+	width:25px;
+	height:20px;
+	margin-top:2px;
+	margin-left:22px;
+
+}
+.searchPage #main a s img{
+	width:140px;
+	height:23px;
+	margin-top:30px;
+	margin-left:-15px;
+
+}
+.searchPage #main li img{
+	float:left;
+	width:200px;
+	height:220px;
+	margin-left:25px;
+}
+.searchPage #main li p img{
+	margin:0px 0px 0px 10px;;
+	height:40px;
+	width:140px;
+}
+
+.searchPage #main a:hover{
+	border-color:#888888;
+}

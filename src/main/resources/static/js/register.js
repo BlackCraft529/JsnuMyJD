@@ -14,7 +14,7 @@
             password1: '',
             password2: '',
             phone: '',
-            mail: '',
+            email: '',
             name_status: false,
             password_status: false,
             phone_status: false,
