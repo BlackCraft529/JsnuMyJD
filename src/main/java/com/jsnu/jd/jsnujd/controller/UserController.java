@@ -55,7 +55,7 @@ public class UserController {
         String name = node.get("name").toString().replaceAll("\"","");
         String password = node.get("password1").toString().replaceAll("\"","");
         String phone = node.get("phone").toString().replaceAll("\"","");
-        String email = node.get("mail").toString().replaceAll("\"","");
+        String email = node.get("email").toString().replaceAll("\"","");
         User user = new User();
         if(userService.addUser(password,name,phone,email,"未设置","未设置",false)>0){
             user=userService.selectUserByPhone(phone);

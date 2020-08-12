@@ -1,1 +1,160 @@
-<h1>个人信息</h1>
+<div class="userinfo">
+    <!-- title-->
+    <div class="title container">
+        <div class=".col-md-offset-5 logo_ico">
+            <a href="#!/home"><h3><img src="public/logo.png"> 我的京东</h3></a>
+        </div>
+        <div class="middle">
+            <ul>
+                <li><a href="">首页</a></li>
+                <li><a href="">账户设置</a></li>
+                <li><a href="">信息</a></li>
+            </ul>
+        </div>
+        <div class="search">
+            <input type="text" class="search_box">
+            <span class="search_it">搜索</span>
+        </div>
+        <div class="cart" ng-click="">
+            <span class="glyphicon glyphicon-shopping-cart cart_ico"></span>
+            <span>我的购物车</span>
+            <span class="total">1</span>
+        </div>
+    </div>
+    <!-- body-->
+    <div class=" info_main ">
+        <div class="container">
+            <div>
+                <div class="user_ico">
+                    <div > <img src="img-userinfo/1.png" alt="" class="img-circle ico"></div>
+                    <div class="user_name" ng-bind="user.name"></div>
+                    <div class="ico_bottom">
+                        <span class="advip">开通plus会员尊享</span>
+                        <span class="getvip">立即开通</span>
+                    </div>
+                </div>
+                <div class="wallet">
+                    <div class="title">我的钱包</div>
+                    <div class="wallet_data">
+                        <table>
+                            <tr class="data">
+                                <td><a href="">1</a></td>
+                                <td><a href="">1240</a></td>
+                                <td><a href="">0.00</a></td>
+                                <td><a href="">0.00</a></td>
+                                <td><a href="">0.00</a></td>
+                            </tr>
+                            <tr class="guidence">
+                                <td>优惠券</td>
+                                <td>京豆</td>
+                                <td>余额</td>
+                                <td>白条本月待还</td>
+                                <td>小金库昨日收益</td>
+                            </tr>
+                            <tr class="function">
+                                <td><a href="">领券</a></td>
+                                <td><a href="">赚京豆</a>|<a href="">花京豆</a></td>
+                                <td><a href="">充值</a></td>
+                                <td><a href="">查看</a></td>
+                                <td><a href="">转入</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="editinfo">
+                <div class="title">
+                    个人信息
+                    <span class="glyphicon glyphicon-pencil change" ng-click='editIt()' ng-show="!editInfo">点击修改</span>
+                    <span class="glyphicon glyphicon-cog change" ng-click="change()" ng-show="editInfo">点击保存</span>
+                    <span class="glyphicon glyphicon-repeat change" ng-click="cancelEdit()" ng-show="editInfo">取消修改</span>
+                </div>
+                <div class="main">
+                    <table>
+                        <tr>
+                            <td class="hint">用户名：</td>
+                            <td class="inputbox">
+                                <input type="text" ng-disabled="!editInfo" ng-model="tempUser.name">
+                            </td>
+                            <td class="hint">手机号：</td>
+                            <td class="inputbox">
+                                <input type="text" ng-disabled="!editInfo"  ng-model="tempUser.phone">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="hint">密码：</td>
+                            <td class="inputbox"><input type="password" ng-disabled="!editInfo"  ng-model="tempUser.password1"></td>
+                            <td class="hint">邮箱：</td>
+                            <td class="inputbox"><input type="text" ng-disabled="!editInfo"  ng-model="tempUser.email"></td>
+                        </tr>
+                        <tr>
+                            <td class="hint">确认密码：</td>
+                            <td class="inputbox"><input type="password" ng-disabled="!editInfo"  ng-model="tempUser.password2"></td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td class="hint" >收货地址：</td>
+                            <td class="inputbox"><input type="text" class="lginput" ng-disabled="!editInfo"  ng-model="tempUser.address"></td>
+                        </tr>
+                        <tr>
+                            <td class="hint">头像外链：</td>
+                            <td class="inputbox"><input type="text"  class="lginput" ng-disabled="!editInfo"  ng-model="tempUser.avatar"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="release"ng-if="ifRetailer()">
+                <div class="title">发布商品
+                    <span class="glyphicon glyphicon-upload release_goods" ng-click="releaseGoods()">发布</span></div>
+                <div class="main">
+                    <table class="table1">
+                        <tr>
+                            <td class="msg">商品名：</td>
+                            <td><input type="text"></td>
+                            <td class="msg">商品价格：</td>
+                            <td><input type="text"></td>
+                            <td class="msg">商品分类：</td>
+                            <td><input type="text"></td>
+                            <td class="msg">商品数量：</td>
+                            <td><input type="text"></td>
+                        </tr>
+                    </table>
+                    <table class="table2">
+                        <tr>
+                            <td class="msg">商品图片链接：</td>
+                            <td><input type="text"></td>
+                        </tr>
+                        <tr>
+                            <td class="msg">商品描述：</td>
+                            <td><textarea ></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="myorder">
+                <div class="title">我的订单</div>
+                <div class="function">
+                    <span><a href=""><img src="img-userinfo/order1.png"></a></span>
+                    <span><a href=""><img src="img-userinfo/order2.png"></a></span>
+                    <span><a href=""><img src="img-userinfo/order3.png"></a></span>
+                    <span><a href=""><img src="img-userinfo/order4.png"></a></span>
+                    <span><a href=""><img src="img-userinfo/order5.png"></a></span>
+                </div>
+                <div class="data">
+                    <div class="goods_ico">
+                        <a href=""><img src="img-userinfo/1.png"></a>
+                    </div>
+                    <div class="good_name">
+                        剃秃了
+                    </div>
+                    <div class="more">
+                        <span><a href="">查看详情</a></span>
+                        <b></b>
+                        <span><a href="">查看发票</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

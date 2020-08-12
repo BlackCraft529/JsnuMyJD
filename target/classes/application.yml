@@ -21,3 +21,5 @@ spring:
 mybatis:
   type-aliases-package: com.jsnu.jd.jsnujd.pojo
   mapper-locations: classpath:mybatis/mapper/*.xml
+server:
+  port: 8080
