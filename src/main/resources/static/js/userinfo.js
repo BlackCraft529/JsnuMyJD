@@ -8,7 +8,7 @@
             controller: 'userinfoCtrl'
         });
         $qProvider.errorOnUnhandledRejections(false);
-    }]).controller("userinfoCtrl",['$scope','$http','$window','$location',function ($scope,$http,$location,$window) {
+    }]).controller("userinfoCtrl",['$scope','$http','$location',function ($scope,$http,$location) {
         $scope.user={
             uuid:'',
             password:'',
@@ -75,22 +75,24 @@
                 },
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
-                console.log(data.data);
                 $scope.user.cartList="30";
+                console.log("购物车:");
+                console.log(data);
+
             }),function errorCallBack(err) {
                 alert("error!\n" + "error message:" + err);
             };
             //用户订单获取
             $http({
-                url: '/getCartList',
+                url: '/getOrder',
                 method: 'post',
                 data: {
                     "uuid" : $scope.user.uuid,
                 },
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
-                console.log(data.data);
-                $scope.user.cartList="30";
+                console.log("订单");
+                console.log(data);
             }),function errorCallBack(err) {
                 alert("error!\n" + "error message:" + err);
             };
@@ -352,8 +354,7 @@
         $scope.iWantIt=function () {
             if($scope.user.search_key==="")
                 return;
-            $location.path("/search");
-            //.search({'search_key':$scope.user.search_key})
+            $location.path('/search').search({'search_key':$scope.user.search_key});
         };
         //
     }]);

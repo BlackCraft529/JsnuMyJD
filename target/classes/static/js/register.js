@@ -118,13 +118,6 @@
         });
         //手机监听
         $scope.$watch("user.phone",function (now,old) {
-            if(now.length==1){
-                if(now.charAt(0)<'0'||now.charAt(0)>'9')
-                    $scope.user.phone="";
-            }
-            else if(now.charAt(now.length-1)<'0'||now.charAt(now.length-1)>'9'){
-                $scope.user.phone=old;
-            }
             if(now=="" || now.length<11){
                 $scope.info.phone="请输入11位手机号";
                 $scope.info.phone_status=false;
@@ -138,6 +131,14 @@
         $scope.judgePhone=function(){
             if($scope.user.phone.length<11)
                 return;
+            var count=0;
+            for(var i=0;i<$scope.user.phone.length;i++){
+                if($scope.user.phone.charAt(i)<'0'||$scope.user.phone.charAt(i)>'9') {
+                    $scope.info.phone = "手机号中只能含有数字";
+                    $scope.info.phone_status = false;
+                    return;
+                }
+            }
             //发送手机是否存在请求
             $http({
                 url:'/getPhone',//验证表单的接口

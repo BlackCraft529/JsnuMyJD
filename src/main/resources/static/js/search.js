@@ -8,7 +8,8 @@
             controller: 'searchCtrl'
         });
         $qProvider.errorOnUnhandledRejections(false);
-    }]).controller('searchCtrl',['$scope','$http',function ($scope,$http) {
-
+    }]).controller('searchCtrl',['$scope','$http','$routeParams',function ($scope,$http,$routeParams) {
+        $scope.search_key=$routeParams.search_key;
+        console.log($scope.search_key);
     }]);
 })(angular);
