@@ -356,6 +356,10 @@
                 return;
             $location.path('/search').search({'search_key':$scope.user.search_key});
         };
+        //去购物车
+        $scope.toCart=function () {
+            $location.path('/cart');
+        }
         //
     }]);
 })(angular)
