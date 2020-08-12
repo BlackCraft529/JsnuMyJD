@@ -30,6 +30,12 @@ public class GoodsController {
      */
     private ObjectMapper jsonObjectMapper =  new ObjectMapper();
 
+    /**
+     * 发布商品
+     * @param jsonData json数据
+     * @return 是否添加成功
+     * @throws JsonProcessingException 转换错误
+     */
     @RequestMapping("/release")
     @ResponseBody
     public String addNewGoods(@RequestBody String jsonData) throws JsonProcessingException {

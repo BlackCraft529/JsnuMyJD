@@ -116,6 +116,12 @@ public class UserController {
         }
     }
 
+    /**
+     * 修改用户信息
+     * @param jsonData json数据
+     * @return 是否修改
+     * @throws JsonProcessingException 转换错误
+     */
     @RequestMapping("/editInformation")
     @ResponseBody
     public String editInformation(@RequestBody String jsonData) throws JsonProcessingException {
