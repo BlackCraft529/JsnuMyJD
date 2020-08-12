@@ -7,6 +7,7 @@ import com.jsnu.jd.jsnujd.utils.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -291,7 +292,11 @@ public class UserServiceImpl implements UserService {
         User user = userMapper.selectUserByUuid(userId);
         user.setAddress(address);
         user.setName(name==null?userId:name);
-        user.setPassword(MD5Util.getSaltMD5(password));
+        if(Objects.equals(password, "") ||password==null){
+            user.setPassword(user.getPassword());
+        }else {
+            user.setPassword(MD5Util.getSaltMD5(password));
+        }
         user.setPhone(phone);
         user.setAvatar(avatar);
         user.setEmail(email);
