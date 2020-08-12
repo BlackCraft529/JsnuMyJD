@@ -15,7 +15,7 @@
             <input type="text" class="search_box" ng-model="user.search_key">
             <span class="search_it" ng-click="iWantIt()">搜索</span></a>
         </div>
-        <div class="cart" ng-click="">
+        <div class="cart" ng-click="toCart()">
             <span class="glyphicon glyphicon-shopping-cart cart_ico"></span>
             <span>我的购物车</span>
             <span class="total" ng-bind="user.cartList"></span>
