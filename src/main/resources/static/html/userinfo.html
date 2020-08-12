@@ -117,9 +117,15 @@
                             <td class="msg">商品价格：</td>
                             <td><input type="text" placeholder="商品价格，不可为空" ng-model="goodsInfo.price"></td>
                             <td class="msg">商品分类：</td>
-                            <td><input type="text" placeholder="商品分类，不可为空" ng-model="goodsInfo.cate"></td>
+                            <td>
+                                <select ng-model="goodsInfo.cate">
+                                    <option value="日用品">日用品</option>
+                                    <option value="乐器">乐器</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </td>
                             <td class="msg">商品数量：</td>
-                            <td><input type="text" placeholder="商品数量，不可为空" ng-model="goodsInfo.Sell_amount"></td>
+                            <td><input type="text" placeholder="商品数量，不可为空" ng-model="goodsInfo.left_amount"></td>
                         </tr>
                     </table>
                     <table class="table2">

@@ -36,13 +36,13 @@
     - msg: 发布商品
     - return: true/fasle 成功为true
 
-  /editInfomation:
-    - params: uuid name phone password email address Avatar
+  /editInformation:
+    - params: uuid name phone password email address avatar
     - msg: 修改用户信息（不变也改，节省判断） 如果name为空，则使用uuid作为用户名;密码为空则不修改;
     - return: true/false 成功为true
 
   /enrollCart:
-    - params: uuid Goods_id
+    - params: uuid goods_id
     - msg: 加入购物车
     - return: ture/false 成功为true
 

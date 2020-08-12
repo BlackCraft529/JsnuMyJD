@@ -113,23 +113,30 @@
                     <table class="table1">
                         <tr>
                             <td class="msg">商品名：</td>
-                            <td><input type="text" placeholder="商品名称，不可为空" ng-model="goodsINfo.name"></td>
+                            <td><input type="text" placeholder="商品名称，不可为空" ng-model="goodsInfo.name"></td>
                             <td class="msg">商品价格：</td>
-                            <td><input type="text" placeholder="商品价格，不可为空" ng-model="goodsINfo.price"></td>
+                            <td><input type="text" placeholder="商品价格，不可为空" ng-model="goodsInfo.price"></td>
                             <td class="msg">商品分类：</td>
-                            <td><input type="text" placeholder="商品分类，不可为空" ng-model="goodsINfo.cate"></td>
+                            <td>
+<!--                                <input type="text" placeholder="商品分类，不可为空" ng-model="goodsInfo.cate">-->
+                                <select ng-model="goodsInfo.cate">
+                                    <option value="日用品" selected="selected">日用品</option>
+                                    <option value="乐器">乐器</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </td>
                             <td class="msg">商品数量：</td>
-                            <td><input type="text" placeholder="商品数量，不可为空" ng-model="goodsINfo.Sell_amount"></td>
+                            <td><input type="text" placeholder="商品数量，不可为空" ng-model="goodsInfo.Sell_amount"></td>
                         </tr>
                     </table>
                     <table class="table2">
                         <tr>
                             <td class="msg">商品图片链接：</td>
-                            <td><input type="text" placeholder="商品图片链接，不可为空" ng-model="goodsINfo.name"></td>
+                            <td><input type="text" placeholder="商品图片链接，不可为空" ng-model="goodsInfo.image"></td>
                         </tr>
                         <tr>
                             <td class="msg">商品描述：</td>
-                            <td><textarea  placeholder="商品描述，可以为空" ng-model="goodsINfo.name"></textarea></td>
+                            <td><textarea  placeholder="商品描述，可以为空" ng-model="goodsInfo.desc"></textarea></td>
                         </tr>
                     </table>
                 </div>

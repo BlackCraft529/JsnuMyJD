@@ -21,6 +21,7 @@
             registerTime:'',
             retailer: '',
             status: false,
+            cartList: '',
         };
         $scope.tempUser={
             password1:'',
@@ -31,7 +32,7 @@
             avatar:'',
             address: '',
         };
-        $scope.goodsINfo={
+        $scope.goodsInfo={
             name:'',
             price:'',
             desc:'',
@@ -217,9 +218,30 @@
         //发布商品
         $scope.releaseGoods=function () {
             //商品名
-            // if($scope.goodsINfo)
+            if($scope.goodsInfo.name.length<3){
+                alert("商品名称起码要有3位")
+                return;
+            }
             //商品价格
+            if($scope.goodsInfo.price===""){
+                alert("请输入商品价格");
+                return;
+            }
+            var count=0;
+            for(var i=0;i<$scope.goodsInfo.price.length;i++){
+                if($scope.goodsInfo.price.charAt(i)==='.'){
+                    count++;
+                    if(count>1){
+                        alert("只能输入一个小数点");
+                        return;
+                    }
+                }else if($scope.goodsInfo.price.charAt(i)<'0'||$scope.goodsInfo.price.charAt(i)>'9'){
+                    alert("商品价格请勿输入数字以及小数点之外的内容！")
+                    return;
+                }
+            }
             //商品分类
+            console.log($scope.goodsInfo.cate);
             //商品数量
             //商品图片链接
             //商品描述
@@ -227,12 +249,12 @@
         };
         //清空商品内容
         $scope.clearGoodsInfo=function () {
-            $scope.goodsINfo.name='';
-            $scope.goodsINfo.price='';
-            $scope.goodsINfo.desc='';
-            $scope.goodsINfo.Sell_amount='';
-            $scope.goodsINfo.cate='';
-            $scope.goodsINfo.image='';
+            $scope.goodsInfo.name='';
+            $scope.goodsInfo.price='';
+            $scope.goodsInfo.desc='';
+            $scope.goodsInfo.Sell_amount='';
+            $scope.goodsInfo.cate='';
+            $scope.goodsInfo.image='';
 
             $http({
                 url: '/getCartList',

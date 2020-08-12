@@ -36,7 +36,7 @@
             name:'',
             price:'',
             desc:'',
-            Sell_amount:'',
+            left_amount:'',
             cate:'',
             image:'',
         };
@@ -241,8 +241,19 @@
                 }
             }
             //商品分类
-
+            if($scope.goodsInfo.cate===""){
+                alert("请选择商品分类！");
+                return;
+            }
             //商品数量
+            if($scope.goodsInfo.left_amount===""){
+                alert("请输入商品数量！");
+                return;
+            }
+            count=0;
+            for (var i=0;i<$scope.goodsInfo.left_amount.length;i++){
+
+            }
             //商品图片链接
             //商品描述
 
