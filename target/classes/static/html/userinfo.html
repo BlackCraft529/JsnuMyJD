@@ -18,7 +18,7 @@
         <div class="cart" ng-click="">
             <span class="glyphicon glyphicon-shopping-cart cart_ico"></span>
             <span>我的购物车</span>
-            <span class="total">1</span>
+            <span class="total" ng-model="user.cartList"></span>
         </div>
     </div>
     <!-- body-->
@@ -26,7 +26,7 @@
         <div class="container">
             <div>
                 <div class="user_ico">
-                    <div > <img src="img-userinfo/1.png" alt="" class="img-circle ico"></div>
+                    <div > <img onerror="this.src='img-userinfo/1.png'" class="img-circle ico" ng-src="user.avatar"></div>
                     <div class="user_name" ng-bind="user.name"></div>
                     <div class="ico_bottom">
                         <span class="advip">开通plus会员尊享</span>
@@ -118,15 +118,14 @@
                             <td><input type="text" placeholder="商品价格，不可为空" ng-model="goodsInfo.price"></td>
                             <td class="msg">商品分类：</td>
                             <td>
-<!--                                <input type="text" placeholder="商品分类，不可为空" ng-model="goodsInfo.cate">-->
                                 <select ng-model="goodsInfo.cate">
-                                    <option value="日用品" selected="selected">日用品</option>
+                                    <option value="日用品">日用品</option>
                                     <option value="乐器">乐器</option>
                                     <option value="其他">其他</option>
                                 </select>
                             </td>
                             <td class="msg">商品数量：</td>
-                            <td><input type="text" placeholder="商品数量，不可为空" ng-model="goodsInfo.Sell_amount"></td>
+                            <td><input type="text" placeholder="商品数量，不可为空" ng-model="goodsInfo.left_amount"></td>
                         </tr>
                     </table>
                     <table class="table2">
@@ -163,6 +162,7 @@
                         <span><a href="">查看发票</a></span>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

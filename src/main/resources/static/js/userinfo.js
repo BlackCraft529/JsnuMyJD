@@ -21,7 +21,7 @@
             registerTime:'',
             retailer: '',
             status: false,
-            cartList: '',
+            cartList: "0",
         };
         $scope.tempUser={
             password1:'',
@@ -41,6 +41,7 @@
             image:'',
         };
         $scope.editInfo=false;
+        //装填个人信息
         if (sessionStorage.getItem("uuid")!==null){
             $scope.user.uuid=sessionStorage.getItem("uuid");
             $scope.user.password=sessionStorage.getItem("password");
@@ -61,8 +62,23 @@
                 $scope.tempUser.address=$scope.user.address;
             if($scope.user.avatar!=="未设置")
                 $scope.tempUser.avatar=$scope.user.avatar;
+            //购物车数量获取
+            $http({
+                url: '/getCartList',
+                method: 'post',
+                data: {
+                    "uuid" : $scope.user.uuid,
+                },
+                headers :{'Content-Type': 'application/json;charset=UTF-8'},
+            }).then(function successCallBack(data) {
+                console.log(data.data);
+                $scope.user.cartList="30";
+            }),function errorCallBack(err) {
+                alert("error!\n" + "error message:" + err);
+            };
         }
-        //进入个人信息编辑装填
+
+        //进入个人信息编辑状态
         $scope.editIt=function () {
             $scope.editInfo=true;
         };
@@ -113,22 +129,24 @@
                     return;
                 }
             }
-            $http({
-                url:'/getPhone',//验证表单的接口
-                method:'post',
-                data: {
-                    'phone' :$scope.tempUser.phone
-                },
-                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
-            }).then(function successCallback(data) {
-                if(data.data){
-                    alert("当前手机号已被占用");
+            if($scope.tempUser.phone!==$scope.user.phone){
+                $http({
+                    url:'/getPhone',//验证表单的接口
+                    method:'post',
+                    data: {
+                        'phone' :$scope.tempUser.phone
+                    },
+                    headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+                }).then(function successCallback(data) {
+                    if(data.data){
+                        alert("当前手机号已被占用");
+                        return;
+                    }
+                }, function errorCallback(response) {
+                    alert("error!\n"+"error message:"+response);
                     return;
-                }
-            }, function errorCallback(response) {
-                alert("error!\n"+"error message:"+response);
-                return;
-            });
+                });
+            }
             //邮箱判断
             if($scope.tempUser.email===""){
                 alert("邮箱不允许为空");
@@ -151,26 +169,28 @@
                 alert("请在@后输入内容");
                 return ;
             }
-            $http({
-                url: '/getMail',//验证表单的接口
-                method: 'post',
-                data: {
-                    'mail': $scope.tempUser.email
-                },
-                headers: {'Content-Type': 'application/json;charset=UTF-8'}, //将其变为 json 参数形式
-            }).then(function successCallback(data) {
-                console(data);
-                if (!data.data) {
-                    alert("当前邮箱已被占用");
+            if($scope.tempUser.email!==$scope.user.email){
+                $http({
+                    url: '/getMail',//验证表单的接口
+                    method: 'post',
+                    data: {
+                        'mail': $scope.tempUser.email
+                    },
+                    headers: {'Content-Type': 'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+                }).then(function successCallback(data) {
+                    console(data);
+                    if (!data.data) {
+                        alert("当前邮箱已被占用");
+                        return;
+                    }
+                }, function errorCallback(response) {
+                    alert("error!\n" + "error message:" + response);
                     return;
-                }
-            }, function errorCallback(response) {
-                alert("error!\n" + "error message:" + response);
-                return;
-            });
+                });
+            }
             //发送修改请求
             $http({
-                url: '/editInfomation',
+                url: '/editInformation',
                 method: 'post',
                 data: {
                     uuid: $scope.user.uuid,
@@ -252,10 +272,40 @@
             }
             count=0;
             for (var i=0;i<$scope.goodsInfo.left_amount.length;i++){
-
+                if($scope.goodsInfo.left_amount.charAt(i)<'0'||$scope.goodsInfo.left_amount.charAt(i)>'9'){
+                    alert("商品数量只可以输入数字");
+                    return;
+                }
             }
             //商品图片链接
+            if($scope.goodsInfo.image===""){
+                alert("请输入图片链接");
+                return;
+            }
             //商品描述
+            //发布
+            $http({
+                url: '/release',
+                method: 'post',
+                data: {
+                    'uuid': $scope.user.uuid,
+                    'name': $scope.goodsInfo.name,
+                    'price': $scope.goodsInfo.price,
+                    'left_amount': $scope.goodsInfo.left_amount,
+                    'desc': $scope.goodsInfo.desc,
+                    'cate': $scope.goodsInfo.cate,
+                    'image': $scope.goodsInfo.image,
+                },
+                headers :{'Content-Type': 'application/json;charset=UTF-8'},
+            }).then(function successCallBack(data) {
+                if(data.data){
+                    alert("恭喜您，发布成功！");
+                }else {
+                    alert("未知错误，发布失败，请重试");
+                }
+            }),function errorCallBack(err) {
+                alert("error!\n"+"error message:"+err);
+            }
 
         };
         //清空商品内容
@@ -266,21 +316,14 @@
             $scope.goodsInfo.Sell_amount='';
             $scope.goodsInfo.cate='';
             $scope.goodsInfo.image='';
-
-            $http({
-                url: '/getCartList',
-                method: 'post',
-                data: {
-                    "uuid" : $scope.user.uuid,
-                },
-                headers :{'Content-Type': 'application/json;charset=UTF-8'},
-            }).then(function successCallBack(data) {
-               console.log(data.data);
-                console.log(12131);
-            }),function errorCallBack(err) {
-                alert("error!\n"+"error message:"+err);
-            }
         };
+
+        //获取用户头像
+        $scope.getUserAvatar=function () {
+            if($scope.user.avatar==="")
+                return "img-userinfo/1.png";
+            return $scope.user.avatar;
+        }
         //
     }]);
 })(angular)

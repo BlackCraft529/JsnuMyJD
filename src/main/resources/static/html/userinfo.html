@@ -18,7 +18,7 @@
         <div class="cart" ng-click="">
             <span class="glyphicon glyphicon-shopping-cart cart_ico"></span>
             <span>我的购物车</span>
-            <span class="total">1</span>
+            <span class="total" ng-model="user.cartList"></span>
         </div>
     </div>
     <!-- body-->
@@ -26,7 +26,7 @@
         <div class="container">
             <div>
                 <div class="user_ico">
-                    <div > <img src="img-userinfo/1.png" alt="" class="img-circle ico"></div>
+                    <div > <img onerror="this.src='img-userinfo/1.png'" class="img-circle ico" ng-src="user.avatar"></div>
                     <div class="user_name" ng-bind="user.name"></div>
                     <div class="ico_bottom">
                         <span class="advip">开通plus会员尊享</span>
@@ -162,6 +162,7 @@
                         <span><a href="">查看发票</a></span>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

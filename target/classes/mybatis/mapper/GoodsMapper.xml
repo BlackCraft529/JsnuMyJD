@@ -30,7 +30,7 @@
         <result column="publisher" property="publisher"/>
     </resultMap>
     <insert id="addGoods" parameterMap="GoodsParameterMap">
-        insert into goods_data (goods_id,name,desc,price,sell_price,cate,left_amount,image,sell_amount,create_time,publisher)
+        insert into goods_data (goods_id,`name`,`desc`,price,sell_price,cate,left_amount,image,sell_amount,create_time,publisher)
             values (#{id},#{name},#{description},#{price},#{sellPrice},#{cate},#{leftAmount},#{image},#{sellAmount},#{createTime},#{publisher});
     </insert>
     <select id="selectGoodsByGoodsId" parameterType="string" resultMap="GoodsResultMap">
@@ -43,7 +43,7 @@
         delete from goods_data where goods_id=#{goodsId};
     </delete>
     <update id="updateGoodsInfoByPojo" parameterMap="GoodsParameterMap">
-        update goods_data set name=#{name},desc=#{description},price=#{price},sell_price=#{sellPrice},
+        update goods_data set `name`=#{name},`desc`=#{description},price=#{price},sell_price=#{sellPrice},
             cate=#{cate},left_amount=#{leftAmount},image=#{image},publisher=#{publisher} where goods_id=#{id};
     </update>
     <select id="selectAllGoods" resultMap="GoodsResultMap">
@@ -53,10 +53,10 @@
         select * from goods_data where cate=#{cate};
     </select>
     <select id="selectGoodsByNameExact" parameterType="string" resultMap="GoodsResultMap">
-        select * from goods_data where name=#{nameExact};
+        select * from goods_data where `name`=#{nameExact};
     </select>
     <select id="selectGoodsByVagueName" parameterType="string" resultMap="GoodsResultMap">
-        select * from goods_data where name=#{vagueName};
+        select * from goods_data where `name`=#{vagueName};
     </select>
     <!--查找最新商品-->
     <select id="findNewestGoods" parameterType="_int" resultMap="GoodsResultMap">
