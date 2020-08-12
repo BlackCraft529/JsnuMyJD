@@ -24,7 +24,7 @@
         <result column="status" property="status"/>
     </resultMap>
     <select id="getNewestOrderListByUserId" resultMap="OrderResultMap" parameterType="string">
-        select * from order_data iat group by create_time desc,id desc;
+        select * from order_data iat group by create_time desc,order_id desc;
     </select>
     <select id="selectOrderByOrderId" resultMap="OrderResultMap" parameterType="string">
         select * from order_data where order_id=#{orderId};
