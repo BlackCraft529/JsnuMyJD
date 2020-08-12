@@ -192,7 +192,7 @@
                 url: '/getMail',//验证表单的接口
                 method: 'post',
                 data: {
-                    'mail': $scope.user.email
+                    'email': $scope.user.email
                 },
                 headers: {'Content-Type': 'application/json;charset=UTF-8'}, //将其变为 json 参数形式
             }).then(function successCallback(data) {

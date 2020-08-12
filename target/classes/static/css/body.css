@@ -118,6 +118,9 @@
 .userinfo .title a:hover{
     text-decoration: none;
 }
+.userinfo .title input{
+    color: black;
+}
 .userinfo .title .logo_ico{
     float: left;
 }

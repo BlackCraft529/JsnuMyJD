@@ -192,7 +192,7 @@
                     url: '/getMail',//验证表单的接口
                     method: 'post',
                     data: {
-                        'mail': $scope.tempUser.email
+                        'email': $scope.tempUser.email
                     },
                     headers: {'Content-Type': 'application/json;charset=UTF-8'}, //将其变为 json 参数形式
                 }).then(function successCallback(data) {
@@ -350,7 +350,10 @@
         }
         //搜索
         $scope.iWantIt=function () {
-            $location.path("/search").search({'search_key':$scope.user.search_key})
+            if($scope.user.search_key==="")
+                return;
+            $location.path("/search");
+            //.search({'search_key':$scope.user.search_key})
         };
         //
     }]);
