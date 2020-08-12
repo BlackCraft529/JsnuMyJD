@@ -35,7 +35,7 @@ public class ShopCartController {
      */
     @RequestMapping("/getCartList")
     @ResponseBody
-    public String loginAction(@RequestBody String jsonData) throws JsonProcessingException {
+    public String getCartList(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String userId=node.get("uuid").toString().replaceAll("\"","");
         ShopCart shopCart=shopCartService.selectShopCartByUserId(userId);

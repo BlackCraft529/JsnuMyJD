@@ -19,6 +19,8 @@ public class ShopCart {
     private String id;
     private User owner;
     private Map<Goods, Integer> goodsList;
+
+
     public ShopCart(com.jsnu.jd.jsnujd.pojo.ShopCart shopCart){
         if(shopCart!=null){
             for(String value:shopCart.getGoodsList().split(",")){
