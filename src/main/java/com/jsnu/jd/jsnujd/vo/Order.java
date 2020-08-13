@@ -26,6 +26,7 @@ public class Order {
     private String address;
     private int status;
     public Order(com.jsnu.jd.jsnujd.pojo.Order order){
+        goodsList = new HashMap<>();
         if(order!=null) {
             for (String value : order.getGoodsList().split(",")) {
                 String goodsId = value.split("#")[0];
