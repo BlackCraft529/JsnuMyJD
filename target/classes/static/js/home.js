@@ -27,7 +27,6 @@
             // console.log($scope.user.avatar);
         }
         $scope.iWantIt=function () {
-            console.log($scope.user.search_key);
             if($scope.user.search_key==='')
                 return;
             $location.path('/search').search({"search_key":$scope.user.search_key});

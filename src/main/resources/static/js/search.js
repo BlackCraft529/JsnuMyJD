@@ -10,24 +10,27 @@
         $qProvider.errorOnUnhandledRejections(false);
     }]).controller('searchCtrl',['$scope','$http','$routeParams','$location',function ($scope,$http,$routeParams,$location) {
         $scope.search_key=$routeParams.search_key;
-        console.log($scope.search_key);
+        // console.log($scope.search_key);
         $scope.goodList=[];
         $scope.result=false;
         //获取数据
-        $http({
-            url:'/getSomething',//验证表单的接口
-            method:'post',
-            data:{
-                "search_key" : $scope.search_key,
-            },
-            headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
-        }).then(function successCallback(data) {
-            $scope.goodList=data.data.goodsList;
-            $scope.result=data.data.result;
-            // console.log(data.data);
-        }, function errorCallback(response) {
-            alert("error!\n"+"error message:"+response);
-        });
+        if($scope.search_key!==''&&typeof ($scope.search_key)!=='undefined'){
+            console.log($scope.search_key);
+            $http({
+                url:'/getSomething',//验证表单的接口
+                method:'post',
+                data:{
+                    "search_key" : $scope.search_key,
+                },
+                headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
+            }).then(function successCallback(data) {
+                $scope.goodList=data.data.goodsList;
+                $scope.result=data.data.result;
+                // console.log(data.data);
+            }, function errorCallback(response) {
+                alert("error!\n"+"error message:"+response);
+            });
+        }
         //搜索
         $scope.IwantIt=function () {
             if($scope.search_key==="")

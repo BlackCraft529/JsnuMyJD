@@ -145,12 +145,13 @@
         };
         //支付选中内容
         $scope.buyIt=function () {
+            console.log($scope.selectList);
             if($scope.selectList.length===0){
                 alert("当前未选择任何商品");
                 return;
             }
             $http({
-                url: '/uuid',
+                url: '/pay',
                 method: 'post',
                 data: {
                     "uuid" : $scope.user.uuid,
