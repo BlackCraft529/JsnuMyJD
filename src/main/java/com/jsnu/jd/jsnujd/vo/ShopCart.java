@@ -22,7 +22,6 @@ public class ShopCart {
     private User owner;
     private Map<Goods, Integer> goodsList;
 
-
     public ShopCart(com.jsnu.jd.jsnujd.pojo.ShopCart shopCart){
         goodsList=new HashMap<>();
         if(shopCart!=null){

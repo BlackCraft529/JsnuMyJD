@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jsnu.jd.jsnujd.service.ShopCartService;
 import com.jsnu.jd.jsnujd.vo.ShopCart;
+import com.jsnu.jd.jsnujd.vo.UserShopCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -38,7 +39,7 @@ public class ShopCartController {
     public String getCartList(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String userId=node.get("uuid").toString().replaceAll("\"","");
-        ShopCart shopCart=shopCartService.selectShopCartByUserId(userId);
+        UserShopCart shopCart=shopCartService.selectShopCartByUserId(userId);
         return jsonObjectMapper.valueToTree(shopCart).toString();
     }
 

@@ -1,6 +1,7 @@
 package com.jsnu.jd.jsnujd.service;
 
 import com.jsnu.jd.jsnujd.vo.ShopCart;
+import com.jsnu.jd.jsnujd.vo.UserShopCart;
 
 /**
  * @author 魏荣轩
@@ -21,7 +22,7 @@ public interface ShopCartService {
      * @param userId 用户ID
      * @return 购物车vo类
      */
-    ShopCart selectShopCartByUserId(String userId);
+    UserShopCart selectShopCartByUserId(String userId);
 
     /**
      * 根据购物车ID获取购物车信息

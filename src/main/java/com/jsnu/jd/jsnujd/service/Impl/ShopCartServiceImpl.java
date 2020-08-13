@@ -6,9 +6,9 @@ import com.jsnu.jd.jsnujd.mapper.UserMapper;
 import com.jsnu.jd.jsnujd.pojo.Goods;
 import com.jsnu.jd.jsnujd.service.ShopCartService;
 import com.jsnu.jd.jsnujd.vo.ShopCart;
+import com.jsnu.jd.jsnujd.vo.UserShopCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -50,8 +50,9 @@ public class ShopCartServiceImpl implements ShopCartService {
      * @return 购物车vo类
      */
     @Override
-    public ShopCart selectShopCartByUserId(String userId) {
-        return new ShopCart(shopCartMapper.selectShopCartByUserId(userId));
+    public UserShopCart selectShopCartByUserId(String userId) {
+        ShopCart shopCart = new ShopCart(shopCartMapper.selectShopCartByUserId(userId));
+        return new UserShopCart(shopCart);
     }
 
     /**
