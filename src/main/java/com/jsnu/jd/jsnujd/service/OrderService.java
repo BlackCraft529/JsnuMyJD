@@ -82,4 +82,11 @@ public interface OrderService {
      * @return 订单数据
      */
     List<Order> getNewestOrderListByUserId(String userId);
+
+    /**
+     * 根据vo类创建订单信息
+     * @param order 订单信息
+     * @return 创建条数
+     */
+    int createNewOrder(Order order);
 }

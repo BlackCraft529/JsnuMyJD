@@ -1,6 +1,8 @@
 package com.jsnu.jd.jsnujd.service.Impl;
 
 import com.jsnu.jd.jsnujd.mapper.OrderMapper;
+import com.jsnu.jd.jsnujd.pojo.Goods;
+import com.jsnu.jd.jsnujd.service.GoodsService;
 import com.jsnu.jd.jsnujd.service.OrderService;
 import com.jsnu.jd.jsnujd.vo.Order;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -172,5 +174,27 @@ public class OrderServiceImpl implements OrderService {
             newOrderList.add(new Order(order));
         }
         return newOrderList;
+    }
+
+    /**
+     * 根据vo类创建订单信息
+     *
+     * @param order 订单信息
+     * @return 创建条数
+     */
+    @Override
+    public int createNewOrder(Order order) {
+        String goodsList="";
+        for (Map.Entry<Goods,Integer> value : order.getGoodsList().entrySet()){
+            goodsList+=value.getKey().getId()+"#"+value.getValue()+",";
+        }
+        //String goodsList, String userId, double payment, double settlement, Date createTime,String address,int status
+        return createNewOrder(goodsList,
+                order.getUser().getUuid()
+                ,order.getPayment()
+                ,order.getSettlement()
+                ,order.getCreateTime()
+                ,order.getAddress()
+                ,order.getStatus());
     }
 }

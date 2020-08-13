@@ -110,6 +110,7 @@ public class ShopCartServiceImpl implements ShopCartService {
         return shopCartMapper.updateShopCartGoodsListByPojo(shopCart);
     }
 
+
     /**
      * 为用户购物车新增商品
      *
@@ -147,6 +148,17 @@ public class ShopCartServiceImpl implements ShopCartService {
         if(!isAdd){
             newGoodsList.put(goodsMapper.selectGoodsByGoodsId(goodsId),1);
         }
+        return shopCartMapper.updateShopCartGoodsListByPojo(new com.jsnu.jd.jsnujd.pojo.ShopCart(shopCart));
+    }
+
+    /**
+     * 根据vo类更新商品数据
+     *
+     * @param shopCart 商品信息
+     * @return 更新条数
+     */
+    @Override
+    public int updateShopCartByPojo(ShopCart shopCart) {
         return shopCartMapper.updateShopCartGoodsListByPojo(new com.jsnu.jd.jsnujd.pojo.ShopCart(shopCart));
     }
 

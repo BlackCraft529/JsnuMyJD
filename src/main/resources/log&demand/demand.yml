@@ -67,16 +67,19 @@
     - params: uuid goods_id[](这是数组的意思，参数还是goods_id)
     - msg: 删除用户选中的购物车内容
     - return: ture/false 成功为true
+    - Complete: ShopCartController("/delSome");
 
   /delAll:
     - params: uuid
     - msg: 直接清空用户的购物车
     - return: true/false 成功为true
+    - Complete: ShopCartController("/delAll");
 
   /pay:
     - params: uuid goods_id[]
     - msg: 用户购买商品 删除对应的记录然后生成一个order 一次购买生成一次 order 且order的图片属性以第一个good_id决定
     - return: true/false 成功为true
+    - Complete: OrderController("/pay");
 
   /jd1:
     -msg: 转发至旧版京东

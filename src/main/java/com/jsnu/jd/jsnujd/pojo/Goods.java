@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * @author 魏荣轩
@@ -23,4 +24,21 @@ public class Goods {
     private String image;
     private int sellAmount;
     private Date createTime;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Goods)){
+            return false;
+        }
+        Goods goods = (Goods) o;
+        return getId().equals(goods.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
+    }
 }

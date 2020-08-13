@@ -61,4 +61,11 @@ public interface ShopCartService {
      * @return 修改条数
      */
     int addShopCartGoodsByUserId(String userId,String goodsId,int amount);
+
+    /**
+     * 根据vo类更新商品数据
+     * @param shopCart 商品信息
+     * @return 更新条数
+     */
+    int updateShopCartByPojo(ShopCart shopCart);
 }
