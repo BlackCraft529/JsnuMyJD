@@ -2,6 +2,7 @@ package com.jsnu.jd.jsnujd.service;
 
 
 import com.jsnu.jd.jsnujd.vo.Order;
+import com.jsnu.jd.jsnujd.vo.OrderArray;
 import java.util.Date;
 import java.util.List;
 /**
@@ -31,6 +32,7 @@ public interface OrderService {
      * @return 订单
      */
     Order selectOrderByOrderId(String orderId);
+
     /**
      * 根据用户ID查询订单
      * @param userId 用户ID
@@ -81,7 +83,7 @@ public interface OrderService {
      * @param userId 用户ID
      * @return 订单数据
      */
-    List<Order> getNewestOrderListByUserId(String userId);
+    List<OrderArray> getNewestOrderListByUserId(String userId);
 
     /**
      * 根据vo类创建订单信息

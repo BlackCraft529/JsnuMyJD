@@ -2,9 +2,9 @@ package com.jsnu.jd.jsnujd.service.Impl;
 
 import com.jsnu.jd.jsnujd.mapper.OrderMapper;
 import com.jsnu.jd.jsnujd.pojo.Goods;
-import com.jsnu.jd.jsnujd.service.GoodsService;
 import com.jsnu.jd.jsnujd.service.OrderService;
 import com.jsnu.jd.jsnujd.vo.Order;
+import com.jsnu.jd.jsnujd.vo.OrderArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.*;
@@ -167,11 +167,11 @@ public class OrderServiceImpl implements OrderService {
      * @return 订单数据
      */
     @Override
-    public List<Order> getNewestOrderListByUserId(String userId) {
+    public List<OrderArray> getNewestOrderListByUserId(String userId) {
         List<com.jsnu.jd.jsnujd.pojo.Order> pojoOrderList = orderMapper.getNewestOrderListByUserId(userId);
-        List<Order> newOrderList=new ArrayList<>();
+        List<OrderArray> newOrderList=new ArrayList<>();
         for(com.jsnu.jd.jsnujd.pojo.Order order:pojoOrderList){
-            newOrderList.add(new Order(order));
+            newOrderList.add(new OrderArray(new Order(order)));
         }
         return newOrderList;
     }
