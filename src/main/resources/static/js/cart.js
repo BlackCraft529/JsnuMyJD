@@ -76,12 +76,14 @@
         //删除某个内容
         $scope.delOne=function () {
             console.log(this);
+            var goods_id=[];
+            goods_id.push(this.item.goods.id);
             $http({
                 url: '/delSome',
                 method: 'post',
                 data: {
                     "uuid" : $scope.user.uuid,
-                    "goods_id[]": this.item.goods.id,
+                    "goods_id": goods_id,
                 },
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
