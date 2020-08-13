@@ -5,8 +5,8 @@
             <a href=""><h3><img src="public/logo.png"> 购物车</h3></a>
         </div>
         <div class="search">
-            <input type="text" class="search_box" placeholder="自营">
-            <span class="search_it">搜索</span>
+            <input type="text" class="search_box" placeholder="自营" ng-model="user.search_key">
+            <span class="search_it" ng-click="iWantIt()">搜索</span>
         </div>
     </div>
     <!--infotitle-->
@@ -18,7 +18,7 @@
         <div class="functionlist">
             <table>
                 <tr>
-                    <td class="td1"><input type="checkbox">全选</td>
+                    <td class="td1"><input type="checkbox" ng-model="checkedAll">全选</td>
                     <td class="td2">商品</td>
                     <td class="td3">单价</td>
                     <td class="td4">数量</td>
@@ -33,7 +33,28 @@
     <div class="goodsinfo">
         <table>
             <tr>
-                <td class="td1"><input type="checkbox"><img src="asdsd" onerror="this.src='img-userinfo/1.png'"></td>
+                <td class="td1"><input type="checkbox" ng-click="select($event)" ng-checked="checkedAll"><img src="asdsd" onerror="this.src='img-userinfo/1.png'"></td>
+                <td class="td2">
+                    <div class="goodsname"><a href="">82年可乐</a></div>
+                    <div class="goodsservice"><img src="img-cart/tool.png" alt=""><a href="">选服务</a></div>
+                </td>
+                <td class="td3"><span>￥319.00</span></td>
+                <td class="td4">1</td>
+                <td class="td5"><b>￥319.00</b></td>
+                <td class="td6">
+                    <div><a href="">删除</a></div>
+                    <div><a href="">移到我的关注</a></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="goodsinfo">
+        <table>
+            <tr>
+                <td class="td1">
+                    <input type="checkbox" ng-click="select($event)" ng-checked="checkedAll" ng-data="test:4">
+                    <img src="asdsd" onerror="this.src='img-userinfo/1.png'">
+                </td>
                 <td class="td2">
                     <div class="goodsname"><a href="">82年可乐</a></div>
                     <div class="goodsservice"><img src="img-cart/tool.png" alt=""><a href="">选服务</a></div>
@@ -52,7 +73,7 @@
 
     <!--购买-->
     <div class="buybox">
-        <div class="buybox_left"><input type="checkbox">全选</div>
+        <div class="buybox_left"><input type="checkbox" ng-model="checkedAll">全选</div>
         <div class="buybox_left"><a href="">删除选中商品</a></div>
         <div class="buybox_left"><a href="">移到关注</a></div>
         <div class="buybox_left"><b><a href="">清理购物车</a></b></div>

@@ -344,12 +344,6 @@
             $scope.goodsInfo.image='';
         };
 
-        //获取用户头像
-        $scope.getUserAvatar=function () {
-            if($scope.user.avatar==="")
-                return "img-userinfo/1.png";
-            return $scope.user.avatar;
-        }
         //搜索
         $scope.iWantIt=function () {
             if($scope.user.search_key==="")
@@ -362,4 +356,4 @@
         }
         //
     }]);
-})(angular)
+})(angular);

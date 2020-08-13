@@ -11,6 +11,7 @@
     }]).controller('searchCtrl',['$scope','$http','$routeParams','$location',function ($scope,$http,$routeParams,$location) {
         $scope.search_key=$routeParams.search_key;
         $scope.goodList=[];
+        $scope.result=false;
         $http({
             url:'/getSomething',//验证表单的接口
             method:'post',
@@ -20,7 +21,8 @@
             headers:{'Content-Type':'application/json;charset=UTF-8'}, //将其变为 json 参数形式
         }).then(function successCallback(data) {
             $scope.goodList=data.data.goodsList;
-            console.log($scope.goodList);
+            $scope.result=data.data.result;
+            console.log(data.data);
         }, function errorCallback(response) {
             alert("error!\n"+"error message:"+response);
         });
@@ -33,24 +35,24 @@
         //加入购物车
         $scope.putIn=function () {
             var uuid=sessionStorage.getItem("uuid");
-            if(uuid!==null){
+            if(uuid===null){
                 $location.path('/login');
                 return;
             }
-            console.log("s");// 测试goods_id
-            // $http({
-            //     url: '/enrollCart',
-            //     method: 'post',
-            //     data:{
-            //         uuid: uuid,
-            //         goods_id:''
-            //     },
-            //     headers:{'Content-Type':'application/json;charset=UTF-8'},
-            // }).then(function successCallback(data) {
-            //     console.log(data);
-            // }, function errorCallback(response) {
-            //     alert("error!\n"+"error message:"+response);
-            // });
+            console.log(this.item.id);// 测试goods_id
+            $http({
+                url: '/enrollCart',
+                method: 'post',
+                data:{
+                    uuid: uuid,
+                    goods_id: this.item.id
+                },
+                headers:{'Content-Type':'application/json;charset=UTF-8'},
+            }).then(function successCallback(data) {
+                console.log(data);
+            }, function errorCallback(response) {
+                alert("error!\n"+"error message:"+response);
+            });
         }
     }]);
 })(angular);

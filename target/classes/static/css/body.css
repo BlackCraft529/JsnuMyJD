@@ -367,7 +367,6 @@
 /*--------------------------------------搜索页CSS--------------------------------------*/
 .searchPage #select{
     width:1230px;
-    height:800px;
     margin:20px auto;
 }
 .searchPage #top img{
@@ -461,7 +460,7 @@
     font-size:23px;
     margin-left:20px;
 }
-.searchPage #main a div{
+.searchPage #main a .goods_name{
     color:#888888;
     font-size:13px;
     margin-bottom:20px;
@@ -478,28 +477,35 @@
     font-size:13px;
     margin-left:-120px;
 }
-
+.searchPage #main .none{
+    text-align: center;
+    font-size: 30px;
+    color: rgb(230,230,230);
+    font-weight: bold;
+}
 .searchPage #main a button{
     color:red;
     border:1px solid red;
     background-color:white;
     font-size:13px;
-    margin:10px 0px 10px 120px;
+    margin:0px 0px 10px 100px;
 }
 
 
-.searchPage #main a b img{
+.searchPage #main a .retailer_ico{
     width:25px;
     height:20px;
     margin-top:2px;
-    margin-left:22px;
-
+    /*margin-left:22px;*/
+}
+.searchPage #main a .retailer_name{
+    margin-left: 100px;
 }
 .searchPage #main a s img{
     width:140px;
     height:23px;
-    margin-top:30px;
-    margin-left:-15px;
+    margin-top:5px;
+    margin-left:0px;
 
 }
 .searchPage #main li img{
@@ -550,6 +556,7 @@
 .cart .title .search_box{
     width: 87%;
     height: 99%;
+    color: black;
 }
 .cart .title .search_it{
     padding: 5px;
