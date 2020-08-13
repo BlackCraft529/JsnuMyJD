@@ -1,249 +1,249 @@
 <!doctype html>
 <html lang="en" ng-app="jd">
- <head>
-  	<meta charset="UTF-8">
-  	<title>京东首页</title>
-	 <!-- css文件 -->
-  	<link rel = "stylesheet" href ="/css/style.css">
-  	<link rel = "stylesheet" href ="/css/body.css">
-<!--  	<link rel = "stylesheet" href ="/css-login/style.css">-->
-<!--  	<link rel = "stylesheet" href ="/css-register/style.css">-->
-<!--  	<link rel = "stylesheet" href ="/css-userinfo/style.css">-->
-  	<link rel = "stylesheet" href ="/css-home/style.css">
-	 <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-		   integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<head>
+	<meta charset="UTF-8">
+	<title>京东首页</title>
+	<!-- css文件 -->
+	<link rel = "stylesheet" href ="/css/style.css">
+	<link rel = "stylesheet" href ="/css/body.css">
+	<!--  	<link rel = "stylesheet" href ="/css-login/style.css">-->
+	<!--  	<link rel = "stylesheet" href ="/css-register/style.css">-->
+	<!--  	<link rel = "stylesheet" href ="/css-userinfo/style.css">-->
+	<link rel = "stylesheet" href ="/css-home/style.css">
+	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
- </head>
- <body>
-	 <header class="head container-fluid" ng-controller="indexCtrl">
+</head>
+<body>
+<header class="head container-fluid" ng-controller="indexCtrl">
 			<span class="col-md-1 col-md-offset-2 location">
 				<span class="glyphicon glyphicon-globe loaction_ico"></span>
-				<a href="#" ng-bind="location"></a>
+				<a href="" ng-bind="location"></a>
 			</span>
-		 <ul  class="col-md-offset-5">
-			 <li ng-if="user.status" >
-				 <a href="#!/userinfo" ng-bind="user.name"></a>
-				 <a ng-click="logout()">注销</a>
-			 </li>
-			 <li ng-if="!user.status">
-				 <a href="#!/login">你好，请登录</a>
-				 <a href="#!/register" class="rgt_now">免费注册</a>
-			 </li>
-			 <li class="spacer"></li>
-			 <li>
-				 <a href="#">我的订单</a>
-			 </li>
-			 <li class="spacer"></li>
-			 <li>
-				 <a href="#">我的京东</a>
-				 <span class="glyphicon glyphicon-menu-down g_down"></span>
-			 </li>
-			 <li class="spacer"></li>
-			 <li>
-				 <a href="#" class="firm_buy">企业采购</a>
-				 <span class="glyphicon glyphicon-menu-down g_down"></span>
-			 </li>
-			 <li class="spacer"></li>
-			 <li>
-				 <a href="#">客户服务</a>
-				 <span class="glyphicon glyphicon-menu-down g_down"></span>
-			 </li>
-			 <li class="spacer"></li>
-			 <li>
-				 <a href="#">网站导航</a>
-				 <span class="glyphicon glyphicon-menu-down g_down"></span>
-			 </li>
-			 <li class="spacer"></li>
-			 <li>
-				 <a href="#">手机京东</a>
-			 </li>
-		 </ul>
-	 </header>
-	 <div ng-view class="row container-fluid">
+	<ul  class="col-md-offset-5">
+		<li ng-if="user.status" >
+			<a href="#!/userinfo" ng-bind="user.name"></a>
+			<a ng-click="logout()">注销</a>
+		</li>
+		<li ng-if="!user.status">
+			<a href="#!/login">你好，请登录</a>
+			<a href="#!/register" class="rgt_now">免费注册</a>
+		</li>
+		<li class="spacer"></li>
+		<li>
+			<a href="">我的订单</a>
+		</li>
+		<li class="spacer"></li>
+		<li>
+			<a href="">我的京东</a>
+			<span class="glyphicon glyphicon-menu-down g_down"></span>
+		</li>
+		<li class="spacer"></li>
+		<li>
+			<a href="" class="firm_buy">企业采购</a>
+			<span class="glyphicon glyphicon-menu-down g_down"></span>
+		</li>
+		<li class="spacer"></li>
+		<li>
+			<a href="">客户服务</a>
+			<span class="glyphicon glyphicon-menu-down g_down"></span>
+		</li>
+		<li class="spacer"></li>
+		<li>
+			<a href="">网站导航</a>
+			<span class="glyphicon glyphicon-menu-down g_down"></span>
+		</li>
+		<li class="spacer"></li>
+		<li>
+			<a href="">手机京东</a>
+		</li>
+	</ul>
+</header>
+<div ng-view class="row container-fluid">
 
-	 </div>
+</div>
 
-	 <footer class="foot container-fluid row">
-		 <div class="container">
-			 <div class="row ">
-				 <ul class="main" >
-					 <li>
-						 <a href="#">关于我们</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">联系我们</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">联系客服</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">合作招商</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">商家帮助</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">营销中心</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">手机京东</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">友情链接</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">销售联盟</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">京东社区</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">风险监测</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">隐私政策</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">京东公益</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">English Site</a>
-					 </li>
-					 <li class="spacer"></li>
-					 <li>
-						 <a href="#">Media & IR</a>
-					 </li>
-				 </ul>
-			 </div>
-			 <div class="sub_row">
-				 <div class="row">
-					 <ul class="sub_1">
-						 <li>
-							 <a href="#">京公网安备 11000002000088号</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 京ICP证070359号
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <a href="#">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 新出发京零 字第大120007号
-						 </li>
-					 </ul>
-				 </div>
-				 <div class="row">
-					 <ul class="sub_2 ">
-						 <li>
-							 互联网出版许可证编号新出网证(京)字150号
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <a href="#">出版物经营许可证</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <a href="#">网络文化经营许可证京网文[2014]2148-348号</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 违法和不良信息举报电话：4006561155
-						 </li>
-					 </ul>
-				 </div>
-				 <div class="row">
-					 <ul class="sub_3">
-						 <li>
-							 Copyright &copy; 2004 - 2020  京东JD.com 版权所有
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 消费者维权热线：4006067733
-							 <a href="#">经营证照</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 (京)网械平台备字(2018)第00003号
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <a href="#">营业执照</a>
-						 </li>
-					 </ul>
-				 </div>
-				 <div class="row">
-					 <ul class="sub_4">
-						 <li>
-							 <span class="glyphicon glyphicon-globe glb_ico"></span>
-							 <a href="#" class="">Global Site</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <span class="glyphicon glyphicon-globe glb_ico"></span>
-							 <a href="#" class="">Сайт России</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <span class="glyphicon glyphicon-globe glb_ico"></span>
-							 <a href="#" class="">Situs Indonesia</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <span class="glyphicon glyphicon-globe glb_ico"></span>
-							 <a href="#" class="">Sitio de España</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <span class="glyphicon glyphicon-globe glb_ico"></span>
-							 <a href="#" class="">เว็บไซต์ประเทศไทย</a>
-						 </li>
-					 </ul>
-				 </div>
-				 <div class="row">
-					 <ul class="sub_5">
-						 <li>
-							 京东旗下网站：
-							 <a href="#" >京东钱包</a>
-						 </li>
-						 <li class="spacer"></li>
-						 <li>
-							 <a href="#" class="">京东智联云</a>
-						 </li>
-					 </ul>
-				 </div>
-			 </div>
-		 </div>
-	 </footer>
+<footer class="foot container-fluid row">
+	<div class="container">
+		<div class="row ">
+			<ul class="main" >
+				<li>
+					<a href="">关于我们</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">联系我们</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">联系客服</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">合作招商</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">商家帮助</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">营销中心</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">手机京东</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">友情链接</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">销售联盟</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">京东社区</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">风险监测</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">隐私政策</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">京东公益</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">English Site</a>
+				</li>
+				<li class="spacer"></li>
+				<li>
+					<a href="">Media & IR</a>
+				</li>
+			</ul>
+		</div>
+		<div class="sub_row">
+			<div class="row">
+				<ul class="sub_1">
+					<li>
+						<a href="">京公网安备 11000002000088号</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						京ICP证070359号
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="">互联网药品信息服务资格证编号(京)-经营性-2014-0008</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						新出发京零 字第大120007号
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<ul class="sub_2 ">
+					<li>
+						互联网出版许可证编号新出网证(京)字150号
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="">出版物经营许可证</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="">网络文化经营许可证京网文[2014]2148-348号</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						违法和不良信息举报电话：4006561155
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<ul class="sub_3">
+					<li>
+						Copyright &copy; 2004 - 2020  京东JD.com 版权所有
+					</li>
+					<li class="spacer"></li>
+					<li>
+						消费者维权热线：4006067733
+						<a href="">经营证照</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						(京)网械平台备字(2018)第00003号
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="">营业执照</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<ul class="sub_4">
+					<li>
+						<span class="glyphicon glyphicon-globe glb_ico"></span>
+						<a href="" class="">Global Site</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<span class="glyphicon glyphicon-globe glb_ico"></span>
+						<a href="" class="">Сайт России</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<span class="glyphicon glyphicon-globe glb_ico"></span>
+						<a href="" class="">Situs Indonesia</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<span class="glyphicon glyphicon-globe glb_ico"></span>
+						<a href="" class="">Sitio de España</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<span class="glyphicon glyphicon-globe glb_ico"></span>
+						<a href="" class="">เว็บไซต์ประเทศไทย</a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<ul class="sub_5">
+					<li>
+						京东旗下网站：
+						<a href="" >京东钱包</a>
+					</li>
+					<li class="spacer"></li>
+					<li>
+						<a href="" class="">京东智联云</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
 
- <!-- 引ng包-->
-	<script src="https://cdn.jsdelivr.net/npm/angular@1.8.0/angular.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/angular-route@1.8.0/angular-route.js"></script>
-	<script src="js/index.js"></script>
-	<script src="js/home.js"></script>
-	<script src="js/login.js"></script>
-	<script src="js/register.js"></script>
-	<script src="js/userinfo.js"></script>
-	<script src="js/search.js"></script>
-	<script src="js/cart.js"></script>
-	<!-- 最新的 Bootstrap 核心 JavaScript 文件
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	-->
- </body>
+<!-- 引ng包-->
+<script src="https://cdn.jsdelivr.net/npm/angular@1.8.0/angular.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/angular-route@1.8.0/angular-route.js"></script>
+<script src="js/index.js"></script>
+<script src="js/home.js"></script>
+<script src="js/login.js"></script>
+<script src="js/register.js"></script>
+<script src="js/userinfo.js"></script>
+<script src="js/search.js"></script>
+<script src="js/cart.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+-->
+</body>
 </html>
