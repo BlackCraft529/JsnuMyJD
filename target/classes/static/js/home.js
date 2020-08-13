@@ -7,7 +7,7 @@
             templateUrl: 'html/home.html',
             controller: 'homeCtrl'
         })
-    }]).controller('homeCtrl', ['$scope', function($scope){
+    }]).controller('homeCtrl', ['$scope','$location', function($scope,$location){
         $scope.user={
             uuid:'',
             password:'',
@@ -26,7 +26,14 @@
             $scope.user.status = true;
         }
         $scope.iWantIt=function () {
-
+            console.log($scope.user.search_key);
+            if($scope.user.search_key==='')
+                return;
+            $location.path('/search').search({"search_key":$scope.user.search_key});
         };
+        $scope.toCart=function () {
+            $location.path("/cart");
+        }
+        //
     }]);
 })(angular)

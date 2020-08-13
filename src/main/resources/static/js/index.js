@@ -15,12 +15,12 @@
     app.run(['$rootScope', '$location', function($rootScope, $location) {
         /* 监听路由的状态变化 */
         $rootScope.$on('$routeChangeStart', function(evt, next, current){
-            // console.log('route begin change');//开始变化
+            console.log('route begin change');//开始变化
         });
         $rootScope.$on('$routeChangeSuccess', function(evt, current, previous) {
-            // console.log('route have already changed ：'+$location.path());//变化结束
+            console.log('route have already changed ：'+$location.path());//变化结束
             //如果登录过后访问登录/注册
-            if(($location.path()==='/login'||$location.path()==="/register")&&sessionStorage.getItem("uuid")!=null){
+            if(($location.path()==='/login'||$location.path()==="/register"||$location.path()==="/cart")&&sessionStorage.getItem("uuid")!=null){
                 $location.path("/home");
                 return;
             }

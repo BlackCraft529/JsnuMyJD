@@ -10,8 +10,10 @@
         $qProvider.errorOnUnhandledRejections(false);
     }]).controller('searchCtrl',['$scope','$http','$routeParams','$location',function ($scope,$http,$routeParams,$location) {
         $scope.search_key=$routeParams.search_key;
+        console.log($scope.search_key);
         $scope.goodList=[];
         $scope.result=false;
+        //获取数据
         $http({
             url:'/getSomething',//验证表单的接口
             method:'post',
@@ -22,7 +24,7 @@
         }).then(function successCallback(data) {
             $scope.goodList=data.data.goodsList;
             $scope.result=data.data.result;
-            console.log(data.data);
+            // console.log(data.data);
         }, function errorCallback(response) {
             alert("error!\n"+"error message:"+response);
         });

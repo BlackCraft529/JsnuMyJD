@@ -1,22 +1,23 @@
-<div class="container" >
+<div class="container">
     <div class="homePage">
 
         <!--页面输入框一栏-->
         <div class="home">
             <div class="row">
                 <div class="col-md-3 hidden-sm hidden-xs">
-                    <a href = "#">
-                        <img src = "img-home/logo.png">
+                    <a href="#">
+                        <img src="img-home/logo.png">
                     </a>
                 </div>
                 <div class="col-md-8">
                     <div class="input_seacrch">
-                        <input  type="text"class = "txtSearch" placeholder ="光明牛奶">
-                        <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+                        <input type="text" class="txtSearch" placeholder="光明牛奶" ng-model="user.search_key">
+                        <a href="#" ng-click="iWantIt()"><span class="glyphicon glyphicon-search"></span></a>
                     </div>
                 </div>
                 <div class="col-md-1 col-md-pull-2">
-                    <div class="gouwuche">
+                    <div class="gouwuche" ng-click="toCart()">
+                        <div class="glyphicon glyphicon-shopping-cart xiaoche"></div>
                         我的购物车
                         <b></b>
                     </div>
@@ -25,15 +26,15 @@
                     <div class="col-sm-12 col-md-5">
                         <div class="hot_words">
                             <span>热门搜索:</span>
-                            <a href = "#">南极人家纺</a>
-                            <a href = "#">彩虹电热毯</a>
-                            <a href = "#">博洋家纺</a>
-                            <a href = "#">旧冰箱</a>
-                            <a href = "#">旧彩电</a>
-                            <a href = "#">旧洗衣机</a>
-                            <a href = "#">空调</a>
-                            <a href = "#">热水器</a>
-                            <a href = "#">南极人家纺</a>
+                            <a href="#">南极人家纺</a>
+                            <a href="#">彩虹电热毯</a>
+                            <a href="#">博洋家纺</a>
+                            <a href="#">旧冰箱</a>
+                            <a href="#">旧彩电</a>
+                            <a href="#">旧洗衣机</a>
+                            <a href="#">空调</a>
+                            <a href="#">热水器</a>
+                            <a href="#">南极人家纺</a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-7 col-sm-pull-1 ">
@@ -76,52 +77,52 @@
                     <div class="words_list">
                         <ul>
                             <li>
-                                <h6><a href = "#">家用电器</a></h6>
+                                <h6><a href="#">家用电器</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">手机/运营商/数码</a></h6>
+                                <h6><a href="#">手机/运营商/数码</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">电脑/办公</a></h6>
+                                <h6><a href="#">电脑/办公</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">家居/家具/家装/厨具</a></h6>
+                                <h6><a href="#">家居/家具/家装/厨具</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">男装/女装/童装/内衣</a></h6>
+                                <h6><a href="#">男装/女装/童装/内衣</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">美妆/个护清洁/宠物</a></h6>
+                                <h6><a href="#">美妆/个护清洁/宠物</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">女鞋/箱包/钟表/珠宝</a></h6>
+                                <h6><a href="#">女鞋/箱包/钟表/珠宝</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">男鞋/运动/户外</a></h6>
+                                <h6><a href="#">男鞋/运动/户外</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">房产/汽车/汽车用品</a></h6>
+                                <h6><a href="#">房产/汽车/汽车用品</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">母婴/玩具乐器</a></h6>
+                                <h6><a href="#">母婴/玩具乐器</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">食品/酒类/生鲜/特产</a></h6>
+                                <h6><a href="#">食品/酒类/生鲜/特产</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">艺术/礼品鲜花/农资绿植</a></h6>
+                                <h6><a href="#">艺术/礼品鲜花/农资绿植</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">医药保健/计生情趣</a></h6>
+                                <h6><a href="#">医药保健/计生情趣</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">图书/文娱/教育/电子书</a></h6>
+                                <h6><a href="#">图书/文娱/教育/电子书</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">机票/酒店/旅游/生活</a></h6>
+                                <h6><a href="#">机票/酒店/旅游/生活</a></h6>
                             </li>
                             <li>
-                                <h6><a href = "#">理财/众筹/白条/保险</a></h6>
+                                <h6><a href="#">理财/众筹/白条/保险</a></h6>
                             </li>
                         </ul>
                     </div>
@@ -129,28 +130,28 @@
                 <!--中间的图片-->
                 <div class="col-md-5 hidden-sm hidden-xs">
                     <div class="middle_img">
-                        <a href = "#">
-                            <img src = "img-home/weishengjin.jpg">
+                        <a href="#">
+                            <img src="img-home/weishengjin.jpg">
                         </a>
                     </div>
                 </div>
 
                 <!--中右侧图片-->
                 <div class="col-md-2 yili hidden-sm hidden-xs">
-                    <a href = "#">
-                        <img src = "img-home/yili.png">
+                    <a href="#">
+                        <img src="img-home/yili.png">
                     </a>
                     <div class="row">
                         <div class="col-md-2 col-md-offset-4 col-md-pull-4 hidden-sm hidden-xs">
-                            <a href = "#">
-                                <img src = "img-home/nongzi.png">
+                            <a href="#">
+                                <img src="img-home/nongzi.png">
                             </a>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-2 col-md-offset-4 col-md-pull-4 hidden-sm hidden-xs">
-                            <a href = "#">
-                                <img src = "img-home/paobuji.png">
+                            <a href="#">
+                                <img src="img-home/paobuji.png">
                             </a>
                         </div>
                     </div>
@@ -161,7 +162,7 @@
                     <div class="rt_first">
                         <ul>
                             <li class="small_logndog">
-                                <img src="img-home/small_logndog.png" class="img-circle" >
+                                <img src="img-home/small_logndog.png" class="img-circle">
                                 <ul>
                                     <li>
                                         欢迎逛京东!
@@ -169,12 +170,16 @@
                                     <li>
                                         <a href="#!/login">登录</a> | <a href="#!/register">注册</a>
                                     </li>
-<!--                                 <li class="welcome">欢迎您，孙珂</li>-->
+                                    <!-- <li class="welcome">欢迎您，孙珂</li> -->
                                 </ul>
                             </li>
                             <li class="two_button">
-                                <a href="#"><button type="button" class="btn  btn-xs bt_one">新人福利</button></a>
-                                <a href="#"><button type="button" class="btn  btn-xs bt_two">PLUS会员</button></a>
+                                <a href="#">
+                                    <button type="button" class="btn  btn-xs bt_one">新人福利</button>
+                                </a>
+                                <a href="#">
+                                    <button type="button" class="btn  btn-xs bt_two">PLUS会员</button>
+                                </a>
                             </li>
                             <li class="space_line"></li>
                             <li class="jd_news">
@@ -208,24 +213,24 @@
                                 <ul>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_huafei.png">
+													<a href="#">
+														<img src="img-home/jd_huafei.png">
 													</a>
 													<h5>话费</h5>
 												</span>
                                     </li>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_plane.png">
+													<a href="#">
+														<img src="img-home/jd_plane.png">
 													</a>
 													<h5>机票</h5>
 												</span>
                                     </li>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_jiudian.png">
+													<a href="#">
+														<img src="img-home/jd_jiudian.png">
 													</a>
 													<h5>酒店</h5>
 												</span>
@@ -237,24 +242,24 @@
                                 <ul>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_youxi.png">
+													<a href="#">
+														<img src="img-home/jd_youxi.png">
 													</a>
 													<h5>游戏</h5>
 												</span>
                                     </li>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_jiayouka.png">
+													<a href="#">
+														<img src="img-home/jd_jiayouka.png">
 													</a>
 													<h5>油卡</h5>
 												</span>
                                     </li>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_train.png">
+													<a href="#">
+														<img src="img-home/jd_train.png">
 													</a>
 													<h5>车票</h5>
 												</span>
@@ -267,24 +272,24 @@
                                 <ul>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_zhongchou.png">
+													<a href="#">
+														<img src="img-home/jd_zhongchou.png">
 													</a>
 													<h5>众筹</h5>
 												</span>
                                     </li>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_licai.png">
+													<a href="#">
+														<img src="img-home/jd_licai.png">
 													</a>
 													<h5>理财</h5>
 												</span>
                                     </li>
                                     <li>
 												<span>
-													<a href = "#">
-														<img src = "img-home/jd_baitiao.png">
+													<a href="#">
+														<img src="img-home/jd_baitiao.png">
 													</a>
 													<h5>白条</h5>
 												</span>
@@ -298,31 +303,266 @@
         </div>
 
         <!--页面中间图-->
-        <div class="main">
+        <div class="show_sixad">
             <div class="row">
                 <div class="col-md-2">
-                    1
+                    <div class="sixad_one">
+                        <img src="img-home/jd_shizhong.png">
+                        <h4>京东秒杀</h4>
+                        <h5>14:00点场 倒计时<h5>
+								<span>
+									<b>01</b> :
+									<b>18</b> :
+									<b>51</b>
+								</span>
+                    </div>
                 </div>
                 <div class="col-md-2">
-                    2
+                    <div class="sixad_two">
+                        <img src="img-home/jd_yugan.jpg">
+                        <h4>光威（GW）新款28调鱼竿...</h4>
+                        <ul>
+                            <li>
+                                <b>￥</b>
+                                <span>188.00</span>
+                                <h5>￥208.90</h5>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-md-2">
-                    3
+                    <div class="sixad_three">
+                        <img src="img-home/jd_guiguzi.jpg">
+                        <h4>[ 包邮 ] 成功励志书籍全5...</h4>
+                        <ul>
+                            <li>
+                                <b>￥</b>
+                                <span>9.90</span>
+                                <h5>￥15.50</h5>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-md-2">
-                    4
+                    <div class="sixad_four">
+                        <img src="img-home/jd_danci.jpg">
+                        <h4>思维导图 超强串记英语单词...</h4>
+                        <ul>
+                            <li>
+                                <b>￥</b>
+                                <span>8.80</span>
+                                <h5>12.90</h5>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-md-2">
-                    5
+                    <div class="sixad_five">
+                        <img src="img-home/jd_chaye.jpg">
+                        <h4>天旭 茶叶 绿茶 雀舌250克...</h4>
+                        <ul>
+                            <li>
+                                <b>￥</b>
+                                <span>87.60</span>
+                                <h5>￥208.90</h5>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
                 <div class="col-md-2">
-                    6
+                    <div class="sixad_six">
+                        <img src="img-home/jd_sanxing.jpg">
+                        <h4>三星秒杀专场</h4>
+                        <h3>23.8英寸爆款739</h3>
+                        <span>
+								大牌闪购
+								</span>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!--中间两个大广告-->
+        <div class="show_twoad">
+            <div class="row">
+                <!--每日特价-->
+                <div class="col-md-6">
+                    <div class="col-sm-3 tejia">
+                        <h4>每日特价</h4>
+                    </div>
+                    <div class="col-sm-2 jingxuan col-sm-offset-1">
+                        <a href="#">精选</a>
+                    </div>
+                    <div class="col-sm-2 jingxuan">
+                        <a href="#">美食</a>
+                    </div>
+                    <div class="col-sm-2 baihuo">
+                        <a href="#">百货</a>
+                    </div>
+                    <div class="col-sm-2 jingxuan">
+                        <a href="#">个护</a>
+                    </div>
+                </div>
+                <!--品牌闪购-->
+                <div class="col-md-6">
+                    <div class="col-md-3 shangou">
+                        <h4>品牌闪购</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--中下方2两列，1列3广告-->
+        <div class="show_threead">
+            <div class="row">
+                <!--左侧3列广告-->
+                <div class="col-md-2">
+                    <div class="peach">
+                        <a href="#">
+                            <img src="img-home/jd_peach.jpg">
+                        </a>
+                        <h4>锦绣黄桃大果5斤</h4>
+                        <ul>
+                            <li class="new_price">￥29.9</li>
+                            <li class="old_price">￥55.9</li>
+                        </ul>
+                        <h5>已抢<b>103</b>件</h5>
+                    </div>
+                </div>
+
+                <!--百香果-->
+                <div class="col-md-2">
+                    <div class="first_column">
+                        <div class="baixiangguo">
+                            <a href="#">
+                                <img src="img-home/jd_baixiangguo.png">
+                            </a>
+                            <ul>
+                                <li class="word">精选白香果中大果 12枚</li>
+                                <li class="new_price">￥18.7</li>
+                                <li class="old_price">￥29.8</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="niluo">
+                            <a href="#">
+                                <img src="img-home/jd_niluo.jpg">
+                            </a>
+                            <ul>
+                                <li class="word">[宁波馆] 5A泥螺260</li>
+                                <li class="new_price">￥23.9</li>
+                                <li class="old_price">￥45</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--花蛤-->
+                <div class="col-md-2">
+                    <div class="second_column">
+                        <div class="huaha">
+                            <a href="#">
+                                <img src="img-home/jd_huaha.jpg">
+                            </a>
+                            <ul>
+                                <li class="word">菇蛤蜊花蛤海鲜熟食即</li>
+                                <li class="new_price">￥32</li>
+                                <li class="old_price">￥56</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="yuli">
+                            <a href="#">
+                                <img src="img-home/jd_yuli.jpg">
+                            </a>
+                            <ul>
+                                <li class="word">新鲜皇冠梨翠玉梨 5斤</li>
+                                <li class="new_price">￥15.8</li>
+                                <li class="old_price">￥30</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!--右侧3列广告-->
+                <div class="col-md-2">
+                    <div class="tebu">
+                        <ul>
+                            <li class="zhuanchang">特步运动专场</li>
+                            <li class="dizhi">低至12元 | 仅剩 2 天</li>
+                        </ul>
+                        <a href="#">
+                            <img src="img-home/jd_tebu.png">
+                        </a>
+                    </div>
+                </div>
+
+                <!--老人头-->
+                <div class="col-md-2">
+                    <div class="laorentou">
+                        <a href="#">
+                            <img src="img-home/jd_laorentou.png">
+                        </a>
+                        <span>老人头品牌专场</span>
+                    </div>
+
+                    <div class="row">
+                        <div class="bra">
+                            <a href="#">
+                                <img src="img-home/jd_bra.png">
+                            </a>
+                            <span>CabraKalani专场</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="jiabei">
+                            <a href="#">
+                                <img src="img-home/jd_jiabei.png">
+                            </a>
+                            <span>精选联合闪购</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!--阿迪达斯-->
+                <div class="col-md-2">
+                    <div class="adidas">
+                        <a href="#">
+                            <img src="img-home/jd_adidas.png">
+                        </a>
+                        <span>阿迪达斯运动专场</span>
+                    </div>
+
+                    <div class="row">
+                        <div class="kele">
+                            <a href="#">
+                                <img src="img-home/jd_kele.png">
+                            </a>
+                            <span>科勒品牌闪购专场</span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="haidaochuan">
+                            <a href="#">
+                                <img src="img-home/jd_haidaochuan.png">
+                            </a>
+                            <span>电竞游戏装备日</span>
+                        </div>
+                    </div>
+                </div>
 
 
+            </div>
 
+        </div>
     </div>
+
+</div>
 </div>

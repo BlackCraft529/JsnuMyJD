@@ -53,7 +53,7 @@
 				<div ng-if="!result" class="none">暂时没有该内容哦！请等待更多商家发布！</div>
 				<ul type="none" ng-if="result">
 					<li ng-repeat="item in goodList" data-id="item.id">
-						<a ><img  onerror="this.src='img-search/1.jpg'"  ng-src="item.image" >
+						<a ><img  onerror="this.src='img-search/1.jpg'"  ng-src="{{item.image}}" >
 							<span ng-bind="item.sellPrice">xx</span>
 							<div ng-bind="item.name" class="goods_name">xxxxxxxx</div>
 							<div class="retailer_name"><img class="retailer_ico"src="img-search/b3.png"><b ng-bind="item.publisher"></b></div>

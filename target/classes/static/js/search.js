@@ -10,8 +10,10 @@
         $qProvider.errorOnUnhandledRejections(false);
     }]).controller('searchCtrl',['$scope','$http','$routeParams','$location',function ($scope,$http,$routeParams,$location) {
         $scope.search_key=$routeParams.search_key;
+        console.log($scope.search_key);
         $scope.goodList=[];
         $scope.result=false;
+        //获取数据
         $http({
             url:'/getSomething',//验证表单的接口
             method:'post',
@@ -22,7 +24,7 @@
         }).then(function successCallback(data) {
             $scope.goodList=data.data.goodsList;
             $scope.result=data.data.result;
-            console.log(data.data);
+            // console.log(data.data);
         }, function errorCallback(response) {
             alert("error!\n"+"error message:"+response);
         });
@@ -39,7 +41,7 @@
                 $location.path('/login');
                 return;
             }
-            console.log(this.item.id);// 测试goods_id
+            // console.log(this.item.id);// 测试goods_id
             $http({
                 url: '/enrollCart',
                 method: 'post',
@@ -49,7 +51,10 @@
                 },
                 headers:{'Content-Type':'application/json;charset=UTF-8'},
             }).then(function successCallback(data) {
-                console.log(data);
+                // console.log(data);
+                if(data.data)
+                    alert("加入购物车成功！");
+                else alert("加入购物车失败！");
             }, function errorCallback(response) {
                 alert("error!\n"+"error message:"+response);
             });

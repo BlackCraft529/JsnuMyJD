@@ -724,3 +724,1038 @@
 /*--------------------------------------主页CSS--------------------------------------*/
 /*--------------------------------------主页CSS--------------------------------------*/
 /*--------------------------------------主页CSS--------------------------------------*/
+/***logn一行设置***/
+.homePage .home .input_seacrch{
+    margin-top:30px;
+    width:500px;
+    height:40px;
+    background-color:red;
+    border:none;
+    outline:none;
+}
+
+.homePage .home .input_seacrch .txtSearch{
+    border:hidden;
+    padding-left:10px;
+    margin:1px 5px 1px 1px;
+    width:450px;
+    height:38px;
+}
+
+.homePage .home .input_seacrch span{
+    padding:11px 5px 2px 10px;
+    color:white;
+
+}
+
+/*********logn一行的购物车*******/
+.homePage .home div.gouwuche{
+    border:1px solid #EEEEEE;
+    margin-top:35px;
+    width:125px;
+    height:32px;
+    line-height:10px;
+    padding:8px 0px 20px 15px;
+
+}
+.homePage .home div.gouwuche:hover{
+    cursor: pointer;
+    border: 1px solid rgb(200,22,35);
+}
+
+.homePage .home div.gouwuche div.xiaoche{
+    color:red;
+}
+
+
+.homePage .home div.gouwuche b{
+    border:5px solid transparent;
+    border-top-color:#CCC;
+    /**相对定位*/
+    position:relative;
+    top:11px;
+    left:3px;
+}
+
+
+
+/*热门搜索*/
+.homePage .home div.hot_words{
+    margin-top:3px;
+    height:16px;
+    overflow:hidden;
+}
+.homePage .home div.hot_words span{
+    font-size:5px;
+    color:red;
+}
+
+.homePage .home div.hot_words a{
+    font-size:5px;
+    color:#999;
+    margin-right:5px;
+}
+.homePage .home div.hot_words a:hover{
+    color:red;
+
+}
+
+
+
+/**秒杀，优惠券，PLUS一栏的设置*/
+.homePage .home ul li{
+    padding-right:20px;
+    font-size:15px;
+    margin-top:12px;
+    list-style:none;
+}
+.homePage .home ul li span{
+    float:left;
+    padding-right:22px;
+    color:black;
+}
+
+.homePage .home .miaosha span{
+    color:red;
+    font-weight:bold;
+}
+
+.homePage .home .youhuiquan span{
+    color:red;
+    font-weight:bold;
+}
+
+.homePage .home .plus span:hover{
+    color:red;
+}
+
+
+/**中间banner广告的部分*/
+.homePage .banner div.words_list ul{
+    border:1px solid #ddd;
+    padding-left:15px;
+    padding-bottom:5px;
+}
+.homePage .banner div.words_list ul li{
+    list-style:none;
+}
+
+.homePage .banner div.words_list ul li a:hover{
+    color:red;
+}
+
+.homePage .banner .words_list li a{
+    color:black;
+    text-decoration:none;
+}
+
+
+.homePage .banner .middle_img a img{
+    padding-left:0px;
+    width:104.5%;
+}
+
+
+/**中右侧图片*/
+.homePage .banner .yili a img{
+    width:160px;
+    height:128.5px;
+    padding:0px 0px 5px 5px;
+
+}
+
+/****右侧一栏*****/
+
+.homePage .banner .rt_first ul{
+    padding-left:0px;
+    list-style:none;
+}
+
+
+.homePage .banner .rt_first ul{
+    height:380px;
+}
+
+.homePage .banner .rt_first ul li.small_logndog img{
+    width:25%;
+    height:30%;
+    margin:10px 0px 5px 15px;
+
+}
+
+.homePage .banner .rt_first ul li.small_logndog ul{
+    float:right;
+    margin:15px 20px 0px 5px;
+    width:75px;
+    height:35px;
+    font-size:10px;
+}
+
+.homePage .banner .rt_first ul li.small_logndog ul li a{
+    text-decoration:none;
+    color:black;
+}
+
+.homePage .banner .rt_first ul li.small_logndog ul li a:hover{
+    color:red;
+}
+
+.homePage .banner .rt_first ul li.small_logndog ul li.welcome{
+    font-weight:bold;
+    font-size:12px;
+}
+
+
+.homePage .banner .rt_first ul li.two_button{
+    width:145px;
+    margin-left:10px;
+    padding:3px;
+}
+
+.homePage .banner .rt_first ul li.two_button button{
+    background-color:red;
+    color:white;
+
+}
+
+
+.homePage .banner .rt_first ul li.two_button button.bt_two{
+    background-color:black;
+    color:yellow;
+}
+
+.homePage .banner .rt_first ul li.two_button button:hover{
+    background-color:#900000;
+}
+
+
+.homePage .banner .rt_first ul li.space_line{
+    width:150px;
+    height:1px;
+    margin-top:10px;
+    margin-left:6px;
+    background-color: #ddd;
+}
+
+.homePage .banner .rt_first ul li.jd_news ul{
+    height:22px;
+}
+
+.homePage .banner .rt_first ul li.jd_news ul li.jd_newsone span{
+    font-size:13px;
+    font-weight:bold;
+    margin:15px 0px 0px 10px;
+}
+
+.homePage .banner .rt_first ul li.jd_news ul li.jd_newstwo span{
+    margin-top:-15px;
+    margin-right:10px;
+    float:right;
+    font-size:10px;
+    color:rgb(148,148,148);
+}
+
+.homePage .banner .rt_first ul li.jd_news ul li.jd_newstwo span:hover{
+    color:red;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul{
+    height:80px;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul li b{
+    font-size:10px;
+    border:1px solid red;
+    color:red;
+    background-color:rgb(251,238,232);
+    margin-left:5px;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul li span{
+    margin-left:9px;
+    font-size:12px;
+}
+
+.homePage .banner .rt_first ul li.jd_words ul li span:hover{
+    color:red;
+}
+
+
+
+.homePage .banner .rt_first ul li.words_line ul{
+
+    height:50px;
+}
+
+.homePage .banner .rt_first ul li.words_line ul li{
+    margin:5px;
+    float:left;
+    padding:0px 5px 0px 5px;
+    width:43px;
+    height:45px;
+}
+
+
+
+.homePage .banner .rt_first ul li.words_line ul li span a img{
+    width:25px;
+    height:25px;
+
+}
+
+.homePage .banner .rt_first ul li.words_line ul li span h5{
+    margin:1px 4px 0px 4px;
+    width:30px;
+    font-size:2px;
+}
+
+.homePage .banner .rt_first ul li.words_line ul li:hover{
+    color:red;
+}
+
+
+
+
+/*****页面中间图********/
+.homePage .show_sixad{
+
+    height:230px;
+}
+
+
+
+.homePage .show_sixad .sixad_one img{
+    height:200px;
+    width:160px;
+}
+
+.homePage .show_sixad .sixad_one{
+    position:relative;
+}
+
+.homePage .show_sixad .sixad_one h4{
+    position:absolute;
+    top:30px;
+    left:35px;
+    font-weight:bold;
+    font-size:25px;
+    color:white;
+}
+
+
+.homePage .show_sixad .sixad_one h5{
+    position:absolute;
+    top:120px;
+    left:30px;
+    font-weight:bold;
+    font-size:15px;
+    color:white;
+}
+
+
+
+.homePage .show_sixad .sixad_one span {
+    position:absolute;
+    width:130px;
+    height:35px;
+    top:28px;
+    left:8px;
+    color:white;
+}
+
+.homePage .show_sixad .sixad_one span b{
+    margin:10px 5px 5px 0px;
+    padding:5px 2px 5px 2px;
+    background-color:black;
+    font-size:15px;
+    width:20px;
+    height:20px;
+
+}
+
+
+/******6个广告第2个图片*********/
+.homePage .show_sixad .sixad_two{
+    margin-left:-5px;
+
+}
+
+.homePage .show_sixad .sixad_two img{
+    height:150px;
+    width:130px;
+
+}
+
+.homePage .show_sixad .sixad_two h4{
+    font-size:11px;
+}
+
+
+.homePage .show_sixad .sixad_two h4:hover{
+    color:red;
+}
+
+.homePage .show_sixad .sixad_two ul li{
+    float:left;
+    list-style:none;
+    font-size:15px;
+    width:148px;
+    margin-left:-50px;
+    height:25px;
+    color:rgb(255,240,229);
+    background-color:red;
+    margin-top:-8px;
+    padding:1px;
+
+}
+
+.homePage .show_sixad .sixad_two ul li b{
+
+    font-size:5px;
+    margin:0px 2px 10px 15px;
+
+}
+
+.homePage .show_sixad .sixad_two ul li span{
+    font-weight:bold;
+}
+
+.homePage .show_sixad .sixad_two ul li h5{
+    float:right;
+    background-color:white;
+    color:rgb(152,152,152);
+    width:63px;
+    height:23px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    text-decoration:line-through;
+    padding:8px 5px 5px 8px;
+    font-size:10px;
+}
+
+/*******6个广告第3个广告图片**********/
+
+.homePage .show_sixad .sixad_three{
+    margin-left:-25px;
+}
+
+.homePage .show_sixad .sixad_three img{
+    height:150px;
+    width:130px;
+}
+
+.homePage .show_sixad .sixad_three h4{
+    font-size:11px;
+}
+
+.homePage .show_sixad .sixad_three h4:hover{
+    color:red;
+}
+
+.homePage .show_sixad .sixad_three ul li{
+    float:left;
+    list-style:none;
+    font-size:15px;
+    width:149px;
+    margin-left:-50px;
+    height:25px;
+    color:rgb(255,240,229);
+    background-color:red;
+    margin-top:-8px;
+    padding:1px;
+}
+
+.homePage .show_sixad .sixad_three ul li b{
+    font-size:5px;
+    margin:0px 2px 10px 15px;
+
+}
+
+.homePage .show_sixad .sixad_three ul li span{
+    font-weight:bold;
+}
+
+.homePage .show_sixad .sixad_three ul li h5{
+    float:right;
+    background-color:white;
+    color:rgb(152,152,152);
+    width:61px;
+    height:23px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    text-decoration:line-through;
+    padding:8px 5px 5px 8px;
+    font-size:10px;
+}
+
+
+/*******6个广告第4个广告图片*******/
+.homePage .show_sixad .sixad_four{
+    margin-left:-42px;
+}
+
+.homePage .show_sixad .sixad_four img{
+    height:150px;
+    width:130px;
+
+}
+
+.homePage .show_sixad .sixad_four h4{
+    font-size:11px;
+}
+
+.homePage .show_sixad .sixad_four h4:hover{
+    color:red;
+}
+
+.homePage .show_sixad .sixad_four ul li{
+    float:left;
+    list-style:none;
+    font-size:15px;
+    width:149px;
+    margin-left:-50px;
+    height:25px;
+    color:rgb(255,240,229);
+    background-color:red;
+    margin-top:-8px;
+    padding:1px;
+}
+
+.homePage .show_sixad .sixad_four ul li b{
+
+    font-size:5px;
+    margin:0px 2px 10px 15px;
+
+}
+
+.homePage .show_sixad .sixad_four ul li span{
+    font-weight:bold;
+}
+
+.homePage .show_sixad .sixad_four ul li h5{
+    float:right;
+    background-color:white;
+    color:rgb(152,152,152);
+    width:61px;
+    height:23px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    text-decoration:line-through;
+    padding:8px 5px 5px 8px;
+    font-size:10px;
+}
+
+
+/*******6个广告第5个广告图片*******/
+.homePage .show_sixad .sixad_five{
+    margin-left:-58px;
+}
+
+.homePage .show_sixad .sixad_five img{
+    height:150px;
+    width:130px;
+}
+
+.homePage .show_sixad .sixad_five h4{
+    font-size:11px;
+}
+
+.homePage .show_sixad .sixad_five h4:hover{
+    color:red;
+}
+
+.homePage .show_sixad .sixad_five ul li{
+    float:left;
+    list-style:none;
+    font-size:15px;
+    width:149px;
+    margin-left:-50px;
+    height:25px;
+    color:rgb(255,240,229);
+    background-color:red;
+    margin-top:-8px;
+    padding:1px;
+}
+
+.homePage .show_sixad .sixad_five ul li b{
+
+    font-size:5px;
+    margin:0px 2px 10px 15px;
+
+}
+
+.homePage .show_sixad .sixad_five ul li span{
+    font-weight:bold;
+}
+
+.homePage .show_sixad .sixad_five ul li h5{
+    float:right;
+    background-color:white;
+    color:rgb(152,152,152);
+    width:61px;
+    height:23px;
+    margin-top:0px;
+    margin-right:0px;
+    margin-bottom:0px;
+    text-decoration:line-through;
+    padding:8px 5px 5px 8px;
+    font-size:10px;
+}
+
+
+/*******6个广告第6个广告图片*******/
+.homePage .show_sixad .sixad_six{
+    height:230px;
+    background-color:rgb(239,239,247);
+    width:200px;
+    margin-left:-90px;
+
+}
+
+.homePage .show_sixad .sixad_six img{
+    height:130px;
+    width:200px;
+
+
+}
+
+.homePage .show_sixad .sixad_six h4{
+    font-size:14px;
+    margin-top:15px;
+    color:rgb(167,167,167);
+    margin-left:60px;
+    width:100px;
+}
+
+.homePage .show_sixad .sixad_six h3{
+    font-size:14px;
+    font-weight:bold;
+    width:110px;
+    margin-left:50px;
+    margin-top:5px;
+}
+
+.homePage .show_sixad .sixad_six span{
+    border:1px solid red;
+    border-radius:20px;
+    font-size:15px;
+    font-weight:bold;
+    margin-left:63px;
+    margin-top:5px;
+    padding:5px;
+    color:red;
+    background-color:rgb(255,245,251);
+}
+
+.homePage .show_sixad .sixad_six span:hover{
+    color:white;
+    background-color:red;
+}
+
+
+
+
+
+/**中间两个大广告****/
+.homePage .show_twoad {
+    height:45px;
+}
+
+.homePage .show_twoad .tejia h4{
+    font-weight:bold;
+    font-size:25px;
+}
+
+
+.homePage .show_twoad .jingxuan{
+    margin-top:15px;
+}
+
+.homePage .show_twoad .jingxuan a{
+    color:rgb(214,216,215);
+}
+
+.homePage .show_twoad .jingxuan a:hover{
+    color:red;
+}
+
+.homePage .show_twoad .baihuo{
+    margin-top:15px;
+}
+
+.homePage .show_twoad .baihuo a{
+    color:red;
+}
+
+.homePage .show_twoad .shangou h4{
+    font-weight:bold;
+    font-size:25px;
+}
+
+/****中下方2两列，1列3广告***/
+.homePage .show_threead{
+    height:280px;
+}
+
+.homePage .show_threead .peach{
+    width:180px;
+    height:265px;
+    background-color:rgb(248,249,251);
+}
+
+.homePage .show_threead .peach a img{
+    width:125px;
+    height:115px;
+    margin:30px 0px 0px 27px;
+
+}
+
+.homePage .show_threead .peach h4{
+    font-size:16px;
+    width:125px;
+    margin-left:27px;
+}
+
+.homePage .show_threead .peach ul{
+    font-size:18px;
+    color:red;
+    list-style:none;
+    height:25px;
+    width:130px;
+    margin-left:5px;
+}
+
+.homePage .show_threead .peach ul li{
+    float:left;
+}
+
+.homePage .show_threead .peach ul li.new_price{
+    font-weight:bold;
+
+}
+
+.homePage .show_threead .peach ul li.old_price {
+    margin-top:8px;
+    font-size:8px;
+    color:rgb(208,212,215);
+    text-decoration:line-through;
+}
+
+.homePage .show_threead .peach h5{
+    width:80px;
+    color:rgb(208,212,215);
+    margin-left:45px;
+}
+
+.homePage .show_threead .peach h5 b{
+    color:red;
+}
+
+
+
+
+/************百香果**************/
+.homePage .show_threead .first_column .baixiangguo{
+    margin-top:20px;
+}
+
+.homePage .show_threead .first_column .baixiangguo a img{
+    width:80px;
+    height:80px;
+}
+
+.homePage .show_threead .first_column .baixiangguo ul{
+    list-style:none;
+    font-size:12px;
+    margin-left:50px;
+    margin-top:-80px;
+
+}
+
+.homePage .show_threead .first_column .baixiangguo ul li{
+    width:70px;
+}
+
+.homePage .show_threead .first_column .baixiangguo ul li.word:hover{
+    color:red;
+}
+
+.homePage .show_threead .first_column .baixiangguo ul li.new_price{
+    font-weight:bold;
+    font-size:14px;
+    color:red;
+}
+
+.homePage .show_threead .first_column .baixiangguo ul li.old_price{
+    font-size:8px;
+    color:rgb(208,212,215);
+    text-decoration:line-through;
+}
+
+
+
+/************泥螺**************/
+.homePage .show_threead .niluo{
+    margin-top:60px;
+}
+
+.homePage .show_threead .niluo a img{
+    width:80px;
+    height:80px;
+    margin-left:10px;
+}
+
+.homePage .show_threead .niluo ul{
+    list-style:none;
+    font-size:12px;
+    margin-left:65px;
+    margin-top:-80px;
+}
+
+.homePage .show_threead .niluo ul li{
+    width:70px;
+}
+
+.homePage .show_threead .niluo ul li.word:hover{
+    color:red;
+}
+
+.homePage .show_threead .niluo ul li.new_price{
+    font-weight:bold;
+    font-size:14px;
+    color:red;
+}
+
+.homePage .show_threead .niluo ul li.old_price{
+    font-size:8px;
+    color:rgb(208,212,215);
+    text-decoration:line-through;
+}
+
+/******蛤蜊************/
+.homePage .show_threead .second_column .huaha{
+    margin-top:20px;
+}
+.homePage .show_threead .second_column .huaha a img{
+    width:80px;
+    height:80px;
+}
+
+.homePage .show_threead .second_column .huaha ul{
+    list-style:none;
+    font-size:12px;
+    margin-left:60px;
+    margin-top:-80px;
+
+}
+
+.homePage .show_threead .second_column .huaha ul li{
+    width:70px;
+}
+
+.homePage .show_threead .second_column .huaha ul li.word:hover{
+    color:red;
+}
+
+.homePage .show_threead .second_column .huaha ul li.new_price{
+    font-weight:bold;
+    font-size:14px;
+    color:red;
+}
+
+.homePage .show_threead .second_column .huaha ul li.old_price{
+    font-size:8px;
+    color:rgb(208,212,215);
+    text-decoration:line-through;
+}
+
+
+/*********玉梨**************/
+.homePage .show_threead .yuli{
+    margin-top:60px;
+}
+
+.homePage .show_threead .yuli a img{
+    width:80px;
+    height:80px;
+    margin-left:10px;
+}
+
+.homePage .show_threead .yuli ul{
+    list-style:none;
+    font-size:12px;
+    margin-left:80px;
+    margin-top:-80px;
+
+}
+
+.homePage .show_threead  .yuli ul li{
+    width:70px;
+}
+
+.homePage .show_threead  .yuli ul li.word:hover{
+    color:red;
+}
+
+.homePage .show_threead  .yuli ul li.new_price{
+    font-weight:bold;
+    font-size:14px;
+    color:red;
+}
+
+.homePage .show_threead  .yuli ul li.old_price{
+    font-size:8px;
+    color:rgb(208,212,215);
+    text-decoration:line-through;
+}
+
+/*********特步运动专场********/
+.homePage .show_threead .tebu{
+    margin-top:-42px;
+    width:220px;
+    height:265px;
+    background-color:rgb(251,250,246);
+}
+
+.homePage .show_threead .tebu ul{
+    list-style:none;
+    margin-top:40px;
+    margin-left:10px;
+}
+
+
+.homePage .show_threead .tebu ul li.zhuanchang{
+    font-weight:bold;
+    font-size:17px;
+    width:120px;
+    margin-left:5px;
+}
+
+.homePage .show_threead .tebu ul li.dizhi{
+    margin-top:10px;
+    font-size:12px;
+    width:120px;
+
+    color:rgb(107,103,103);
+}
+
+.homePage .show_threead .tebu a img{
+    width:120px;
+    height:120px;
+    margin-left:50px;
+    margin-top:5px;
+}
+
+/*********特步运动专场右侧6个广告,第一个老人头********/
+.homePage .show_threead .laorentou{
+    width:120px;
+    height:90px;
+    margin-left:30px;
+}
+
+.homePage .show_threead .laorentou a img{
+    width:120px;
+    height:70px;
+}
+
+.homePage .show_threead .laorentou span{
+    margin:5px 0px 0px 20px;
+    font-size:12px;
+    color:rgb(112,116,119);
+}
+
+/*********特步运动专场右侧6个广告,第二个bra********/
+.homePage .show_threead .bra{
+    width:120px;
+    height:90px;
+    margin-left:45px;
+}
+
+.homePage .show_threead .bra a img{
+    width:120px;
+    height:70px;
+}
+
+.homePage .show_threead .bra span{
+    margin:5px 0px 0px 15px;
+    font-size:12px;
+    color:rgb(112,116,119);
+}
+
+/*********特步运动专场右侧6个广告,第3个佳贝********/
+.homePage .show_threead .jiabei{
+    width:120px;
+    height:90px;
+    margin-left:45px;
+}
+
+.homePage .show_threead .jiabei a img{
+    width:120px;
+    height:70px;
+}
+
+.homePage .show_threead .jiabei span{
+    margin:5px 0px 0px 20px;
+    font-size:12px;
+    color:rgb(112,116,119);
+}
+
+
+/*********特步运动专场右侧6个广告,第四个阿迪达斯****/
+.homePage .show_threead .adidas{
+    width:120px;
+    height:90px;
+    margin-left:-10px;
+}
+
+.homePage .show_threead .adidas a img{
+    width:120px;
+    height:70px;
+}
+
+.homePage .show_threead .adidas span{
+    margin:5px 0px 0px 15px;
+    font-size:12px;
+    color:rgb(112,116,119);
+}
+
+
+/*********特步运动专场右侧6个广告,第五个科勒****/
+.homePage .show_threead .kele{
+    width:120px;
+    height:90px;
+    margin-left:5px;
+}
+
+.homePage .show_threead .kele a img{
+    width:120px;
+    height:70px;
+}
+
+.homePage .show_threead .kele span{
+    margin:5px 0px 0px 15px;
+    font-size:12px;
+    color:rgb(112,116,119);
+}
+
+
+/*********特步运动专场右侧6个广告,第六个海盗船********/
+.homePage .show_threead .haidaochuan{
+    width:120px;
+    height:90px;
+    margin-left:5px;
+}
+
+.homePage .show_threead .haidaochuan a img{
+    width:120px;
+    height:70px;
+}
+
+.homePage .show_threead .haidaochuan span{
+    margin:5px 0px 0px 20px;
+    font-size:12px;
+    color:rgb(112,116,119);
+}

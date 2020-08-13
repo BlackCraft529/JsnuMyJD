@@ -21,7 +21,7 @@
             registerTime:'',
             retailer: '',
             status: false,
-            cartList: "0",
+            cartList: 0,
             search_key: "",
         };
         $scope.tempUser={
@@ -75,14 +75,11 @@
                 },
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
-                $scope.user.cartList="30";
-                console.log("购物车:");
+                // $scope.user.cartList=data.data.shopCartGoods.length;
                 console.log(data.data);
-                var s=[];
-                s=data.data.goodsList;
-                console.log(s);
-                console.log(data.data.goodsList.length);
-
+                for(var i=0;i<data.data.shopCartGoods.length;i++){
+                    $scope.user.cartList+=data.data.shopCartGoods[i].shopCartAmount;
+                }
             }),function errorCallBack(err) {
                 alert("error!\n" + "error message:" + err);
             };
