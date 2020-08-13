@@ -7,8 +7,8 @@
 					<img src="img-search/login.png">
 				</a>
 				<div class="search">
-					<input>
-					<button>搜索</button>
+					<input type="text" ng-model="search_key">
+					<button ng-click="IwantIt()">搜索</button>
 				</div>
 				<div class="my_car">
 					<a href="#">
@@ -57,40 +57,7 @@
 							<div>商品名称与信息</div>
 							<b>商家<img src="img-search/b3.png"></b>
 							<s><img src="img-search/b4.png"></s>
-							<button type="button" class="btn btn-default btn-sm">
-								<span class="glyphicon glyphicon-shopping-cart"></span>加入购物车
-							</button>
-						</a>
-					</li>
-					<li>
-						<a href="#"><img src="img-search/">
-							<span>¥价格</span>
-							<div>商品名称与信息</div>
-							<b>商家<img src="img-search/b3.png"></b>
-							<s><img src="img-search/b6.png"></s>
-							<button type="button" class="btn btn-default btn-sm">
-								<span class="glyphicon glyphicon-shopping-cart"></span>加入购物车
-							</button>
-						</a>
-					</li>
-					<li>
-						<a href="#"><img src="img-search/">
-							<span>价格</span>
-							<div>商品名称与信息</div>
-							<b>商家<img src="img-search/b3.png"></b>
-							<s><img src="img-search/b5.png"></s>
-							<button type="button" class="btn btn-default btn-sm">
-								<span class="glyphicon glyphicon-shopping-cart"></span>加入购物车
-							</button>
-						</a>
-					</li>
-					<li>
-						<a href="#"><img src="img-search/">
-							<span>价格</span>
-							<div>商品名称与信息</div>
-							<b>商家<img src="img-search/b3.png"></b>
-							<s><img src="img-search/b4.png"></s>
-							<button type="button" class="btn btn-default btn-sm">
+							<button type="button" class="btn btn-default btn-sm" ng-click="putIn()">
 								<span class="glyphicon glyphicon-shopping-cart"></span>加入购物车
 							</button>
 						</a>
@@ -98,3 +65,5 @@
 				</ul>
 			</div>
 		</div>
+	</div>
+</div>

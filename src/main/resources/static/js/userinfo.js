@@ -323,7 +323,7 @@
                     $scope.goodsInfo.name='';
                     $scope.goodsInfo.price='';
                     $scope.goodsInfo.desc='';
-                    $scope.goodsInfo.Sell_amount='';
+                    $scope.goodsInfo.left_amount='';
                     $scope.goodsInfo.cate='';
                     $scope.goodsInfo.image='';
                 }else {
