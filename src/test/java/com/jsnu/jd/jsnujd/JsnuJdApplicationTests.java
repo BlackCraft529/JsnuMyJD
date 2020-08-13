@@ -2,6 +2,7 @@ package com.jsnu.jd.jsnujd;
 
 import com.jsnu.jd.jsnujd.pojo.Goods;
 import com.jsnu.jd.jsnujd.service.GoodsService;
+import com.jsnu.jd.jsnujd.service.ShopCartService;
 import com.jsnu.jd.jsnujd.service.UserService;
 import com.jsnu.jd.jsnujd.utils.AddressUtil;
 import com.jsnu.jd.jsnujd.utils.StaticServiceImpl;
@@ -19,6 +20,9 @@ class JsnuJdApplicationTests {
 
     @Autowired
     private GoodsService goodsService;
+
+    @Autowired
+    private ShopCartService shopCartService;
 
     @Test
     void contextLoads() {
@@ -64,5 +68,10 @@ class JsnuJdApplicationTests {
     void TestVagueGoodsSet(){
         System.out.println(StaticServiceImpl.getUserService()
                 .selectUserByUserId("5f09034154114554832f1f7fd351122e").getName());
+    }
+
+    @Test
+    void TestAddShopCart(){
+        System.out.println(shopCartService.addShopCartGoodsByUserId("d03fef760d254cff9f078f0ad1314d7b","8efec19343ea4f0c8440ccff80628557",1));
     }
 }

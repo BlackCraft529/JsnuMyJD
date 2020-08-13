@@ -6,6 +6,8 @@ import com.jsnu.jd.jsnujd.utils.StaticServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -22,6 +24,7 @@ public class ShopCart {
 
 
     public ShopCart(com.jsnu.jd.jsnujd.pojo.ShopCart shopCart){
+        goodsList=new HashMap<>();
         if(shopCart!=null){
             for(String value:shopCart.getGoodsList().split(",")){
                 String goodsId=value.split("#")[0];

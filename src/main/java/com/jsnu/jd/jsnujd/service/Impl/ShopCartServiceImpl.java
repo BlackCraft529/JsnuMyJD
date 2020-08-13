@@ -2,11 +2,14 @@ package com.jsnu.jd.jsnujd.service.Impl;
 
 import com.jsnu.jd.jsnujd.mapper.GoodsMapper;
 import com.jsnu.jd.jsnujd.mapper.ShopCartMapper;
+import com.jsnu.jd.jsnujd.mapper.UserMapper;
 import com.jsnu.jd.jsnujd.pojo.Goods;
 import com.jsnu.jd.jsnujd.service.ShopCartService;
 import com.jsnu.jd.jsnujd.vo.ShopCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -20,6 +23,8 @@ public class ShopCartServiceImpl implements ShopCartService {
     private ShopCartMapper shopCartMapper;
     @Autowired
     private GoodsMapper goodsMapper;
+    @Autowired
+    private UserMapper userMapper;
 
     /**
      * 新增一个购物车信息
@@ -114,17 +119,31 @@ public class ShopCartServiceImpl implements ShopCartService {
      */
     @Override
     public int addShopCartGoodsByUserId(String userId, String goodsId, int amount) {
+        //新增购物车
         if(shopCartMapper.selectShopCartByUserId(userId)==null){
-            return 0;
+            String cartId = UUID.randomUUID().toString().replaceAll("-","");
+            while (shopCartMapper.selectShopCartByCardId(cartId)!=null){
+                cartId = UUID.randomUUID().toString().replaceAll("-","");
+            }
+            ShopCart shopCartNew=new ShopCart();
+            shopCartNew.setId(cartId);
+            Map<Goods,Integer> goodsList = new HashMap<>();
+            goodsList.put(goodsMapper.selectGoodsByGoodsId(goodsId),amount);
+            shopCartNew.setGoodsList(goodsList);
+            shopCartNew.setOwner(userMapper.selectUserByUuid(userId));
+            return shopCartMapper.addShopCart(new com.jsnu.jd.jsnujd.pojo.ShopCart(shopCartNew));
         }
+        //增加购物车
         com.jsnu.jd.jsnujd.vo.ShopCart shopCart=new ShopCart(shopCartMapper.selectShopCartByUserId(userId));
         Map<Goods, Integer> newGoodsList = shopCart.getGoodsList();
+        boolean isAdd=false;
         for(Map.Entry<Goods, Integer> entry : shopCart.getGoodsList().entrySet()){
             if(entry.getKey().getId().equalsIgnoreCase(goodsId)){
                 newGoodsList.put(entry.getKey(),entry.getValue()+1);
+                isAdd=true;
             }
         }
-        if(newGoodsList.equals(shopCart.getGoodsList())){
+        if(!isAdd){
             newGoodsList.put(goodsMapper.selectGoodsByGoodsId(goodsId),1);
         }
         return shopCartMapper.updateShopCartGoodsListByPojo(new com.jsnu.jd.jsnujd.pojo.ShopCart(shopCart));
