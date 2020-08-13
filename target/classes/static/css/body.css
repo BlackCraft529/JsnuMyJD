@@ -885,12 +885,14 @@
 
 .homePage .banner .rt_first ul li.small_logndog ul{
     float:right;
-    margin:15px 20px 0px 5px;
+    margin:0px 20px 0px 5px;
     width:75px;
     height:35px;
     font-size:10px;
 }
-
+.homePage .banner .rt_first ul li.small_logndog ul li{
+    width:120px;
+}
 .homePage .banner .rt_first ul li.small_logndog ul li a{
     text-decoration:none;
     color:black;
@@ -907,6 +909,7 @@
 
 
 .homePage .banner .rt_first ul li.two_button{
+    margin-top:5px;
     width:145px;
     margin-left:10px;
     padding:3px;

@@ -162,15 +162,16 @@
                     <div class="rt_first">
                         <ul>
                             <li class="small_logndog">
-                                <img src="img-home/small_logndog.png" class="img-circle">
+                                <img src="img-home/small_logndog.png" class="img-circle" ng-if="!user.status">
+                                <img onerror="this.src='img-userinfo/1.png'" class="img-circle" ng-if="user.status" ng-src="{{user.avatar}}">
                                 <ul>
                                     <li>
                                         欢迎逛京东!
                                     </li>
-                                    <li>
+                                    <li ng-if="!user.status">
                                         <a href="#!/login">登录</a> | <a href="#!/register">注册</a>
                                     </li>
-                                    <!-- <li class="welcome">欢迎您，孙珂</li> -->
+                                     <li class="welcome" ng-if="user.status" ng-bind="'欢迎您，'+user.name"></li>
                                 </ul>
                             </li>
                             <li class="two_button">

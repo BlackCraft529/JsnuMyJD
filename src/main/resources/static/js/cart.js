@@ -34,8 +34,8 @@
             for(var i=0;i<data.data.shopCartGoods.length;i++){
                 $scope.user.cartList+=data.data.shopCartGoods[i].shopCartAmount;
             }
-            console.log( $scope.cart);
-            console.log( $scope.cart[1].goods.image);
+            // console.log( $scope.cart);
+            // console.log( $scope.cart[1].goods.image);
         }),function errorCallBack(err) {
             alert("error!\n" + "error message:" + err);
         };

@@ -24,6 +24,7 @@
             $scope.user.avatar = sessionStorage.getItem("avatar");
             $scope.user.address = sessionStorage.getItem("address");
             $scope.user.status = true;
+            // console.log($scope.user.avatar);
         }
         $scope.iWantIt=function () {
             console.log($scope.user.search_key);
@@ -36,4 +37,4 @@
         }
         //
     }]);
-})(angular)
+})(angular);

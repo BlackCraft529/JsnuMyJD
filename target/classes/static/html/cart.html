@@ -35,7 +35,7 @@
             <tr>
                 <td class="td1">
                     <input type="checkbox" ng-click="select($event)" ng-checked="checkedAll">
-                    <img  onerror="this.src='img-search/1.jpg'" ng-src="item.goods.image">
+                    <img  onerror="this.src='img-search/1.jpg'" ng-src="{{item.goods.image}}">
                 </td>
                 <td class="td2">
                     <div class="goodsname"><a href="" ng-bind="item.goods.name"></a></div>

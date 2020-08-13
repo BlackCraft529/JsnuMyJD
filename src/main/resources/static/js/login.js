@@ -62,7 +62,7 @@
                 sessionStorage.setItem("lastLoginTime", data.data.lastLoginTime);
                 sessionStorage.setItem("registerTime", data.data.registerTime);
                 sessionStorage.setItem("retailer", data.data.retailer);
-                console.log(data.data);
+                // console.log(data.data);
                 alert("登录成功！页面即将跳转，如果没有跳转请手动刷新！");
                 $window.location.reload();
             }, function errorCallback(response) {

@@ -77,3 +77,6 @@
     - params: uuid good_id[]
     - msg: 用户购买商品 删除对应的记录然后生成一个order 一次购买生成一次 order 且order的图片属性以第一个good_id决定
     - return: true/false 成功为true
+
+  /jd1:
+    -msg: 转发至旧版京东
