@@ -155,7 +155,7 @@
                 method: 'post',
                 data: {
                     "uuid" : $scope.user.uuid,
-                    "good_id":$scope.selectList,
+                    "goods_id":$scope.selectList,
                 },
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
