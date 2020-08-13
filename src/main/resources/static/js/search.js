@@ -39,7 +39,7 @@
                 $location.path('/login');
                 return;
             }
-            console.log(this.item.id);// 测试goods_id
+            // console.log(this.item.id);// 测试goods_id
             $http({
                 url: '/enrollCart',
                 method: 'post',
@@ -49,7 +49,10 @@
                 },
                 headers:{'Content-Type':'application/json;charset=UTF-8'},
             }).then(function successCallback(data) {
-                console.log(data);
+                // console.log(data);
+                if(data.data)
+                    alert("加入购物车成功！");
+                else alert("加入购物车失败！");
             }, function errorCallback(response) {
                 alert("error!\n"+"error message:"+response);
             });

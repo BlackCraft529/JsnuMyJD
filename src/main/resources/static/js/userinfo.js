@@ -77,7 +77,11 @@
             }).then(function successCallBack(data) {
                 $scope.user.cartList="30";
                 console.log("购物车:");
-                console.log(data.data.length);
+                console.log(data.data);
+                var s=[];
+                s=data.data.goodsList;
+                console.log(s);
+                console.log(data.data.goodsList.length);
 
             }),function errorCallBack(err) {
                 alert("error!\n" + "error message:" + err);
