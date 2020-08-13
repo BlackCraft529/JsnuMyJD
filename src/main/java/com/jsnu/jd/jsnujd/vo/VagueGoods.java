@@ -5,6 +5,8 @@ import com.jsnu.jd.jsnujd.utils.StaticServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +21,8 @@ public class VagueGoods {
     private boolean result;
 
     public void setGoodsList(List<Goods> goodsList){
-        String goodsPublisher="";
+        this.goodsList=new ArrayList<>();
+        String goodsPublisher;
         for(Goods goods:goodsList){
             goodsPublisher = StaticServiceImpl.getUserService()
                     .selectUserByUserId(goods.getPublisher()).getName();
