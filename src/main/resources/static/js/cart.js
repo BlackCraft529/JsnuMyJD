@@ -15,6 +15,7 @@
             cartList: 0,
             selectMoney: 0,
             selectNum: 0,
+            cartStatus: false,
         };
         $scope.cart=[];
         $scope.selectList=[];
@@ -33,6 +34,11 @@
             $scope.cart=data.data.shopCartGoods;
             for(var i=0;i<data.data.shopCartGoods.length;i++){
                 $scope.user.cartList+=data.data.shopCartGoods[i].shopCartAmount;
+            }
+            if($scope.cart.length!==0){
+                $scope.user.cartStatus=true;
+            }else {
+                $scope.user.cartStatus=false;
             }
             // console.log( $scope.cart);
             // console.log( $scope.cart[1].goods.image);
@@ -84,6 +90,7 @@
                 data: {
                     "uuid" : $scope.user.uuid,
                     "goods_id": goods_id,
+                    // "goods_id":[this.item.goods.id],
                 },
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
@@ -99,9 +106,12 @@
         };
         //删除某些内容
         $scope.delSome=function () {
-            console.log(this);
-            if($scope.selectList.length===0)
+            console.log($scope.selectList.length);
+            if($scope.selectList.length===0){
+                alert("当前未选择任何商品");
                 return;
+            }
+
             $http({
                 url: '/delSome',
                 method: 'post',

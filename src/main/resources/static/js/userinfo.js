@@ -8,7 +8,12 @@
             controller: 'userinfoCtrl'
         });
         $qProvider.errorOnUnhandledRejections(false);
-    }]).controller("userinfoCtrl",['$scope','$http','$location',function ($scope,$http,$location) {
+    }]).controller("userinfoCtrl",[
+        '$scope',
+        '$http',
+        '$location',
+        '$window',
+        function ($scope,$http,$location,$window) {
         $scope.user={
             uuid:'',
             password:'',
@@ -23,6 +28,7 @@
             status: false,
             cartList: 0,
             search_key: "",
+            orderStatus: false,
         };
         $scope.tempUser={
             password1:'',
@@ -41,9 +47,7 @@
             cate:'',
             image:'',
         };
-        $scope.userOrder={
-
-        };
+        $scope.userOrder=[];
         $scope.editInfo=false;
         //装填个人信息
         if (sessionStorage.getItem("uuid")!==null){
@@ -76,10 +80,14 @@
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
                 // $scope.user.cartList=data.data.shopCartGoods.length;
-                console.log(data.data);
-                for(var i=0;i<data.data.shopCartGoods.length;i++){
-                    $scope.user.cartList+=data.data.shopCartGoods[i].shopCartAmount;
+                // console.log(data);
+                $scope.user.cartList=0;
+                if(data.data!==null){
+                    for(var i=0;i<data.data.shopCartGoods.length;i++){
+                        $scope.user.cartList+=data.data.shopCartGoods[i].shopCartAmount;
+                    }
                 }
+
             }),function errorCallBack(err) {
                 alert("error!\n" + "error message:" + err);
             };
@@ -92,8 +100,15 @@
                 },
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
-                console.log("订单");
                 console.log(data);
+                console.log($scope.user.uuid);
+                $scope.userOrder=data.data;
+                if($scope.userOrder.length===0){
+                    $scope.user.orderStatus=false;
+                }
+                else {
+                    $scope.user.orderStatus=true;
+                }
             }),function errorCallBack(err) {
                 alert("error!\n" + "error message:" + err);
             };
@@ -354,7 +369,7 @@
         //去购物车
         $scope.toCart=function () {
             $location.path('/cart');
-        }
-        //
+        };
+
     }]);
 })(angular);

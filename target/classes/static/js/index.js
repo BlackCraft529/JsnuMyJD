@@ -31,7 +31,7 @@
             }
         });
     }]);
-    app.controller("indexCtrl",['$scope','$http','$window',function ($scope,$http,$window) {
+    app.controller("indexCtrl",['$scope','$http','$window','$location',function ($scope,$http,$window,$location) {
         $scope.location='';
         $scope.ip='';
         $scope.user={
@@ -101,6 +101,11 @@
         $scope.logout=function () {
             sessionStorage.clear();
             $window.location.reload();
+        };
+        //打开个人信息定位到我的订单
+        $scope.toMyOrder=function () {
+            // $location.path("/userinfo").search({hash:'order'});
+            $location.path("/userinfo").hash('order');
         };
         //
     }]);

@@ -140,7 +140,7 @@
                     </table>
                 </div>
             </div>
-            <div class="myorder">
+            <div class="myorder" id="order">
                 <div class="title">我的订单</div>
                 <div class="function">
                     <span><a href=""><img src="img-userinfo/order1.png"></a></span>
@@ -149,12 +149,14 @@
                     <span><a href=""><img src="img-userinfo/order4.png"></a></span>
                     <span><a href=""><img src="img-userinfo/order5.png"></a></span>
                 </div>
-                <div class="data">
+                <div class="none" ng-if="!user.orderStatus">明知买买买是个泥潭，还是忍不住往里踩</div>
+                <div class="data" ng-repeat="item in userOrder" ng-if="user.orderStatus">
                     <div class="goods_ico">
-                        <a href=""><img src="img-userinfo/1.png"></a>
+                        <a href=""><img onerror="this.src='img-search/1.jpg'" ng-src="{{item.goodList[0].goods.image}}"></a>
                     </div>
                     <div class="good_name">
-                        剃秃了
+                        <div ng-bind="item.goodList[0].goods.name">title</div>
+                        <div ng-bind="'订单号：'+item.id">sub</div>
                     </div>
                     <div class="more">
                         <span><a href="">查看详情</a></span>

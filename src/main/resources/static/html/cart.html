@@ -30,7 +30,8 @@
     </div>
 
     <!--重复获取-->
-    <div class="goodsinfo" ng-repeat="item in cart" data-id="item.goods.id">
+    <div class="none" ng-if="!user.cartStatus">明知买买买是个泥潭，还是忍不住往里踩</div>
+    <div class="goodsinfo" ng-repeat="item in cart" data-id="item.goods.id"  ng-if="user.cartStatus">
         <table>
             <tr>
                 <td class="td1">

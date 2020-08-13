@@ -32,7 +32,7 @@
         $scope.$watch('user.name',function (now,old) {
             if(now===''){
                 $scope.info.name="4-20个字符，可以留空";
-                $scope.info.name_status=false;
+                $scope.info.name_status=true;
                 return;
             }
             if(now.length<4){
@@ -50,7 +50,7 @@
         $scope.judgeName=function(){
             if($scope.user.name.length<4)
                 return;
-            //发送姓名是否存在请求
+            //发送用户名是否存在请求
             $http({
                 url:'/getName',//验证表单的接口
                 method:'post',
