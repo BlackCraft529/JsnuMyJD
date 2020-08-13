@@ -61,7 +61,7 @@ public class GoodsController {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String vagueName = node.get("search_key").toString().replaceAll("\"","");
         VagueGoods vagueGoods = new VagueGoods();
-        if(goodsService.selectGoodsByVagueName(vagueName)==null){
+        if(goodsService.selectGoodsByVagueName(vagueName).size()==0){
             vagueGoods.setResult(false);
             return jsonObjectMapper.valueToTree(vagueGoods).toString();
         }
