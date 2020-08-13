@@ -56,7 +56,7 @@
         select * from goods_data where `name`=#{nameExact};
     </select>
     <select id="selectGoodsByVagueName" parameterType="string" resultMap="GoodsResultMap">
-        select * from goods_data where `name`=#{vagueName};
+        select * from goods_data where `name` like #{vagueName};
     </select>
     <!--查找最新商品-->
     <select id="findNewestGoods" parameterType="_int" resultMap="GoodsResultMap">

@@ -4,6 +4,7 @@ import com.jsnu.jd.jsnujd.pojo.Goods;
 import com.jsnu.jd.jsnujd.service.GoodsService;
 import com.jsnu.jd.jsnujd.service.UserService;
 import com.jsnu.jd.jsnujd.utils.AddressUtil;
+import com.jsnu.jd.jsnujd.vo.VagueGoods;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -42,5 +43,19 @@ class JsnuJdApplicationTests {
     @Test
     void findAllUser(){
         System.out.println(userService.selectUserByUserId("UUID-123456"));
+    }
+
+    @Test
+    void testFindGoods(){
+        String vagueName="手表";
+        VagueGoods vagueGoods = new VagueGoods();
+        if(goodsService.selectGoodsByVagueName(vagueName).size()==0){
+            vagueGoods.setResult(false);
+            System.out.println(vagueGoods.toString());
+            return;
+        }
+        vagueGoods.setGoodsList(goodsService.selectGoodsByVagueName(vagueName));
+        vagueGoods.setResult(true);
+        System.out.println(vagueGoods.toString());
     }
 }
