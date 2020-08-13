@@ -51,11 +51,11 @@
 					<img src="img-search/t1.png">
 				</div>
 				<ul type="none">
-					<li>
-						<a href="#"><img src="img-search/">
-							<span>价格</span>
-							<div>商品名称与信息</div>
-							<b>商家<img src="img-search/b3.png"></b>
+					<li ng-repeat="item in goodList" data-id="{{item.id}}">
+						<a href="#"><img onerror="this.src='img-search/error-goods.jpg'" ng-src="item.image" >
+							<span ng-bind="item.sellPrice">价格</span>
+							<div ng-bind="item.name">商品名称与信息</div>
+							<b ng-bind="item.publisher">商家<img src="img-search/b3.png"></b>
 							<s><img src="img-search/b4.png"></s>
 							<button type="button" class="btn btn-default btn-sm" ng-click="putIn()">
 								<span class="glyphicon glyphicon-shopping-cart"></span>加入购物车
