@@ -30,7 +30,7 @@ public class IndexController {
         return "register";
     }
 
-    @RequestMapping("/oldjd")
+    @RequestMapping("/jd1")
     public String toOldJd(){
         return "oldjd";
     }

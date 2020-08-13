@@ -51,6 +51,9 @@ public class ShopCartServiceImpl implements ShopCartService {
      */
     @Override
     public UserShopCart selectShopCartByUserId(String userId) {
+        if(shopCartMapper.selectShopCartByUserId(userId)==null){
+            return null;
+        }
         ShopCart shopCart = new ShopCart(shopCartMapper.selectShopCartByUserId(userId));
         return new UserShopCart(shopCart);
     }
@@ -108,6 +111,7 @@ public class ShopCartServiceImpl implements ShopCartService {
         com.jsnu.jd.jsnujd.pojo.ShopCart shopCart=shopCartMapper.selectShopCartByUserId(userId);
         shopCart.setGoodsList(goodsList);
         return shopCartMapper.updateShopCartGoodsListByPojo(shopCart);
+
     }
 
 
