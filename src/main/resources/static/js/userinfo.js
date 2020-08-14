@@ -374,20 +374,31 @@
         $scope.editOrder=function (status) {
             console.log(status);
             console.log(this.item);
-
-        //     $http({
-        //         url:"/editOrder",
-        //         method: 'post',
-        //         data:{
-        //             uuid: $scope.user.uuid,
-        //             status: status,
-        //         },
-        //         headers :{'Content-Type': 'application/json;charset=UTF-8'},
-        //     }).then(function successCallback(data) {
-        //         console.log(data.data);
-        //     }),function errorCallback(err) {
-        //         alert("error!\n"+"error message:"+err);
-        //     };
+            $http({
+                url:"/editOrder",
+                method: 'post',
+                data:{
+                    uuid: $scope.user.uuid,
+                    status: status,
+                    id: this.item.orderId
+                },
+                headers :{'Content-Type': 'application/json;charset=UTF-8'},
+            }).then(function successCallback(data) {
+                console.log(data.data);
+                if(data.data){
+                    if(status==5)
+                        alert("确认收货成功！");
+                    else alert("退货成功！");
+                    $window.location.reload();
+                }
+                else {
+                    if(status==5)
+                        alert("确认收货失败！");
+                    else alert("退货失败！");
+                }
+            }),function errorCallback(err) {
+                alert("error!\n"+"error message:"+err);
+            };
          }
         //
     }]);
