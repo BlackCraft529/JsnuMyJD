@@ -101,7 +101,7 @@
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
                 console.log(data);
-                console.log($scope.user.uuid);
+                // console.log($scope.user.uuid);
                 $scope.userOrder=data.data;
                 if($scope.userOrder.length===0){
                     $scope.user.orderStatus=false;

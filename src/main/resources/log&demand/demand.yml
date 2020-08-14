@@ -94,3 +94,11 @@
     - params: uuid status
     - msg: 修改用户的订单状态， staus为几则修改状态为几，例如5则修改状态为5(即确认收货修改为订单完成)(前端只会发送5,6)
     - return: true/false 成功为true
+
+  /getGoods:
+    - params: goods_id
+    - msg: 获取商品信息
+    - return: goods全部信息
+
+  /cart1:
+    -msg: 转发至购物车副本

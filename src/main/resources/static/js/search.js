@@ -61,6 +61,11 @@
             }, function errorCallback(response) {
                 alert("error!\n"+"error message:"+response);
             });
-        }
+        };
+        //打开详情页
+        $scope.showDetail=function () {
+            $location.path('/detail').search({detail_key:this.item.id});
+        };
+        //
     }]);
 })(angular);

@@ -182,6 +182,11 @@
                 alert("error!\n" + "error message:" + err);
             };
         };
+        //打开详情页
+        $scope.showDetail=function () {
+            var key=this.item.goods.id;
+            $location.path('/detail').search({detail_key:key});
+        };
         //
     }]);
 })(angular);

@@ -1,0 +1,64 @@
+<div class="detail">
+    <div class="container">
+        <!-- title-->
+        <div class="title container">
+            <div class=".col-md-offset-5 logo_ico">
+                <h3><img src="public/logo.png"> 商品详情</h3>
+            </div>
+            <div class="search">
+                <input type="text" class="search_box"ng-model="user.search_key">
+                <span class="search_it"ng-click="iWantIt()">搜全站</span>
+            </div>
+            <div class="cart"  ng-click="toCart()">
+                <span class="glyphicon glyphicon-shopping-cart cart_ico"></span>
+                <span>我的购物车</span>
+                <span class="total" ng-bind="user.cartList"></span>
+            </div>
+        </div>
+    </div>
+    <!--分类和店名-->
+    <div class="various">
+        <div class="container">
+            <div class="type"><a href="">日用品</a></div>
+            <div class="retailer"><span>自营</span><a href="">宏碁京东自营旗舰店</a></div>
+        </div>
+    </div>
+    <!--详情信息-->
+    <div class="msg">
+        <div class="container">
+            <div class="roughly col-md-offset-1">
+                <div class="logo">
+                    <img src="https://img14.360buyimg.com/n0/jfs/t1/123173/9/9493/123521/5f3286f8E0a4bcbfd/32d703b5bdbee4e6.jpg" width="350px" height="350px">
+                </div>
+                <div class="more">
+                    <div class="name"><img src="img-detail/fanbox.png">卡西欧（CASIO）手表 G-SHOCK 魔金双显 男士防水防震防磁运动手表石英表 GA-110GB-1A</div>
+                    <div class="price">
+                        <div>京东价<span class="rel_price">￥1490.00</span></div>
+                        <div>促销<span class="discount">-￥00.00</span></div>
+                    </div>
+                    <div class="function">
+                        <div class="f" ng-click="buyIt()">立即支付</div>
+                        <div class="f" ng-click="putIn()">加入购物车</div>
+                    </div>
+                </div>
+            </div>
+            <div class="des">
+                <div class="title">
+                    <div>
+                        <ul>
+                            <li class="main">商品介绍</li>
+                            <li class="li1"><a href="">规格与包装</a></li>
+                            <li class="li1"><a href="">售后保障</a></li>
+                            <li class="li1"><a href="">商品评价</a></li>
+                            <li class="li1"><a href="">本店好评商品</a></li>
+                        </ul>
+                    </div>
+                    <div class="toCart" ng-click="putIn()">加入购物车</div>
+                </div>
+                <div class="none">商家没有添加详细内容</div>
+                <div class="show">测试内容</div>
+            </div>
+
+        </div>
+    </div>
+</div>
