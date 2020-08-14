@@ -344,6 +344,13 @@
     width: 80px;
     height: 80px;
 }
+.userinfo .info_main .myorder .none{
+    color: rgb(230,230,230);
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 30px;
+}
 .userinfo .info_main .myorder .data .good_name{
     float: left;
     padding: 10px 0 10px 10px;
