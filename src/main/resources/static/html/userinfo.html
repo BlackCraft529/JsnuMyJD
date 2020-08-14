@@ -176,10 +176,12 @@
                         <!--status为6-->
                         <span ng-if="(item.status===6)?true:false">
                             <span>订单已取消</span>
+                            <b></b>
                         </span>
-                        <b></b>
+
                         <span><a href="">查看详情</a></span>
-                        <b></b>
+                        <!--status为6或3-->
+                        <span ng-if="(item.status===6 || item.status===3)?false:true"><b></b></span>
                         <!--status为5-->
                         <span ng-if="(item.status===5)?true:false"><a href="">查看发票</a></span>
                     </div>
