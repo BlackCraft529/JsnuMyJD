@@ -372,20 +372,23 @@
         };
         //改变订单状态
         $scope.editOrder=function (status) {
-            $http({
-                url:"/editOrder",
-                method: 'post',
-                data:{
-                    uuid: $scope.user.uuid,
-                    status: status,
-                },
-                headers :{'Content-Type': 'application/json;charset=UTF-8'},
-            }).then(function successCallback(data) {
-                console.log(data.data);
-            }),function errorCallback(err) {
-                alert("error!\n"+"error message:"+err);
-            };
-        }
+            console.log(status);
+            console.log(this.item);
+
+        //     $http({
+        //         url:"/editOrder",
+        //         method: 'post',
+        //         data:{
+        //             uuid: $scope.user.uuid,
+        //             status: status,
+        //         },
+        //         headers :{'Content-Type': 'application/json;charset=UTF-8'},
+        //     }).then(function successCallback(data) {
+        //         console.log(data.data);
+        //     }),function errorCallback(err) {
+        //         alert("error!\n"+"error message:"+err);
+        //     };
+         }
         //
     }]);
 })(angular);

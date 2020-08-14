@@ -312,7 +312,8 @@
 }
 /*---------------------我的订单----------------------*/
 .userinfo .info_main .myorder{
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     background-color: rgb(255,255,255);
     width: 1050px;
     float: none;
@@ -1803,6 +1804,9 @@
     height: 35px;
     width: 500px;
     padding: 2px 0px 2px 2px;
+}
+.detail .title .search input{
+    color: black;
 }
 .detail .title .search_box{
     width: 87%;

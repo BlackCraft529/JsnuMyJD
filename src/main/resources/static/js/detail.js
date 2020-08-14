@@ -15,15 +15,7 @@
             cartList:0,
             search_key:'',
         };
-        $scope.goods={
-            name:'',
-            des:'',
-            price:'',
-            sell_price:'',
-            publisher:'',
-            image:'',
-            cate:'',
-        };
+        $scope.goods={};
         if($scope.detail_key===''||typeof($scope.detail_key)==='undefined' ){
             $location.path('/search');
             return;
@@ -52,7 +44,7 @@
             }
             //获取商品信息
             $http({
-                url: '/goods_id',
+                url: '/getGoods',
                 method: 'post',
                 data: {
                     "goods_id" : $scope.detail_key,
@@ -60,6 +52,7 @@
                 headers :{'Content-Type': 'application/json;charset=UTF-8'},
             }).then(function successCallBack(data) {
                 console.log(data.data);
+                $scope.goods=data.data;
 
             }),function errorCallBack(err) {
                 alert("error!\n" + "error message:" + err);

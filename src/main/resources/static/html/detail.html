@@ -19,8 +19,8 @@
     <!--分类和店名-->
     <div class="various">
         <div class="container">
-            <div class="type"><a href="">日用品</a></div>
-            <div class="retailer"><span>自营</span><a href="">宏碁京东自营旗舰店</a></div>
+            <div class="type"><a href="" ng-bind="goods.cate"></a></div>
+            <div class="retailer"><span>自营</span><a href="" ng-bind="goods.publisher">宏碁京东自营旗舰店</a></div>
         </div>
     </div>
     <!--详情信息-->
@@ -28,13 +28,13 @@
         <div class="container">
             <div class="roughly col-md-offset-1">
                 <div class="logo">
-                    <img src="https://img14.360buyimg.com/n0/jfs/t1/123173/9/9493/123521/5f3286f8E0a4bcbfd/32d703b5bdbee4e6.jpg" width="350px" height="350px">
+                    <img  width="350px" height="350px" onerror="this.src='img-search/1.jpg'" ng-src="{{goods.image}}">
                 </div>
                 <div class="more">
-                    <div class="name"><img src="img-detail/fanbox.png">卡西欧（CASIO）手表 G-SHOCK 魔金双显 男士防水防震防磁运动手表石英表 GA-110GB-1A</div>
+                    <div class="name"><img src="img-detail/fanbox.png"><span ng-bind="goods.name"></span></div>
                     <div class="price">
-                        <div>京东价<span class="rel_price">￥1490.00</span></div>
-                        <div>促销<span class="discount">-￥00.00</span></div>
+                        <div>京东价<span class="rel_price" ng-bind="'￥'+goods.sellPrice"></span></div>
+                        <div>促销<span class="discount" ng-bind="'-￥' + {{goods.price-goods.sellPrice}}"></span></div>
                     </div>
                     <div class="function">
                         <div class="f" ng-click="buyIt()">立即支付</div>
@@ -55,8 +55,8 @@
                     </div>
                     <div class="toCart" ng-click="putIn()">加入购物车</div>
                 </div>
-                <div class="none">商家没有添加详细内容</div>
-                <div class="show">测试内容</div>
+                <div class="none" ng-if="(goods.description)===''?true:false">商家没有添加详细内容</div>
+                <div class="show"ng-if="(goods.description)===''?false:true" ng-bind="goods.description"></div>
             </div>
 
         </div>
