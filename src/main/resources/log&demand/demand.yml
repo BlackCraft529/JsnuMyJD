@@ -85,6 +85,7 @@
     -msg: 转发至旧版京东
 
   bugs:
+    - 将pay之后，order的status改为默认为3(已发货)
     - 无论什么用户都能获取所有的订单，记得判断uuid再获取数据。。（我在打开个人信息页面的时候，后台输出了uuid，确定了每个用户登录的时候uuid是不同的）
     - getOrder中，起码要有一个image,ordername,status的属性,image是订单中第一个商品的图片，ordername是该订单中所有商品名字的拼接，中间用"|"分割,status是订单状态
 

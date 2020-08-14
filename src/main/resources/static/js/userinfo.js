@@ -370,6 +370,22 @@
         $scope.toCart=function () {
             $location.path('/cart');
         };
-
+        //改变订单状态
+        $scope.editOrder=function (status) {
+            $http({
+                url:"/editOrder",
+                method: 'post',
+                data:{
+                    uuid: $scope.user.uuid,
+                    status: status,
+                },
+                headers :{'Content-Type': 'application/json;charset=UTF-8'},
+            }).then(function successCallback(data) {
+                console.log(data.data);
+            }),function errorCallback(err) {
+                alert("error!\n"+"error message:"+err);
+            };
+        }
+        //
     }]);
 })(angular);
