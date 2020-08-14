@@ -69,4 +69,18 @@ public class GoodsController {
         vagueGoods.setResult(true);
         return jsonObjectMapper.valueToTree(vagueGoods).toString();
     }
+
+    /**
+     * 获取商品信息
+     * @param jsonData json数据
+     * @return 商品信息
+     * @throws JsonProcessingException json转换错误
+     */
+    @RequestMapping("/getGoods")
+    @ResponseBody
+    public String getGoods(@RequestBody String jsonData) throws JsonProcessingException {
+        JsonNode node = jsonObjectMapper.readTree(jsonData);
+        String goodsId = node.get("goods_id").toString().replaceAll("\"","");
+        return jsonObjectMapper.valueToTree(goodsService.selectGoodsByGoodsId(goodsId)).toString();
+    }
 }

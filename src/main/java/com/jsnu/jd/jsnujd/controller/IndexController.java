@@ -10,28 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    /**
-     * 登录界面跳转
-     *
-     * @return 登录界面
-     */
-    @RequestMapping("/login")
-    public String toLogin(){
-        return "login";
-    }
-
-    /**
-     * 注册界面跳转
-     *
-     * @return 注册界面
-     */
-    @RequestMapping("/register")
-    public String toRegister(){
-        return "register";
-    }
-
     @RequestMapping("/jd1")
     public String toOldJd(){
         return "oldjd";
     }
+
+    @RequestMapping("/cart1")
+    public String toCart1(){return "cart1";}
 }

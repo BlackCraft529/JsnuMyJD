@@ -10,7 +10,9 @@ import com.jsnu.jd.jsnujd.service.OrderService;
 import com.jsnu.jd.jsnujd.service.ShopCartService;
 import com.jsnu.jd.jsnujd.service.UserService;
 import com.jsnu.jd.jsnujd.vo.Order;
+import com.jsnu.jd.jsnujd.vo.OrderArray;
 import com.jsnu.jd.jsnujd.vo.ShopCart;
+import com.jsnu.jd.jsnujd.vo.SimpleOrderArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -48,6 +50,21 @@ public class OrderController {
     private ObjectMapper jsonObjectMapper =  new ObjectMapper();
 
     /**
+     * 根据订单ID修改订单状态
+     * @param jsonData json数据
+     * @return 修改是否完成
+     * @throws JsonProcessingException json转换错误
+     */
+    @RequestMapping("/editOrder")
+    @ResponseBody
+    public String editOrder(@RequestBody String jsonData) throws JsonProcessingException {
+        JsonNode node = jsonObjectMapper.readTree(jsonData);
+        String orderId = node.get("id").toString().replaceAll("\"","");
+        String status = node.get("status").toString().replaceAll("\"","");
+        return jsonObjectMapper.valueToTree(orderService.updateOrderStatus(orderId,Integer.parseInt(status))!=0).toString();
+    }
+
+    /**
      * 获取用户order数据
      * @param jsonData json数据
      * @return order数据表
@@ -58,7 +75,11 @@ public class OrderController {
     public String getOrder(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String userId =  node.get("uuid").toString().replaceAll("\"","");
-        return jsonObjectMapper.valueToTree(orderService.getNewestOrderListByUserId(userId)).toString();
+        List<SimpleOrderArray> simpleOrderArrays = new ArrayList<>();
+        for(OrderArray orderArray : orderService.getNewestOrderListByUserId(userId)){
+            simpleOrderArrays.add(new SimpleOrderArray(orderArray));
+        }
+        return jsonObjectMapper.valueToTree(simpleOrderArrays).toString();
     }
 
     /**
@@ -103,7 +124,7 @@ public class OrderController {
             order.setGoodsList(goodsMapOrder);
             order.setPayment(settlement);
             order.setSettlement(settlement);
-            order.setStatus(5);
+            order.setStatus(3);
             order.setId(orderId);
             return jsonObjectMapper.valueToTree(orderService.createNewOrder(order)!=0).toString();
         }

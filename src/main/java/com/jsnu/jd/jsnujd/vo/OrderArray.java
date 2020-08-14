@@ -24,12 +24,20 @@ public class OrderArray {
     private Date createTime;
     private String address;
     private int status;
+    private String image;
+    private String orderName;
 
     public OrderArray(Order order){
+        orderName="";
         goodsList=new ArrayList<>();
         for(Map.Entry<Goods,Integer> value : order.getGoodsList().entrySet()){
+            if(image==null|| "".equalsIgnoreCase(image)){
+                image = value.getKey().getImage();
+            }
             goodsList.add(new ShopCartGoods(value.getKey(),value.getValue()));
+            orderName+=value.getKey().getName()+"|";
         }
+        orderName=orderName.substring(0,orderName.length()-1);
         this.id=order.getId();
         this.user=order.getUser();
         this.payment=order.getPayment();

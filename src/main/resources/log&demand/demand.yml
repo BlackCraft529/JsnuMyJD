@@ -98,23 +98,28 @@
     - Complete: OrderController("/pay");
 
   /jd1:
-    -msg: 转发至旧版京东
+    - msg: 转发至旧版京东
+    - Complete: IndexController("/jd1")
 
   bugs:
-    - 将pay之后，order的status改为默认为3(已发货)
-    - 无论什么用户都能获取所有的订单，记得判断uuid再获取数据。。（我在打开个人信息页面的时候，后台输出了uuid，确定了每个用户登录的时候uuid是不同的）
-    - getOrder中，起码要有一个image,ordername,status的属性,image是订单中第一个商品的图片，ordername是该订单中所有商品名字的拼接，中间用"|"分割,status是订单状态
+    - 将pay之后，order的status改为默认为3(已发货) OK
+    - 无论什么用户都能获取所有的订单，记得判断uuid再获取数据。。（我在打开个人信息页面的时候，后台输出了uuid，确定了每个用户登录的时候uuid是不同的）OK
+    - getOrder中，起码要有一个image,ordername,status的属性,image是订单中第一个商品的图片，ordername是该订单中所有商品名字的拼接，中间用"|"分割,status是订单状态 OK
 
 2020.8.14:
   /editOrder:
-    - params: uuid status
-    - msg: 修改用户的订单状态， staus为几则修改状态为几，例如5则修改状态为5(即确认收货修改为订单完成)(前端只会发送5,6)
+    - params: uuid status id
+    - msg: 修改用户的订单状态， staus为几则修改状态为几，
+           例如5则修改状态为5(即确认收货修改为订单完成)(前端只会发送5,6)
     - return: true/false 成功为true
+    - Complete: OrderController("/editOrder");
 
   /getGoods:
     - params: goods_id
     - msg: 获取商品信息
     - return: goods全部信息
+    - Complete: GoodsController("/getGoods");
 
   /cart1:
-    -msg: 转发至购物车副本
+    - msg: 转发至购物车副本
+    - Complete: IndexController("/cart1")
