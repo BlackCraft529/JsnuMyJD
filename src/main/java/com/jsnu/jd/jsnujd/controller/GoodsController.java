@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jsnu.jd.jsnujd.service.GoodsService;
+import com.jsnu.jd.jsnujd.vo.Goods;
 import com.jsnu.jd.jsnujd.vo.VagueGoods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -81,6 +82,6 @@ public class GoodsController {
     public String getGoods(@RequestBody String jsonData) throws JsonProcessingException {
         JsonNode node = jsonObjectMapper.readTree(jsonData);
         String goodsId = node.get("goods_id").toString().replaceAll("\"","");
-        return jsonObjectMapper.valueToTree(goodsService.selectGoodsByGoodsId(goodsId)).toString();
+        return jsonObjectMapper.valueToTree(new Goods(goodsService.selectGoodsByGoodsId(goodsId))).toString();
     }
 }

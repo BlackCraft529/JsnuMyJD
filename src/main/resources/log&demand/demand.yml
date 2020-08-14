@@ -125,5 +125,5 @@
     - Complete: IndexController("/cart1")
 
   change:
-    - 修改/pay命令，用户购买之后修改状态为3(已发货)
-    - /getGoods返回的publisher改成用户的名字
+    - 修改/pay命令，用户购买之后修改状态为3(已发货) OK
+    - /getGoods返回的publisher改成用户的名字 OK

@@ -1,10 +1,14 @@
 package com.jsnu.jd.jsnujd.service.Impl;
 
 import com.jsnu.jd.jsnujd.mapper.GoodsMapper;
+import com.jsnu.jd.jsnujd.mapper.UserMapper;
 import com.jsnu.jd.jsnujd.pojo.Goods;
+import com.jsnu.jd.jsnujd.pojo.User;
 import com.jsnu.jd.jsnujd.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.jws.soap.SOAPBinding;
 import java.util.*;
 
 /**
@@ -16,7 +20,8 @@ public class GoodsServiceImpl implements GoodsService {
     @Autowired
     private GoodsMapper goodsMapper;
 
-
+    @Autowired
+    private UserMapper userMapper;
     /**
      * 新增一条商品数据
      *
