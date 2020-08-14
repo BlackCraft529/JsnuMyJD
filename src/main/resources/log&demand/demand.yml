@@ -1,3 +1,19 @@
+2020.8.6:
+  /loginAction:
+  -params: String account , String password
+  -msg : 发送用户的用户名/邮箱/手机号 和 密码 判断是否匹配
+  -return : true/false 存在为true
+
+  /getName:
+  - params: String username
+  - msg: 发送用户的用户名，判断是否存在
+  - return : true/false 存在为true
+    -
+  /registerUser:
+    - params: String username ,String password, String phone, String mail
+    - msg: 发送用户的  用户名(可以为空,空则默认为UUID)，密码，手机号，邮箱 来注册
+    - return : true/false 成功为true
+
 2020.8.8:
   /oldjd:
     - msg: 转发至静态京东页面
